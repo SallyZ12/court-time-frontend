@@ -16,6 +16,7 @@ export const clearCurrentUser = () => {
 // asynchronous action creators
 
 export const login = (credentials) => {
+  console.log("credentials:",credentials)
   return dispatch => {
     return fetch("http://localhost:3000/api/v1/login", {
       credentials: "include",

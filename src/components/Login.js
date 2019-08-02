@@ -14,7 +14,6 @@ console.log("formdata:",loginFormData)
       [name]: value
     }
     updateLoginForm(updatedFormInfo)
-
   }
 
   const handleSubmit = event => {
@@ -24,6 +23,7 @@ console.log("formdata:",loginFormData)
   }
 
   return (
+
     <form onSubmit={handleSubmit}>
       <input  type="text"
               placeholder="username"
@@ -39,6 +39,7 @@ console.log("formdata:",loginFormData)
 
       <input type="submit" value="Log In"/>
     </form>
+
   )
 }
 

@@ -4,7 +4,7 @@ import {updateLoginForm} from "../actions/loginForm"
 import {login} from "../actions/currentUser"
 
 const Login = ({ loginFormData, updateLoginForm, login}) => {
-
+console.log("formdata:",loginFormData)
   const handleInputChange = event => {
     const { name, value } = event.target
     const updatedFormInfo = {
@@ -23,13 +23,13 @@ const Login = ({ loginFormData, updateLoginForm, login}) => {
     <form onSubmit={handleSubmit}>
       <input  type="text"
               placeholder="username"
-              // value={loginFormData.username}
+              value={loginFormData.username}
               name="username"
               onChange={handleInputChange} />
 
       <input  type="text"
               placeholder="password"
-              // value={loginFormReducer.password}
+              value={loginFormData.password}
               name="password"
               onChange={handleInputChange} />
 
@@ -40,9 +40,9 @@ const Login = ({ loginFormData, updateLoginForm, login}) => {
 
 
 const mapStateToProps = state => {
-  console.log("state:", state)
+  console.log("state:", state.loginFormReducer)
   return {
-    loginFormData: state.loginForm
+    loginFormData: state.loginFormReducer
   }
 }
 

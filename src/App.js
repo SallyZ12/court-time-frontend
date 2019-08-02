@@ -1,5 +1,6 @@
 import React from 'react';
 import Login from './components/Login'
+import Logout from './components/Logout'
 
 class App extends React.Component {
 
@@ -13,6 +14,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <Login />
+        <Logout />
       </div>
     );
   }

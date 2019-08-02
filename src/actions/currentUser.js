@@ -27,7 +27,7 @@ export const login = (credentials) => {
     })
      .then(response => response.json())
      .then(user => {
-       if(user.error {
+       if(user.error) {
          alert(user.error)
        } else {
          dispatch(setCurrentUser(user))

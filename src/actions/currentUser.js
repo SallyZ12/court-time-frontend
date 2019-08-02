@@ -1,9 +1,4 @@
 
-
-
-
-
-
 // synchronous action creators
 export const setCurrentUser = user => {
   return {

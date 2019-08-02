@@ -12,3 +12,49 @@ export const clearCurrentUser = () => {
     type: "CLEAR_CURRENT_USER"
   }
 }
+
+// asynchronous action creators
+
+export const login = (credentials) => {
+  return dispatch => {
+    return fetch("http://localhost:3000/api/v1/login", {
+      credentials: "include",
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stingify(credentials)
+    })
+     .then(response => response.json())
+     .then(user => {
+       if(user.error {
+         alert(user.error)
+       } else {
+         dispatch(setCurrentUser(user))
+       }
+       })
+       .catch(console.log)
+  }
+}
+
+export const getCurrentUser = () => {
+  console.log("Dispatching Get Current User")
+  return dispatch => {
+    return fetch("http://localhost:3000/api/v1/get_current_user", {
+      credentials: "include",
+      method: "GET",
+      headers: {
+          "Content-Type": "application/json"
+      },
+    })
+      .then(response => response.json())
+      .then(user => {
+        if(user.error) {
+          alert(user.error)
+        } else {
+          dispatch(setCurrentUser(user))
+        }
+      })
+       .catch(console.log)
+  }
+}

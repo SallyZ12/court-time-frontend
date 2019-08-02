@@ -2,6 +2,8 @@ import React from 'react';
 import Login from './components/Login'
 import Logout from './components/Logout'
 
+
+
 class App extends React.Component {
 
   // componentDidMount() {
@@ -13,11 +15,14 @@ class App extends React.Component {
   render () {
     return (
       <div className="App">
-        <Login />
+      <h3> Welcome,   Please Log In </h3>
+        < Login/>
         <Logout />
       </div>
     );
   }
 }
 
-export default App;
+
+
+export default (App);

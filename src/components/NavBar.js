@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 const NavBar =  ({ currentUser }) => {
-
+// console.log("currentUser:", currentUser)
   return (
     <div className="NavBar">
       {currentUser ? <strong> Welcome, {currentUser.first_name} </strong> : ""}

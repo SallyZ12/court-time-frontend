@@ -1,28 +1,38 @@
 import React from 'react';
 import Login from './components/Login'
 import Logout from './components/Logout'
+import { getCurrentUser } from './actions/currentUser'
+import { connect } from 'react-redux'
+import NavBar from './components/NavBar'
 
 
 
 class App extends React.Component {
 
-  // componentDidMount() {
-  //   fetch('http://localhost:3000/api/v1/clubs/1/reservations')
-  //   .then(response => response.json())
-  //   .then(data => console.log(data))
-  // }
+  componentDidMount() {
+    this.props.getCurrentUser()
+  }
+
 
   render () {
     return (
       <div className="App">
-      <h3> Welcome,   Please Log In </h3>
-        < Login/>
+        <NavBar />
+        <br/>
+        <Login  />
+        <br/>
         <Logout />
       </div>
     );
   }
 }
 
+const mapStateToProps = state => {
+  return ({
+    loggedIn: !!state.currentUserReducer
+  })
+}
 
 
-export default (App);
+
+export default connect(mapStateToProps, { getCurrentUser })(App);

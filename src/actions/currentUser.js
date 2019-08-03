@@ -16,7 +16,7 @@ export const clearCurrentUser = () => {
 // asynchronous action creators
 
 export const login = (credentials) => {
-  console.log("credentials:",credentials)
+  // console.log("credentials:",credentials)
   return dispatch => {
     return fetch("http://localhost:3000/api/v1/login", {
       credentials: "include",
@@ -52,7 +52,7 @@ export const logout = event => {
 
 
 export const getCurrentUser = () => {
-  console.log("Dispatching Get Current User")
+  // console.log("Dispatching Get Current User")
   return dispatch => {
     return fetch("http://localhost:3000/api/v1/get_current_user", {
       credentials: "include",

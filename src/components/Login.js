@@ -6,7 +6,7 @@ import {resetLoginForm} from "../actions/loginForm"
 
 
 const Login = ({ loginFormData, updateLoginForm, login, resetLoginForm}) => {
-console.log("formdata:",loginFormData)
+
   const handleInputChange = event => {
     const { name, value } = event.target
     const updatedFormInfo = {
@@ -45,7 +45,7 @@ console.log("formdata:",loginFormData)
 
 
 const mapStateToProps = state => {
-  console.log("state:", state.loginFormReducer)
+  
   return {
     loginFormData: state.loginFormReducer
   }

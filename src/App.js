@@ -17,6 +17,8 @@ class App extends React.Component {
   render () {
     return (
       <div className="App">
+        <h2> Court Time </h2>
+        <br/>
         <NavBar />
         <br/>
         <Login  />

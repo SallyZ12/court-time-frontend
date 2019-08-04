@@ -23,9 +23,9 @@ class UsersContainer extends React.Component {
 
 
 const mapStateToProps = state => {
-  // console.log("MSTP:", state.userReducer)
+  // console.log("MSTP:", state.usersReducer)
   return {
-    users: state.userReducer
+    users: state.usersReducer
   }
 }
 

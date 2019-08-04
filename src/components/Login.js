@@ -30,13 +30,13 @@ const Login = ({ loginFormData, updateLoginForm, login, resetLoginForm}) => {
               value={loginFormData.username}
               name="username"
               onChange={handleInputChange} />
-
+              <br/>
       <input  type="text"
               placeholder="password"
               value={loginFormData.password}
               name="password"
               onChange={handleInputChange} />
-
+              <br/><br/>
       <input type="submit" value="Log In"/>
     </form>
 
@@ -45,7 +45,7 @@ const Login = ({ loginFormData, updateLoginForm, login, resetLoginForm}) => {
 
 
 const mapStateToProps = state => {
-  
+
   return {
     loginFormData: state.loginFormReducer
   }

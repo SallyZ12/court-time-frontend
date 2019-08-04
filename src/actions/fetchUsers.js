@@ -13,6 +13,3 @@ export function fetchUsers() {
         }))
   }
 }
-
-
-// .then(users => console.log('fetch:', users))

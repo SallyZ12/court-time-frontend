@@ -4,6 +4,7 @@ import Logout from './components/Logout'
 import { getCurrentUser } from './actions/currentUser'
 import { connect } from 'react-redux'
 import NavBar from './components/NavBar'
+import UsersContainer from './containers/UsersContainer'
 
 
 
@@ -21,6 +22,7 @@ class App extends React.Component {
         <br/>
         <NavBar />
         <br/>
+        <UsersContainer />
         <Login  />
         <br/>
         <Logout />

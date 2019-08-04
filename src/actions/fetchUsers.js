@@ -1,11 +1,10 @@
 export const displayUsers = users => {
-  console.log("display:", users)
+  // console.log("display:", users)
   return {
     type: "DISPLAY_USERS",
     users
   }
 }
-
 
 
 // asynchronous action creators

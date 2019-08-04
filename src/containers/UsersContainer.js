@@ -14,6 +14,7 @@ class UsersContainer extends React.Component {
     return (
       <div>
       <Users users={this.props.users}/>
+      <br/>
       <UserInput />
       </div>
     )

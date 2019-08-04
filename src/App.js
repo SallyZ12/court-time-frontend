@@ -23,6 +23,7 @@ class App extends React.Component {
         <NavBar />
         <br/>
         <UsersContainer />
+        <br/>
         <Login  />
         <br/>
         <Logout />

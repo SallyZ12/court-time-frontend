@@ -5,7 +5,8 @@ import { getCurrentUser } from './actions/currentUser'
 import { connect } from 'react-redux'
 import NavBar from './components/NavBar'
 import UsersContainer from './containers/UsersContainer'
-
+import Users from './components/Users'
+import { Route } from 'react-router-dom'
 
 
 class App extends React.Component {
@@ -18,26 +19,33 @@ class App extends React.Component {
   render () {
     return (
       <div className="App">
+
+      
         <h2> Court Time </h2>
         <br/>
         <NavBar />
+        <Route exact path="/users" component={Users}/>
         <br/>
         <UsersContainer />
         <br/>
         <Login  />
         <br/>
         <Logout />
+
+
       </div>
     );
   }
 }
 
 const mapStateToProps = state => {
+  console.log("MSTP-APP:", state.usersReducer)
   return ({
-    loggedIn: !!state.currentUserReducer
+    loggedIn: !!state.currentUserReducer,
+    users: state.usersReducer
   })
 }
 
 
 
-export default connect(mapStateToProps, { getCurrentUser })(App);
+export default connect(mapStateToProps, { getCurrentUser, Users })(App);

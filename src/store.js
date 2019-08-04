@@ -3,12 +3,12 @@ import thunk from 'redux-thunk'
 
 import currentUserReducer from './reducers/currentUserReducer'
 import loginFormReducer from './reducers/loginFormReducer'
-import userReducer from './reducers/userReducer'
+import usersReducer from './reducers/usersReducer'
 
 const reducer = combineReducers({
   currentUserReducer,
   loginFormReducer,
-  userReducer
+  usersReducer
 
 })
 

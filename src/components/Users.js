@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Users = ({users}) => {
-  console.log("users:", users)
+  // console.log("users:", users)
   return (
   <div>
     <p> Name  --------  ADMIN</p>

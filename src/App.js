@@ -6,7 +6,7 @@ import { connect } from 'react-redux'
 import NavBar from './components/NavBar'
 import UsersContainer from './containers/UsersContainer'
 import Users from './components/Users'
-import { Route } from 'react-router-dom'
+import { Route, Switch, Link } from 'react-router-dom'
 
 
 class App extends React.Component {
@@ -20,26 +20,22 @@ class App extends React.Component {
     return (
       <div className="App">
 
-      
-        <h2> Court Time </h2>
-        <br/>
-        <NavBar />
-        <Route exact path="/users" component={Users}/>
-        <br/>
-        <UsersContainer />
-        <br/>
-        <Login  />
-        <br/>
-        <Logout />
-
-
+      <h2> Court Time </h2>
+      <br/>
+      <NavBar />
+      <br/>
+      <UsersContainer />
+      <br/>
+      <Login  />
+      <br/>
+      <Logout />
       </div>
     );
   }
 }
 
 const mapStateToProps = state => {
-  console.log("MSTP-APP:", state.usersReducer)
+  // console.log("MSTP-APP:", state.usersReducer)
   return ({
     loggedIn: !!state.currentUserReducer,
     users: state.usersReducer

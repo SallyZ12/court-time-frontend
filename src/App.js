@@ -5,8 +5,8 @@ import { getCurrentUser } from './actions/currentUser'
 import { connect } from 'react-redux'
 import NavBar from './components/NavBar'
 import UsersContainer from './containers/UsersContainer'
-import Users from './components/Users'
-import { Route, Switch, Link } from 'react-router-dom'
+// import Users from './components/Users'
+import { Route, Switch, Link, NavLink } from 'react-router-dom'
 
 
 class App extends React.Component {
@@ -24,11 +24,12 @@ class App extends React.Component {
       <br/>
       <NavBar />
       <br/>
-      <UsersContainer />
+        <Route exact path="/users" component = {UsersContainer} />
       <br/>
-      <Login  />
+       <Route exact path="/login" component = {Login} />
+
       <br/>
-      <Logout />
+      <Logout/>
       </div>
     );
   }
@@ -44,4 +45,4 @@ const mapStateToProps = state => {
 
 
 
-export default connect(mapStateToProps, { getCurrentUser, Users })(App);
+export default connect(mapStateToProps, { getCurrentUser })(App);

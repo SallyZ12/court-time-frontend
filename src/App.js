@@ -25,10 +25,10 @@ class App extends React.Component {
       <h2> Court Time </h2>
       <br/>
       <NavBar />
-
+      <br/>
       <Route exact path="/users" render={props => <Users users={this.props.users}/>}/>
       <Route exact path="/login" component = {Login} />
-    
+
       <br/>
       <Logout/>
       </div>

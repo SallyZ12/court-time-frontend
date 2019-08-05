@@ -2,10 +2,11 @@ import React from 'react';
 import Login from './components/Login'
 import Logout from './components/Logout'
 import { getCurrentUser } from './actions/currentUser'
+import { fetchUsers } from './actions/fetchUsers'
 import { connect } from 'react-redux'
 import NavBar from './components/NavBar'
-import UsersContainer from './containers/UsersContainer'
-// import Users from './components/Users'
+// import UsersContainer from './containers/UsersContainer'
+import Users from './components/Users'
 import { Route, Switch, Link, NavLink } from 'react-router-dom'
 
 
@@ -13,6 +14,7 @@ class App extends React.Component {
 
   componentDidMount() {
     this.props.getCurrentUser()
+    this.props.fetchUsers()
   }
 
 
@@ -23,11 +25,10 @@ class App extends React.Component {
       <h2> Court Time </h2>
       <br/>
       <NavBar />
-      <br/>
-        <Route exact path="/users" component = {UsersContainer} />
-      <br/>
-       <Route exact path="/login" component = {Login} />
 
+      <Route exact path="/users" render={props => <Users users={this.props.users}/>}/>
+      <Route exact path="/login" component = {Login} />
+    
       <br/>
       <Logout/>
       </div>
@@ -36,7 +37,7 @@ class App extends React.Component {
 }
 
 const mapStateToProps = state => {
-  // console.log("MSTP-APP:", state.usersReducer)
+  console.log("MSTP-APP:", state.usersReducer)
   return ({
     loggedIn: !!state.currentUserReducer,
     users: state.usersReducer
@@ -45,4 +46,4 @@ const mapStateToProps = state => {
 
 
 
-export default connect(mapStateToProps, { getCurrentUser })(App);
+export default connect(mapStateToProps, { getCurrentUser, fetchUsers })(App);

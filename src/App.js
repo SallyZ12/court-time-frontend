@@ -32,6 +32,7 @@ class App extends React.Component {
 
       <br/>
       <Signup />
+      <br/>
       <Logout/>
       </div>
     );

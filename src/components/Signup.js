@@ -3,10 +3,10 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {signup} from '../actions/currentUser'
 import {updateSignupForm} from "../actions/signupForm"
-// import {resetSignupForm} from "../actions/signupForm"
 
 
-const Signup = ({ signupFormData, updateSignupForm, signup, resetSignupForm}) => {
+
+const Signup = ({ signupFormData, updateSignupForm, signup}) => {
 
   const handleUserInfoInputChange = event => {
     const { name, value } = event.target
@@ -20,7 +20,7 @@ const Signup = ({ signupFormData, updateSignupForm, signup, resetSignupForm}) =>
   const handleSubmit = event => {
     event.preventDefault()
     signup(signupFormData)
-    // resetSignupForm()
+
   }
 
   return (
@@ -57,15 +57,16 @@ const Signup = ({ signupFormData, updateSignupForm, signup, resetSignupForm}) =>
               onChange={handleUserInfoInputChange} />
               <br/>
               <label>
-              
+              <br/>
               Admin:
       <select value={signupFormData.admin}
-              onChange={handleUserInfoInputChange}>
-              name="admin"
+              onChange={handleUserInfoInputChange}
+              name="admin">
               <option value="No">No</option>
               <option value="Yes">Yes</option>
       </select>
           </label>
+          <br/>
           <br/>
       <input type="submit" value="Register"/>
     </form>

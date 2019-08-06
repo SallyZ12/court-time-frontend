@@ -8,7 +8,7 @@ const initialState = {
   admin: "No"
 }
 
-export default (state = initialState, action)
+export default (state = initialState, action)=> {
   switch(action.type) {
 
     case "UPDATE_SIGNUP_FORM":
@@ -19,6 +19,5 @@ export default (state = initialState, action)
 
     default:
       return state
-
   }
 }

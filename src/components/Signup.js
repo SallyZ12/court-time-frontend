@@ -24,8 +24,8 @@ const Signup = ({ signupFormData, updateSignupForm, signup}) => {
   }
 
   return (
-
     <form onSubmit={handleSubmit}>
+        Enter Your Info Below <br/>
       <input  type="text"
             placeholder="First Name"
             value={signupFormData.first_name}
@@ -65,7 +65,7 @@ const Signup = ({ signupFormData, updateSignupForm, signup}) => {
               <option value="No">No</option>
               <option value="Yes">Yes</option>
       </select>
-          </label>
+              </label>
           <br/>
           <br/>
       <input type="submit" value="Register"/>

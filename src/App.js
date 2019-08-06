@@ -29,9 +29,7 @@ class App extends React.Component {
       <br/>
       <Route exact path="/users" render={props => <Users users={this.props.users}/>}/>
       <Route exact path="/login" component = {Login} />
-
-      <br/>
-      <Signup />
+      <Route exact path="/signup" component = {Signup} />
       <br/>
       <Logout/>
       </div>

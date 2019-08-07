@@ -57,6 +57,7 @@ export const signup = (credentials) => {
      .then(signup => {
        if(signup.error) {
          alert(signup.error)
+          dispatch(resetSignupForm())
        } else {
          dispatch(setCurrentUser(signup))
          dispatch(resetSignupForm())
@@ -65,8 +66,6 @@ export const signup = (credentials) => {
        .catch(console.log)
   }
 }
-
-
 
 
 export const logout = event => {
@@ -78,8 +77,6 @@ export const logout = event => {
     })
   }
 }
-
-
 
 
 export const getCurrentUser = () => {

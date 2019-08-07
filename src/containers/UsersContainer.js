@@ -17,6 +17,7 @@ class UsersContainer extends React.Component {
       <Route exact path="/users" render={props => <Users users={this.props.users}/>}/>
       <br/>
       <Route exact path="/signup" component = {Signup} />
+      <br/>
       </div>
     )
   }

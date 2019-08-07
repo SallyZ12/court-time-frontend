@@ -75,7 +75,7 @@ const Signup = ({ signupFormData, updateSignupForm, signup}) => {
 }
 
 const mapStateToProps = state => {
-  console.log("MSTP - Signup:", state.signupFormReducer)
+  // console.log("MSTP - Signup:", state.signupFormReducer)
   return {
     signupFormData: state.signupFormReducer
   }

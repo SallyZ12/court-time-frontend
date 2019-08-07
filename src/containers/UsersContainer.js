@@ -2,7 +2,8 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {fetchUsers} from '../actions/fetchUsers'
 import Users from '../components/Users'
-import UserInput from '../components/UserInput'
+import Signup from '../components/Signup'
+import { Route, Switch, Link, NavLink } from 'react-router-dom'
 
 class UsersContainer extends React.Component {
 
@@ -13,9 +14,9 @@ class UsersContainer extends React.Component {
   render() {
     return (
       <div>
-      <Users users={this.props.users}/>
+      <Route exact path="/users" render={props => <Users users={this.props.users}/>}/>
       <br/>
-      <UserInput />
+      <Route exact path="/signup" component = {Signup} />
       </div>
     )
   }

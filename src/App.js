@@ -1,5 +1,4 @@
 import React from 'react';
-// import Signup from './components/Signup'
 import Login from './components/Login'
 import Logout from './components/Logout'
 import { getCurrentUser } from './actions/currentUser'

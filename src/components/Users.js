@@ -15,7 +15,3 @@ return (
 }
 
 export default Users
-
-
-// {users.users.map(user => <p key={user.id}>
-//   {user.first_name} {user.last_name},  Admin: {user.admin}</p>)}

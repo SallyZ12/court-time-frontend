@@ -15,8 +15,10 @@ let user = props.users.users[props.match.params.id-1]
       <Card.Body>
         <Card.Title>Player Information</Card.Title>
         <Card.Text>
-        {user ? user.first_name : null} {user ? user.last_name : null} <br/>
-        Admin: {user ? user.admin : null} 
+        Name: {user ? user.first_name : null} {user ? user.last_name : null} <br/>
+        Username: {user ? user.username : null} <br/>
+        email: {user ? user.email : null} <br/>
+        Admin: {user ? user.admin : null}
         </Card.Text>
         <Button variant="light"><Link to='/users'>Players</Link></Button>
       </Card.Body>

@@ -26,7 +26,7 @@ getUser = (userId)=>{
       <Route exact path="/signup" component = {Signup} />
       <br/>
 
-      <Route path="/users/:id" render={({match}) => <User user={this.getUser(match.params.id)}/>}/>
+      <Route path="/users/:id" render={(rProps)=> <User {...rProps} users={this.props.users}/>}/>
       </div>
     )
   }

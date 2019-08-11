@@ -1,16 +1,19 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 
-const User = ({user}) => {
-console.log("user:", user)
+const User = (props) => {
+console.log("props:",props )
+
+let user = props.users.users[props.match.params.id-1]
+
   return (
     <div>
     <p> Player Information </p>
     <br/>
-    User
+    {user ? user.first_name : null} {user ? user.last_name : null} <br/>
+    Admin: {user ? user.admin : null}
     <br/>
-    {user && user.first_name}
-
+    <br/>
     <Link to='/users'>Players</Link>
     </div>
   )

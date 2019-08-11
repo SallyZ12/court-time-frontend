@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 // import User from './User'
 
 const Users = ({users}) => {
- console.log("users:", users)
+ // console.log("users:", users)
 return (
 
  <div>

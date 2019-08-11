@@ -2,13 +2,13 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 
 const User = (props) => {
-console.log("props:",props )
+// console.log("props:",props )
 
 let user = props.users.users[props.match.params.id-1]
 
   return (
     <div>
-    <p> Player Information </p>
+    <h3> Player Information </h3>
     <br/>
     {user ? user.first_name : null} {user ? user.last_name : null} <br/>
     Admin: {user ? user.admin : null}

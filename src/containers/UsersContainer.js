@@ -13,9 +13,9 @@ class UsersContainer extends React.Component {
     this.props.fetchUsers()
   }
 
-getUser = (userId)=>{
-  return this.props.users[userId-1]
-}
+// getUser = (userId)=>{
+//   return this.props.users[userId-1]
+// }
 
   render() {
     return (
@@ -25,7 +25,6 @@ getUser = (userId)=>{
       <br/>
       <Route exact path="/signup" component = {Signup} />
       <br/>
-
       <Route path="/users/:id" render={(rProps)=> <User {...rProps} users={this.props.users}/>}/>
       </div>
     )
@@ -42,3 +41,5 @@ const mapStateToProps = state => {
 
 
 export default connect(mapStateToProps, {fetchUsers})(UsersContainer)
+
+  // <Route path="/users/:id" render={({match})=> <User user={this.getUser(match.params.id)}/>}/>

@@ -57,8 +57,7 @@ export const signup = (credentials) => {
      .then(signup => {
        if(signup.error) {
          alert(signup.error)
-         {/*on error for > 1 admin don't clear so user can just change admin to no}
-          {/*dispatch(resetSignupForm())*/}
+         
        } else {
          dispatch(setCurrentUser(signup))
          dispatch(resetSignupForm())

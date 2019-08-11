@@ -8,7 +8,7 @@ import NavBar from './components/NavBar'
 import UsersContainer from './containers/UsersContainer'
 
 import Home from './components/Home'
-import { Route, Link, NavLink, Redirect } from 'react-router-dom'
+import { Route, Redirect } from 'react-router-dom'
 
 
 class App extends React.Component {
@@ -31,6 +31,7 @@ class App extends React.Component {
       <Route exact path="/login" component = {Login} />
       <br/>
       <UsersContainer/>
+      <br/>
       <Logout/>
       </div>
     );

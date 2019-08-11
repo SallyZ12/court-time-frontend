@@ -5,8 +5,13 @@ const User = ({user}) => {
 console.log("user:", user)
   return (
     <div>
-    <Link to='/users'>Players</Link>
+    <p> Player Information </p>
+    <br/>
+    User
+    <br/>
     {user && user.first_name}
+
+    <Link to='/users'>Players</Link>
     </div>
   )
 }

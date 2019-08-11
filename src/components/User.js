@@ -6,7 +6,6 @@ console.log("user:", user)
   return (
     <div>
     <Link to='/users'>Players</Link>
-
     {user && user.first_name}
     </div>
   )

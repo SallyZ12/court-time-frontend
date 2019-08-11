@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 
 
 const User = (props) => {
-// console.log("props:",props )
+// console.log("props:", props )
 
 let user = props.users.users[props.match.params.id-1]
 
@@ -28,3 +28,8 @@ let user = props.users.users[props.match.params.id-1]
 }
 
 export default User;
+
+// const User = (props) => {
+// console.log("props:",props )
+//
+// let user = props.users.users[props.match.params.id-1]

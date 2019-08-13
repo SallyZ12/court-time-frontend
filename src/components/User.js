@@ -19,9 +19,9 @@ let currentDate = momentObj.format('MMM DD YYYY')
     <Card style={{ width: '35rem' }}>
       {/*<Card.Img variant="top" src="holder.js/100px180" />*/}
       <Card.Body>
-        <Card.Title> {currentDate} <br/><br/> Player Information </Card.Title>
+        <Card.Title> Today's Date: {currentDate} <br/><br/> Player Information </Card.Title>
         <Card.Text>
-        Today's Date: <br/>
+         <br/>
         Name: {user ? user.first_name : null} {user ? user.last_name : null} <br/>
         Username: {user ? user.username : null} <br/>
         email: {user ? user.email : null} <br/>

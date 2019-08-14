@@ -12,8 +12,8 @@ let user = props.users.users[props.match.params.id-1]
 
 // steps to accessing today's date
 let date = new Date()
-let momentObj = moment(date)
-let currentDate = momentObj.format('MMM DD YYYY')
+let currentDate = moment(date).format('MMM DD YYYY')
+
 
 
   return (

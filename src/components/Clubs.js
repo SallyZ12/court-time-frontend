@@ -1,11 +1,12 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import '../style.css';
 
 const Clubs = ({clubs}) => {
 // console.log("clubs", clubs)
 return (
 
-  <div>
+  <div className = "Clubs">
 
   {clubs.clubs && clubs.clubs.map(club =>
     <li key={club.id}>

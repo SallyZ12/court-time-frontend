@@ -15,11 +15,11 @@ class ClubsContainer extends React.Component {
     return (
       <div>
       <Switch>
-      <Route path="/clubs/:id" render={(rProps)=> <Club {...rProps} clubs={this.props.clubs}/>}/>
+      
+      <Route path="/clubs/:id" render={(routerProps)=> <Club {...routerProps} clubs={this.props.clubs}/>}/>
       <Route path="/clubs" render={(routerProps) => <Clubs {...routerProps} clubs={this.props.clubs}/>}/>
 
       </Switch>
-
       </div>
     )
   }

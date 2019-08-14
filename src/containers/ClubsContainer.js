@@ -16,7 +16,8 @@ class ClubsContainer extends React.Component {
       <div>
       <Switch>
       <Route path="/clubs/:id" render={(rProps)=> <Club {...rProps} clubs={this.props.clubs}/>}/>
-      <Clubs clubs={this.props.clubs}/>
+      <Route path="/clubs" render={(routerProps) => <Clubs {...routerProps} clubs={this.props.clubs}/>}/>
+
       </Switch>
 
       </div>
@@ -32,3 +33,5 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps, {fetchClubs})(ClubsContainer)
+
+// <Clubs clubs={this.props.clubs}/> removed from return and using Route

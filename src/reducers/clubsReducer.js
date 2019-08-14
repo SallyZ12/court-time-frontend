@@ -4,7 +4,7 @@ export default function clubsReducer(state = initialState, action) {
   switch (action.type) {
 
     case 'DISPLAY_CLUBS':
-    // console.log("reducer:", action.clubs)
+    // console.log("clubsreducer:", action.clubs)
      return {clubs: action.clubs}
 
     default:

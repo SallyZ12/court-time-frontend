@@ -10,7 +10,7 @@ return (
 
   {clubs.clubs && clubs.clubs.map(club =>
     <li key={club.id}>
-    <Link to={`/clubs/${club}`}> {club.club_name} - {club.location} </Link>
+    <Link to={`/clubs/${club.id}`}> {club.club_name} - {club.location} </Link>
     </li>)}
   </div>
   )

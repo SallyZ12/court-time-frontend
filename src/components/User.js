@@ -15,6 +15,7 @@ let date = new Date()
 let momentObj = moment(date)
 let currentDate = momentObj.format('MMM DD YYYY')
 
+
   return (
     <Card style={{ width: '35rem' }}>
       {/*<Card.Img variant="top" src="holder.js/100px180" />*/}
@@ -23,7 +24,7 @@ let currentDate = momentObj.format('MMM DD YYYY')
         <Card.Text>
          <br/>
         Name: {user ? user.first_name : null} {user ? user.last_name : null} <br/>
-        Username: {user ? user.username : null} <br/>
+        username: {user ? user.username : null} <br/>
         email: {user ? user.email : null} <br/>
         Admin: {user ? user.admin : null} <br/>
         Reservation Count: {user ? user.reservations.length : null}<br/><br/>

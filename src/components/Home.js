@@ -1,6 +1,6 @@
 import React from 'react'
 import court from '../court.png'
-import App from '../App.css'
+import '../App.css';
 
 
 const Home = () => {

@@ -9,7 +9,7 @@ import UsersContainer from './containers/UsersContainer'
 import ClubsContainer from './containers/ClubsContainer'
 import Home from './components/Home'
 import { Route, Redirect, NavLink } from 'react-router-dom'
-
+import Button from 'react-bootstrap/Button';
 
 class App extends React.Component {
 
@@ -24,10 +24,12 @@ class App extends React.Component {
       <div className="App">
 
       <br/>
-      <NavLink exact activeClassName="current" to="/home"> HOME -   </NavLink>
-      <NavLink exact activeClassName="current" to="/signup"> Register - </NavLink>
-      <NavLink exact activeClassName="current" to="/login"> Login -  </NavLink>
-      <NavLink exact activeClassName="current" to="/clubs"> CLUBS   </NavLink>
+      <Button variant="dark"><NavLink exact activeClassName="current" to="/home"> HOME  </NavLink></Button>
+      <Button variant="dark"><NavLink exact activeClassName="current" to="/signup"> Register </NavLink></Button>
+      <Button variant="dark"><NavLink exact activeClassName="current" to="/login"> Login </NavLink></Button>
+      <Button variant="dark"><NavLink exact activeClassName="current" to="/clubs"> CLUBS </NavLink></Button>
+      <br/>
+      <br/>
       <NavBar />
       <br/>
       <Route exact path = '/' render = {()=> <Redirect to='/home'/>}/>

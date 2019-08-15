@@ -12,6 +12,7 @@ let club = props.clubs.clubs[props.match.params.id-1]
 return (
   <Card style={{ width: '35rem' }}>
     <Card.Body>
+      <p> Please Register or Login to Reserve a Court</p>
       <Card.Title> Club:   {club ? club.club_name : null} </Card.Title>
         <Card.Text>
          <br/>

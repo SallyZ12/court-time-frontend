@@ -7,7 +7,12 @@
 
 .Clubs {
   display: block;
-  margin-left: 30;
+  margin-left: auto;
   margin-right: auto;
-  width: 75%;
+  width: 50%;
+}
+
+.navmenu {
+  width: 100%;
+  text-align: center;
 }

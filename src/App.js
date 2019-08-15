@@ -7,9 +7,8 @@ import { connect } from 'react-redux'
 import NavBar from './components/NavBar'
 import UsersContainer from './containers/UsersContainer'
 import ClubsContainer from './containers/ClubsContainer'
-
 import Home from './components/Home'
-import { Route, Redirect } from 'react-router-dom'
+import { Route, Redirect, NavLink } from 'react-router-dom'
 
 
 class App extends React.Component {
@@ -25,6 +24,10 @@ class App extends React.Component {
       <div className="App">
 
       <br/>
+      <NavLink exact activeClassName="current" to="/home"> HOME -   </NavLink>
+      <NavLink exact activeClassName="current" to="/signup"> Register - </NavLink>
+      <NavLink exact activeClassName="current" to="/login"> Login -  </NavLink>
+      <NavLink exact activeClassName="current" to="/clubs"> CLUBS   </NavLink>
       <NavBar />
       <br/>
       <Route exact path = '/' render = {()=> <Redirect to='/home'/>}/>

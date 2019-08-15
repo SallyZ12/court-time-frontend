@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 
 
 const Club = (props) => {
-console.log("props:", props )
+// console.log("props:", props )
 
 let club = props.clubs.clubs[props.match.params.id-1]
 
@@ -21,7 +21,7 @@ return (
             {court.court_number} - {court.surface} - Prime Rate:${court.prime} - Non-Prime Rate: ${court.non_prime}</li>)}
 
         </Card.Text>
-          <Button variant="light"><Link to='/clubs'>Clubs</Link></Button>
+          <Button variant="light"><Link to='/home'>Clubs</Link></Button>
     </Card.Body>
   </Card>
   )

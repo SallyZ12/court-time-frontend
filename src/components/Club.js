@@ -1,7 +1,7 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+// import {Link} from 'react-router-dom'
 import Card from 'react-bootstrap/Card'
-import Button from 'react-bootstrap/Button';
+// import Button from 'react-bootstrap/Button';
 
 
 const Club = (props) => {
@@ -22,11 +22,13 @@ return (
             {court.court_number} - {court.surface} - Prime Rate:${court.prime} - Non-Prime Rate: ${court.non_prime}</li>)}
 
         </Card.Text>
-          <Button variant="light"><Link to='/clubs'>Clubs</Link></Button>
+
     </Card.Body>
   </Card>
 
   )
 }
-
 export default Club;
+
+  // Button/Link to Clubs removed since Clubs now available only from Home component.
+  // <Button variant="light"><Link to='/clubs'>Clubs</Link></Button>

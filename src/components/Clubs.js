@@ -9,9 +9,9 @@ return (
   <div className = "Clubs">
 
   {clubs.clubs && clubs.clubs.map(club =>
-    <li key={club.id}>
+    <p key={club.id}>
     <Link to={`/clubs/${club.id}`}> {club.club_name} - {club.location} </Link>
-    </li>)}
+    </p>)}
   </div>
   )
 }

@@ -3,8 +3,7 @@ import {Link} from 'react-router-dom'
 import '../style.css';
 
 const Clubs = ({clubs}) => {
-
-console.log("clubs", clubs)
+// console.log("clubs", clubs)
 return (
 
   <div className = "Clubs">

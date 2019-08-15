@@ -6,7 +6,7 @@ import { fetchUsers } from './actions/fetchUsers'
 import { connect } from 'react-redux'
 import NavBar from './components/NavBar'
 import UsersContainer from './containers/UsersContainer'
-
+import ClubsContainer from './containers/ClubsContainer'
 
 import Home from './components/Home'
 import { Route, Redirect } from 'react-router-dom'
@@ -31,6 +31,7 @@ class App extends React.Component {
       <Route exact path = '/home' component = {Home} />
       <Route exact path="/login" component = {Login} />
       <br/>
+      <ClubsContainer/>
       <UsersContainer/>
       <br/>
       <Logout/>

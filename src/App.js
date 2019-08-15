@@ -25,9 +25,10 @@ class App extends React.Component {
 
       <br/>
       <Button variant="dark"><NavLink exact activeClassName="current" to="/home"> HOME  </NavLink></Button>
+      <Button variant="dark"><NavLink exact activeClassName="current" to="/clubs"> CLUBS </NavLink></Button>
+      <Button variant="dark"><NavLink exact activeClassName="current" to="/users"> PLAYERS </NavLink></Button>
       <Button variant="dark"><NavLink exact activeClassName="current" to="/signup"> Register </NavLink></Button>
       <Button variant="dark"><NavLink exact activeClassName="current" to="/login"> Login </NavLink></Button>
-      <Button variant="dark"><NavLink exact activeClassName="current" to="/clubs"> CLUBS </NavLink></Button>
       <br/>
       <br/>
       <NavBar />

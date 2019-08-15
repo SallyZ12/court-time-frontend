@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import '../style.css';
-// import Button from 'react-bootstrap/Button';
+// import '../style.css';
+
 
 
 const Clubs = ({clubs}) => {
@@ -10,8 +10,8 @@ return (
 
   <div className = "Clubs">
 
-  {clubs.clubs && clubs.clubs.map(club =>
-    <p key={club.id}>
+  {clubs && clubs.map(club =>
+    <p className ='text-center' key={club.id}>
     <Link to={`/clubs/${club.id}`}> {club.club_name} - {club.location} - {club.courts.length} Courts </Link><br/>
     </p>)}
 

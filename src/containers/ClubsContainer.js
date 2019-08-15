@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {fetchClubs} from '../actions/fetchClubs'
-import Clubs from '../components/Clubs'
+
 import Club from '../components/Club'
 import { Route, Switch } from 'react-router-dom'
 
@@ -16,7 +16,7 @@ class ClubsContainer extends React.Component {
       <div>
       <Switch>
         <Route path="/clubs/:id" render={(routerProps)=> <Club {...routerProps} clubs={this.props.clubs}/>}/>
-        <Route path="/clubs" render={(routerProps) => <Clubs {...routerProps} clubs={this.props.clubs}/>}/>
+
       </Switch>
       </div>
     )
@@ -31,3 +31,4 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps, {fetchClubs})(ClubsContainer)
+// <Route path="/clubs" render={(routerProps) => <Clubs {...routerProps} clubs={this.props.clubs}/>}/>

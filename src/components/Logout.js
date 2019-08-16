@@ -2,6 +2,7 @@ import React from 'react'
 
 import { connect } from 'react-redux'
 import { logout } from "../actions/currentUser.js"
+import Button from 'react-bootstrap/Button';
 
 const Logout = ({ logout }) => {
   return (
@@ -10,7 +11,7 @@ const Logout = ({ logout }) => {
         logout()
       }
     }>
-      <input type="submit" value="Log Out"/>
+      <Button variant="primary"><input type="submit" value="Log Out"/></Button>
     </form>
   )
 }

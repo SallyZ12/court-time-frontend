@@ -60,7 +60,7 @@ const mapStateToProps = state => {
 
 
 
-export default connect(mapStateToProps, { getCurrentUser, fetchUsers, fetchClubs })(App);
+export default connect(mapStateToProps, { getCurrentUser, fetchUsers, fetchClubs})(App);
 
 
   // <Logout/>

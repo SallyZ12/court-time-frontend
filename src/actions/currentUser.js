@@ -8,6 +8,7 @@ export const setCurrentUser = user => {
   }
 }
 
+
 export const clearCurrentUser = () => {
   return {
     type: "CLEAR_CURRENT_USER"
@@ -57,7 +58,7 @@ export const signup = (credentials) => {
      .then(signup => {
        if(signup.error) {
          alert(signup.error)
-         
+
        } else {
          dispatch(setCurrentUser(signup))
          dispatch(resetSignupForm())

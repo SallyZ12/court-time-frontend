@@ -9,6 +9,7 @@ const initialState = {
 }
 
 export default (state = initialState, action)=> {
+  // console.log("sign_up_form:", action.formData)
   switch(action.type) {
 
     case "UPDATE_SIGNUP_FORM":

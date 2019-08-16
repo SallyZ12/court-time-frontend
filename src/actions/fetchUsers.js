@@ -9,7 +9,6 @@ export const displayUsers = users => {
 
 
 
-
 // asynchronous action creators
 
 export function fetchUsers() {

@@ -31,6 +31,7 @@ class App extends React.Component {
       <Button variant="light"><NavLink exact activeClassName="current" to="/users"> Players </NavLink></Button>
       <Button variant="light"><NavLink exact activeClassName="current" to="/signup"> Register </NavLink></Button>
       <Button variant="light"><NavLink exact activeClassName="current" to="/login"> Login </NavLink></Button>
+      <Button variant="light"><NavLink exact activeClassName="current" to="/logout"> Logout </NavLink></Button>
       <br/>
       <br/>
       <NavBar />
@@ -38,10 +39,11 @@ class App extends React.Component {
       <Route exact path = '/' render = {()=> <Redirect to='/home'/>}/>
       <Route exact path = '/home' render = {() => <Home home = {this.props.clubs}/>} />
       <Route exact path="/login" component = {Login} />
+      <Route exact path="/logout" component = {Logout} />
       <br/>
       <ClubsContainer/>
       <UsersContainer/>
-      <Logout/>
+
       </div>
     );
   }
@@ -59,3 +61,6 @@ const mapStateToProps = state => {
 
 
 export default connect(mapStateToProps, { getCurrentUser, fetchUsers, fetchClubs })(App);
+
+
+  // <Logout/>

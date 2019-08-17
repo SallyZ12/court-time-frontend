@@ -1,5 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import {addClub} from '../actions/addClub'
 
 class ClubInput extends React.Component {
 
@@ -15,6 +16,7 @@ class ClubInput extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
+    this.props.addClub(this.state)
     this.setState({
       club_name:'',
       location: ''
@@ -26,6 +28,7 @@ class ClubInput extends React.Component {
   render(){
     return (
       <div>
+          <h5> New Club Form </h5>
         <form onSubmit={this.handleSubmit}>
         <label> Club Name </label>
         <input type='text'
@@ -39,11 +42,11 @@ class ClubInput extends React.Component {
                 value={this.state.location}
                 name = 'location'
                 onChange={this.handleChange}/><br/>
-              <input type = "submit"/>
+              <input type = "submit"  value="New Club"/>
         </form>
       </div>
     )
   }
 }
 
-export default connect (null)(ClubInput)
+export default connect (null, {addClub})(ClubInput)

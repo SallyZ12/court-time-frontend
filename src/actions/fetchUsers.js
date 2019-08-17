@@ -18,5 +18,3 @@ export function fetchUsers() {
     )
   }
 }
-
-// .then(users => dispatch(displayUsers(users))

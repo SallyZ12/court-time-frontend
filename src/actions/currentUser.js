@@ -8,9 +8,9 @@ export const setCurrentUser = user => {
   }
 }
 
-export const addCurrentUser = user => {
+export const addUser = user => {
   return {
-    type: "ADD_CURRENT_USER",
+    type: "ADD_USER",
     user
   }
 }
@@ -69,7 +69,7 @@ export const signup = (credentials) => {
        } else {
          dispatch(setCurrentUser(signup))
          dispatch(resetSignupForm())
-         dispatch(addCurrentUser(signup))
+         dispatch(addUser(signup))
        }
        })
        .catch(console.log)

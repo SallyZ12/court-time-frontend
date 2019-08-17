@@ -12,6 +12,7 @@ import { Route, Redirect, NavLink } from 'react-router-dom'
 import Button from 'react-bootstrap/Button';
 import './style.css';
 import ClubInput from './components/ClubInput'
+import ClubsContainer from './containers/ClubsContainer'
 
 class App extends React.Component {
 
@@ -44,6 +45,7 @@ class App extends React.Component {
       {/*<Route exact path="/logout" component = {Logout} />*/}
       <br/>
       <UsersContainer/>
+      <ClubsContainer/>
       <Logout/>
       </div>
     );

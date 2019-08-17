@@ -51,6 +51,7 @@ class App extends React.Component {
 
 const mapStateToProps = state => {
   // console.log("MSTP-APP:", state.usersReducer)
+
   return ({
     loggedIn: !!state.currentUserReducer,
     users: state.usersReducer,

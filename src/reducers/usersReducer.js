@@ -16,5 +16,5 @@ export default function usersReducer(state = initialState, action) {
   }
 }
 
-// can also use the following for "ADD_CURRENT_USER"
+// can also use the following for "ADD_USER"
 // {users: state.users.concat(action.user)}

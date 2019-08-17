@@ -24,7 +24,7 @@ export const clearCurrentUser = () => {
 
 // asynchronous action creators
 
-export const login = (credentials) => {
+export const login = (credentials, history) => {
   // console.log("credentials:",credentials)
   return dispatch => {
     return fetch("http://localhost:3000/api/v1/login", {
@@ -41,6 +41,7 @@ export const login = (credentials) => {
          alert(user.error)
        } else {
          dispatch(setCurrentUser(user))
+         history.push('/')
        }
        })
        .catch(console.log)

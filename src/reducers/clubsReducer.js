@@ -5,14 +5,12 @@ export default function clubsReducer(state = initialState, action) {
 
     case 'ADD_CLUB':
       return {...state, clubs: [...state.clubs,
-      action.club]}
+      action.payload]}
 
     case 'DISPLAY_CLUBS':
     // console.log("clubsreducer:", action.clubs)
      return {clubs: action.clubs}
 
-     case 'DISPLAY_CLUB':
-      return {club: action.club}
 
     default:
       return state

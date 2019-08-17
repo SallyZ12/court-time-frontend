@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {addClub} from '../actions/addClub'
+import { withRouter } from 'react-router-dom';
 
 class ClubInput extends React.Component {
 
@@ -17,18 +18,18 @@ class ClubInput extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault()
     this.props.addClub(this.state)
+    this.props.history.push("/")
     this.setState({
       club_name:'',
       location: ''
     })
   }
 
-
-
   render(){
+
     return (
       <div>
-          <h5> New Club Form </h5>
+          <h5> New Club Data Entry </h5>
         <form onSubmit={this.handleSubmit}>
         <label> Club Name </label>
         <input type='text'
@@ -49,4 +50,4 @@ class ClubInput extends React.Component {
   }
 }
 
-export default connect (null, {addClub})(ClubInput)
+export default withRouter(connect(null, {addClub})(ClubInput))

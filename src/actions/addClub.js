@@ -1,12 +1,6 @@
-export const displayClub = club => {
-  return {
-    type: "DISPLAY_CLUB",
-    club
-  }
-}
 
 //asynchronous action creators
-export const addClub = (data) => {
+export const addClub = (data, history) => {
   return (dispatch) => {
     fetch ('http://localhost:3000/api/v1/clubs', {
       headers: {
@@ -16,7 +10,6 @@ export const addClub = (data) => {
       body: JSON.stringify(data)
     })
       .then(response => response.json())
-      .then(club => dispatch(displayClub(club))
-    )
+      .then(club => dispatch({type: 'ADD_CLUB', payload: club}))
   }
 }

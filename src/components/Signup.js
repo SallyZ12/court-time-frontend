@@ -6,7 +6,7 @@ import {updateSignupForm} from "../actions/signupForm"
 import {addUser} from "../actions/currentUser"
 
 
-const Signup = ({ signupFormData, updateSignupForm, signup, addUser}) => {
+const Signup = ({ signupFormData, updateSignupForm, signup, addUser, history}) => {
 
   const handleUserInfoInputChange = event => {
     const { name, value } = event.target
@@ -19,7 +19,7 @@ const Signup = ({ signupFormData, updateSignupForm, signup, addUser}) => {
 
   const handleSubmit = event => {
     event.preventDefault()
-    signup(signupFormData)
+    signup(signupFormData, history)
 
   }
 

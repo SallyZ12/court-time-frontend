@@ -25,7 +25,7 @@ const Signup = ({ signupFormData, updateSignupForm, signup, addUser, history}) =
 
   return (
     <form onSubmit={handleSubmit}>
-        Enter Your Info Below <br/>
+        <h5> Register Here </h5>      
       <input  type="text"
             placeholder="First Name"
             value={signupFormData.first_name}
@@ -51,7 +51,7 @@ const Signup = ({ signupFormData, updateSignupForm, signup, addUser, history}) =
               onChange={handleUserInfoInputChange} />
               <br/>
       <input  type="text"
-              placeholder="password"
+              placeholder="pwd - at least 8 chars"
               value={signupFormData.password}
               name="password"
               onChange={handleUserInfoInputChange} />

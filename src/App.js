@@ -31,6 +31,7 @@ class App extends React.Component {
       <Button variant="light"><NavLink exact activeClassName="current" to="/users"> Players </NavLink></Button>
       <Button variant="light"><NavLink exact activeClassName="current" to="/signup"> Register </NavLink></Button>
       <Button variant="light"><NavLink exact activeClassName="current" to="/login"> Login </NavLink></Button>
+      <Button variant="light"><NavLink exact activeClassName="current" to="/clubs"> New Club </NavLink></Button>
       {/*<Button variant="light"><NavLink exact activeClassName="current" to="/logout"> Logout </NavLink></Button>*/}
       <br/>
       <br/>

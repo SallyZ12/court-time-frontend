@@ -20,13 +20,12 @@ return (
         <Card.Text>
          <br/>
             Court: <br/><br/>
-
           {club && club.courts.map(court => <li key={court.id}>
             {court.court_number} - {court.surface} - Prime Rate:${court.prime} - Non-Prime Rate: ${court.non_prime}</li>)}
 
         </Card.Text>
     </Card.Body>
-    
+
   </Card>
 
   )

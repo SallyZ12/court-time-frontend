@@ -4,7 +4,7 @@ import '../style.css';
 import Clubs from '../components/Clubs'
 
 const Home = (props) => {
-  console.log("home:", props)
+  // console.log("home:", props)
     return (
 
       <div className = "Home">

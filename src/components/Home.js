@@ -10,7 +10,7 @@ const Home = (props) => {
 
       <div className = "Home">
         <h2 className = "text-center"> Welcome to Court Time! </h2>
-        <h4 className = "text-center"> Your Place To Reserve A Court </h4>
+        <h5 className = "text-center"> Register/Login To Begin </h5>
         <h4 className = "text-center"> Please select a Club </h4>
       <Clubs clubs = {props.home.clubs}/>
       <br/>

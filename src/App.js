@@ -7,11 +7,11 @@ import {fetchClubs} from './actions/fetchClubs'
 import { connect } from 'react-redux'
 import NavBar from './components/NavBar'
 import UsersContainer from './containers/UsersContainer'
-import ClubsContainer from './containers/ClubsContainer'
 import Home from './components/Home'
 import { Route, Redirect, NavLink } from 'react-router-dom'
 import Button from 'react-bootstrap/Button';
 import './style.css';
+import ClubInput from './components/ClubInput'
 
 class App extends React.Component {
 
@@ -39,10 +39,10 @@ class App extends React.Component {
       <br/>
       <Route exact path = '/' render = {()=> <Redirect to='/home'/>}/>
       <Route exact path = '/home' render = {() => <Home home = {this.props.clubs}/>} />
+      <Route exact path = '/clubs' render ={() => <ClubInput clubInput = {this.props.club}/>} />
       <Route exact path="/login" component = {Login} />
       {/*<Route exact path="/logout" component = {Logout} />*/}
       <br/>
-      <ClubsContainer/>
       <UsersContainer/>
       <Logout/>
       </div>

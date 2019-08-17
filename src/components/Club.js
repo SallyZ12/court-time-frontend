@@ -1,6 +1,7 @@
 import React from 'react'
 // import {Link} from 'react-router-dom'
 import Card from 'react-bootstrap/Card'
+
 // import Button from 'react-bootstrap/Button';
 
 
@@ -10,6 +11,8 @@ const Club = (props) => {
 let club = props.clubs.clubs[props.match.params.id-1]
 
 return (
+
+
   <Card style={{ width: '35rem' }}>
     <Card.Body>
       <p> Please Register or Login to Reserve a Court</p>
@@ -22,8 +25,8 @@ return (
             {court.court_number} - {court.surface} - Prime Rate:${court.prime} - Non-Prime Rate: ${court.non_prime}</li>)}
 
         </Card.Text>
-
     </Card.Body>
+    
   </Card>
 
   )

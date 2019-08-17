@@ -8,12 +8,13 @@ export const setCurrentUser = user => {
   }
 }
 
-/*export const addCurrentUser = user => {
+export const addCurrentUser = user => {
   return {
     type: "ADD_CURRENT_USER",
     user
   }
-}*/
+}
+
 
 export const clearCurrentUser = () => {
   return {
@@ -68,7 +69,7 @@ export const signup = (credentials) => {
        } else {
          dispatch(setCurrentUser(signup))
          dispatch(resetSignupForm())
-         /*dispatch(addCurrentUser())*/
+         dispatch(addCurrentUser(signup))
        }
        })
        .catch(console.log)

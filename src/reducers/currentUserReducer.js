@@ -3,11 +3,8 @@ export default (state = null, action) => {
   switch (action.type) {
 
     case "SET_CURRENT_USER":
-    console.log("action.user:", action.user)
+    // console.log("action.user:", action.user)
       return action.user
-
-    /*case "ADD_CURRENT_USER":
-      return {...state, users: action.user}*/
 
     case "CLEAR_CURRENT_USER":
       return null

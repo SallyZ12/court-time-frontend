@@ -8,7 +8,13 @@ export default function usersReducer(state = initialState, action) {
     case 'DISPLAY_USERS':
      return  {users: action.users}
 
+     case "ADD_CURRENT_USER":
+       return {...state, users: [...state.users, action.user]}
+
     default:
       return state
   }
 }
+
+// can also use the following for "ADD_CURRENT_USER"
+// {users: state.users.concat(action.user)}

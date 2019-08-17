@@ -23,8 +23,8 @@ const Login = ({ loginFormData, updateLoginForm, login, resetLoginForm}) => {
   }
 
   return (
-
     <form onSubmit={handleSubmit}>
+       <h5> Login </h5>
       <input  type="text"
               placeholder="username"
               value={loginFormData.username}
@@ -32,7 +32,7 @@ const Login = ({ loginFormData, updateLoginForm, login, resetLoginForm}) => {
               onChange={handleInputChange} />
               <br/>
       <input  type="text"
-              placeholder="password"
+              placeholder="password >= 8 chars"
               value={loginFormData.password}
               name="password"
               onChange={handleInputChange} />

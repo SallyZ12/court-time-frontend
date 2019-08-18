@@ -1,6 +1,7 @@
 import React from 'react'
 import{connect} from 'react-redux'
 import {addCourt} from '../actions/addCourt'
+import Button from 'react-bootstrap/Button';
 
 class CourtInput extends React.Component {
   state = {
@@ -31,7 +32,7 @@ class CourtInput extends React.Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit} className="Input">
         <h5> New Court </h5>
           <input type= 'integer'
                 placeholder = "Court #"
@@ -59,8 +60,8 @@ class CourtInput extends React.Component {
                   value = {this.state.non_prime}
                   name = 'non_prime'
                   onChange={this.handleChange}/><br/>
-
-          <input type="submit" value="New Court"/>
+          <br/>
+          <Button variant="primary"><input type="submit" value="New Court"/></Button>
         </form>
         </div>
     )

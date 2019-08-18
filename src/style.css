@@ -22,3 +22,10 @@
   flex-direction: row;
   list-style: none;
 }
+
+.Input{
+  display: block;
+  margin-left: 15;
+  margin-right: 15;
+  width: 50%;
+}

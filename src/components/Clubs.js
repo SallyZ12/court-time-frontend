@@ -1,17 +1,18 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 
-// import '../style.css';
 
 const Clubs = ({clubs}) => {
-// console.log("clubs", clubs)
+console.log("clubs", clubs)
+
 return (
 
-  <div className = "Clubs">
+  <div>
 
   {clubs && clubs.map(club =>
     <p className ='text-center' key={club.id}>
-    <Link to={`/clubs/${club.id}`}> {club.club_name} - {club.location} - {club.courts.length} Courts </Link><br/>
+
+    <Link to={`/clubs/${club.id}`}> {club.club_name} - {club.location} -{club.courts.length} Courts </Link><br/>
     </p>)}
   </div>
   )

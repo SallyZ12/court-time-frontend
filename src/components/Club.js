@@ -22,12 +22,12 @@ return (
     <Card.Body>
       <p> Please Register or Login to Reserve a Court</p>
       <Card.Title> Club:   {club ? club.club_name : null} </Card.Title>
-        <Card.Text>
+        <Card.Text className="courts">
          <br/>
           {club && club.courts.map(court => <li key={court.id}>
-            Court:{court.court_number} -- Surface: {court.surface} <br/> Prime: ${court.prime} -- Non-Prime: ${court.non_prime} <br/><br/></li> )}
-
+            Court: {court.court_number} <br/> Surface: {court.surface} <br/> Prime: ${court.prime} <br/>   Non-Prime: ${court.non_prime} <br/><br/></li> )}
         </Card.Text>
+
     </Card.Body>
 
   </Card>

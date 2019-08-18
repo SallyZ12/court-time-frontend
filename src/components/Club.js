@@ -7,16 +7,18 @@ import CourtsContainer from '../containers/CourtsContainer'
 
 
 const Club = (props) => {
-console.log("props:", props )
+// console.log("props:", props )
 
 let club = props.clubs.clubs[props.match.params.id-1]
 // let club = props.clubs.filter(club => club.id === props.match.params.id)[0]
-console.log("club:", club)
+// console.log("club:", club)
 
 
 return (
 <div>
-
+  <CourtsContainer club={club}/>
+  <br/>
+  <br/>
   <Card style={{ width: '35rem' }} >
     <Card.Body>
       <p> Please Register or Login to Reserve a Court</p>
@@ -25,10 +27,11 @@ return (
          <br/>
           {club && club.courts.map(court => <li key={court.id}>
             Court: {court.court_number} <br/> Surface: {court.surface} <br/> Prime: ${court.prime} <br/>   Non-Prime: ${court.non_prime} <br/><br/></li> )}
+            <br/><br/>
         </Card.Text>
     </Card.Body>
   </Card>
-  <CourtsContainer club={club}/>
+
   </div>
   )
 }

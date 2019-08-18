@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 
 
 const Clubs = ({clubs}) => {
-console.log("clubs", clubs)
+// console.log("clubs", clubs)
 
 return (
 

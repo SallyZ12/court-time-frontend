@@ -24,9 +24,8 @@ return (
       <Card.Title> Club:   {club ? club.club_name : null} </Card.Title>
         <Card.Text>
          <br/>
-            Court: <br/><br/>
           {club && club.courts.map(court => <li key={court.id}>
-            {court.court_number} - {court.surface} - Prime Rate:${court.prime} - Non-Prime Rate: ${court.non_prime}</li>)}
+            Court:{court.court_number} -- Surface: {court.surface} <br/> Prime: ${court.prime} -- Non-Prime: ${court.non_prime} <br/><br/></li> )}
 
         </Card.Text>
     </Card.Body>

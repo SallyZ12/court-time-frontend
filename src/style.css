@@ -16,3 +16,9 @@
   width: 100%;
   text-align: center;
 }
+
+.courts{
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+}

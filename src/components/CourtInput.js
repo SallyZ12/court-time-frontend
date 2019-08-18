@@ -2,6 +2,9 @@ import React from 'react'
 import{connect} from 'react-redux'
 import {addCourt} from '../actions/addCourt'
 import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 
 class CourtInput extends React.Component {
   state = {
@@ -32,14 +35,15 @@ class CourtInput extends React.Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit} className="Input">
-        <h5> New Court </h5>
+        <Form onSubmit={this.handleSubmit} className="Input">
+          <Row>
+            <Col>
+
           <input type= 'integer'
                 placeholder = "Court #"
                 value = {this.state.court_number}
                 name = 'court_number'
-                onChange={this.handleChange}/><br/>
-                <label> Surface </label>
+                onChange={this.handleChange}/>
           <select
                name = 'surface'
                value = {this.state.surface}
@@ -48,21 +52,27 @@ class CourtInput extends React.Component {
                <option value = "hard">Hard</option>
                <option value = "har-tru">Har-Tru</option>
                <option value = "grass">Grass</option>
-          </select><br/>
+          </select>
+          </Col>
+          </Row>
+            <Col>
+              <Row>
           <input type= 'integer'
                 placeholder = "Prime Rate"
                 value = {this.state.prime}
                 name = 'prime'
-                onChange={this.handleChange}/><br/>
+                onChange={this.handleChange}/>
 
           <input type= 'integer'
                   placeholder = "Non-Prime Rate"
                   value = {this.state.non_prime}
                   name = 'non_prime'
                   onChange={this.handleChange}/><br/>
-          <br/>
           <Button variant="primary"><input type="submit" value="New Court"/></Button>
-        </form>
+            </Row>
+          </Col>
+
+        </Form>
         </div>
     )
   }

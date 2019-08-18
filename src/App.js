@@ -14,6 +14,7 @@ import './style.css';
 import ClubInput from './components/ClubInput'
 import ClubsContainer from './containers/ClubsContainer'
 
+
 class App extends React.Component {
 
   componentDidMount() {
@@ -46,6 +47,7 @@ class App extends React.Component {
       <br/>
       <UsersContainer/>
       <ClubsContainer/>
+
       <Logout/>
       </div>
     );

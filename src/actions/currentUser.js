@@ -79,7 +79,7 @@ export const signup = (credentials, history) => {
 }
 
 
-export const logout = event => {
+export const logout = (event) => {
   return dispatch => {
     dispatch(clearCurrentUser())
     return fetch("http://localhost:3000/api/v1/logout", {
@@ -87,6 +87,7 @@ export const logout = event => {
       method: "DELETE"
     })
   }
+
 }
 
 

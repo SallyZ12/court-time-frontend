@@ -11,7 +11,16 @@ export default function clubsReducer(state = initialState, action) {
     // console.log("clubsreducer:", action.clubs)
      return {clubs: action.clubs}
 
-
+    case 'ADD_COURT':
+      let clubs = state.clubs.map(club => {
+        if (club.id === action.payload.id) {
+          return action.payload
+        } else {
+          return club
+        }
+      })
+        return {...state, clubs: clubs}
+    
     default:
       return state
   }

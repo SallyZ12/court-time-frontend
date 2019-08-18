@@ -2,21 +2,20 @@ import React from 'react'
 // import {Link} from 'react-router-dom'
 import Card from 'react-bootstrap/Card'
 import '../style.css'
+import CourtsContainer from '../containers/CourtsContainer'
 // import Button from 'react-bootstrap/Button';
 
 
 const Club = (props) => {
-// console.log("props:", props )
+console.log("props:", props )
 
 let club = props.clubs.clubs[props.match.params.id-1]
+// let club = props.clubs.filter(club => club.id === props.match.params.id)[0]
+console.log("club:", club)
 
-// {court_surface} === "grass" green
-// {court_surface} === "hard"  blue
-// {court_surface} === "har-tru" grey
-// {court_surface} === "clay" orange
 
 return (
-
+<div>
 
   <Card style={{ width: '35rem' }} >
     <Card.Body>
@@ -27,17 +26,10 @@ return (
           {club && club.courts.map(court => <li key={court.id}>
             Court: {court.court_number} <br/> Surface: {court.surface} <br/> Prime: ${court.prime} <br/>   Non-Prime: ${court.non_prime} <br/><br/></li> )}
         </Card.Text>
-
     </Card.Body>
-
   </Card>
-
+  <CourtsContainer club={club}/>
+  </div>
   )
 }
 export default Club;
-
-
-
-
-  // Button/Link to Clubs removed since Clubs now available only from Home component.
-  // <Button variant="light"><Link to='/clubs'>Clubs</Link></Button>

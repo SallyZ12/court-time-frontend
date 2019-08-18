@@ -29,7 +29,7 @@ class ClubInput extends React.Component {
 
     return (
       <div>
-          <h5> New Club Data Entry </h5>
+          <h5> New Club </h5>
         <form onSubmit={this.handleSubmit}>
         <label> Club Name </label>
         <input type='text'

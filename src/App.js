@@ -1,19 +1,21 @@
 import React from 'react';
+import UsersContainer from './containers/UsersContainer'
+import Home from './components/Home'
 import Login from './components/Login'
 import Logout from './components/Logout'
+import ClubInput from './components/ClubInput'
+import CourtInput from './components/CourtInput'
+import NavBar from './components/NavBar'
 import { getCurrentUser } from './actions/currentUser'
 import { fetchUsers } from './actions/fetchUsers'
 import {fetchClubs} from './actions/fetchClubs'
 import { connect } from 'react-redux'
-import NavBar from './components/NavBar'
-import UsersContainer from './containers/UsersContainer'
-import Home from './components/Home'
 import { Route, Redirect, NavLink } from 'react-router-dom'
 import Button from 'react-bootstrap/Button';
 import './style.css';
-import ClubInput from './components/ClubInput'
+
 import ClubsContainer from './containers/ClubsContainer'
-import CourtInput from './components/CourtInput'
+
 
 class App extends React.Component {
 

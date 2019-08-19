@@ -9,7 +9,7 @@ import Row from 'react-bootstrap/Row';
 class CourtInput extends React.Component {
   state = {
     court_number: "",
-    court_surface: "Hard",
+    surface: "hard",
     prime: "",
     non_prime: ""
   }
@@ -25,7 +25,7 @@ class CourtInput extends React.Component {
     this.props.addCourt(this.state, this.props.club.id)
     this.setState({
       court_number: "",
-      surface: "Hard",
+      surface: "hard",
       prime: "",
       non_prime: ""
     })

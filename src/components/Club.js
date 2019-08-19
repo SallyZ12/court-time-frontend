@@ -17,11 +17,10 @@ let club = props.clubs.clubs[props.match.params.id-1]
 return (
 <div>
   <CourtsContainer club={club}/>
-  <br/>
-  <br/>
+
   <Card style={{ width: '35rem' }} >
     <Card.Body>
-    
+
       <Card.Title> Club:   {club ? club.club_name : null} </Card.Title>
         <Card.Text className="courts">
          <br/>

@@ -4,7 +4,7 @@ import {addCourt} from '../actions/addCourt'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
+
 
 class CourtInput extends React.Component {
   state = {
@@ -36,15 +36,19 @@ class CourtInput extends React.Component {
     return (
       <div>
         <Form onSubmit={this.handleSubmit} className="Input">
-          <Row>
-            <Col>
+          <Form.Row>
+            <Form.Group as={Col} >
 
           <input type= 'integer'
-                placeholder = "Court #"
+                 placeholder = "Court #"
                 value = {this.state.court_number}
                 name = 'court_number'
                 onChange={this.handleChange}/>
-          <select
+          </Form.Group>
+
+        <Form.Group as={Col} >
+        <Form.Label>Surface</Form.Label>
+         <select
                name = 'surface'
                value = {this.state.surface}
                onChange = {this.handleChange}>
@@ -53,10 +57,13 @@ class CourtInput extends React.Component {
                <option value = "har-tru">Har-Tru</option>
                <option value = "grass">Grass</option>
           </select>
-          </Col>
-          </Row>
-            <Col>
-              <Row>
+            <Button variant="primary"><input type="submit" value="New Court"/></Button>
+        </Form.Group>
+        </Form.Row>
+
+        <Form.Row>
+        <Form.Group as={Col} >
+
           <input type= 'integer'
                 placeholder = "Prime Rate"
                 value = {this.state.prime}
@@ -68,9 +75,15 @@ class CourtInput extends React.Component {
                   value = {this.state.non_prime}
                   name = 'non_prime'
                   onChange={this.handleChange}/><br/>
-          <Button variant="primary"><input type="submit" value="New Court"/></Button>
-            </Row>
-          </Col>
+
+          </Form.Group>
+          </Form.Row>
+
+          <Form.Row>
+          <Form.Group as={Col} >
+
+        </Form.Group>
+        </Form.Row>
 
         </Form>
         </div>

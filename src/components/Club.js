@@ -3,8 +3,8 @@ import React from 'react'
 import Card from 'react-bootstrap/Card'
 import '../style.css'
 import CourtsContainer from '../containers/CourtsContainer'
-// import Button from 'react-bootstrap/Button';
-
+import Button from 'react-bootstrap/Button';
+import { NavLink } from 'react-router-dom'
 
 const Club = (props) => {
 // console.log("props:", props )
@@ -16,7 +16,6 @@ let club = props.clubs.clubs[props.match.params.id-1]
 
 return (
 <div>
-  <CourtsContainer club={club}/>
 
   <Card style={{ width: '35rem' }} >
     <Card.Body>
@@ -30,7 +29,7 @@ return (
         </Card.Text>
     </Card.Body>
   </Card>
-
+  <Button variant="light"><NavLink exact activeClassName="current" to={club && `/clubs/${club.id}/courts`}> New Court</NavLink></Button>
   </div>
   )
 }

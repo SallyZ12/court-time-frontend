@@ -2,7 +2,6 @@ import React from 'react'
 // import {Link} from 'react-router-dom'
 import Card from 'react-bootstrap/Card'
 import '../style.css'
-import CourtsContainer from '../containers/CourtsContainer'
 import Button from 'react-bootstrap/Button';
 import { NavLink } from 'react-router-dom'
 
@@ -16,7 +15,7 @@ let club = props.clubs.clubs[props.match.params.id-1]
 
 return (
 <div>
-
+  <Button variant="light"><NavLink exact activeClassName="current" to={ club && `/clubs/${club.id}/courts`}> New Court</NavLink></Button>
   <Card style={{ width: '35rem' }} >
     <Card.Body>
 
@@ -29,7 +28,7 @@ return (
         </Card.Text>
     </Card.Body>
   </Card>
-  <Button variant="light"><NavLink exact activeClassName="current" to={club && `/clubs/${club.id}/courts`}> New Court</NavLink></Button>
+
   </div>
   )
 }

@@ -6,8 +6,8 @@ import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
 import { withRouter } from 'react-router-dom';
 
-class CourtInput extends React.Component {
 
+class CourtInput extends React.Component {
 
 
   state = {
@@ -26,7 +26,7 @@ class CourtInput extends React.Component {
   handleSubmit = (event)=> {
     event.preventDefault()
     this.props.addCourt(this.state, this.props.match.params.id)
-  
+    this.props.history.push('/')
     this.setState({
       court_number: "",
       surface: "hard",
@@ -91,3 +91,7 @@ class CourtInput extends React.Component {
 }
 
 export default withRouter(connect(null, {addCourt})(CourtInput))
+// this.props.match.params.id
+
+// If I want to redirect to Club page after creating a new court
+// this.props.history.push(`/clubs/${this.props.match.params.id}`)

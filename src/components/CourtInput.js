@@ -4,7 +4,7 @@ import {addCourt} from '../actions/addCourt'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
-
+import Row from 'react-bootstrap/Row';
 
 class CourtInput extends React.Component {
   state = {
@@ -35,10 +35,11 @@ class CourtInput extends React.Component {
   render() {
     return (
       <div>
+        <h5> New Court Entry </h5>
         <Form onSubmit={this.handleSubmit} className="Input">
+
           <Form.Row>
             <Form.Group as={Col} >
-
           <input type= 'integer'
                  placeholder = "Court #"
                 value = {this.state.court_number}
@@ -75,13 +76,6 @@ class CourtInput extends React.Component {
                   value = {this.state.non_prime}
                   name = 'non_prime'
                   onChange={this.handleChange}/><br/>
-
-          </Form.Group>
-          </Form.Row>
-
-          <Form.Row>
-          <Form.Group as={Col} >
-
         </Form.Group>
         </Form.Row>
 

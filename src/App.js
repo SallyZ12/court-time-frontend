@@ -13,7 +13,7 @@ import Button from 'react-bootstrap/Button';
 import './style.css';
 import ClubInput from './components/ClubInput'
 import ClubsContainer from './containers/ClubsContainer'
-
+import CourtInput from './components/CourtInput'
 
 class App extends React.Component {
 
@@ -34,6 +34,7 @@ class App extends React.Component {
       <Button variant="light"><NavLink exact activeClassName="current" to="/signup"> Register </NavLink></Button>
       <Button variant="light"><NavLink exact activeClassName="current" to="/login"> Login </NavLink></Button>
       <Button variant="light"><NavLink exact activeClassName="current" to="/clubs"> New Club </NavLink></Button>
+
       {/*<Button variant="light"><NavLink exact activeClassName="current" to="/logout"> Logout </NavLink></Button>*/}
       <br/>
       <br/>
@@ -42,6 +43,7 @@ class App extends React.Component {
       <Route exact path = '/' render = {()=> <Redirect to='/home'/>}/>
       <Route exact path = '/home' render = {() => <Home home = {this.props.clubs}/>} />
       <Route exact path = '/clubs' render ={() => <ClubInput clubInput = {this.props.club}/>} />
+      <Route exact path = '/clubs/:id/courts' render={() => <CourtInput courtInput={this.props.club}/>}/>
       <Route exact path="/login" component = {Login} />
       {/*<Route exact path="/logout" component = {Logout} />*/}
       <br/>

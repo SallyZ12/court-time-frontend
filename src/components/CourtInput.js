@@ -4,9 +4,12 @@ import {addCourt} from '../actions/addCourt'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
-
+import { withRouter } from 'react-router-dom';
 
 class CourtInput extends React.Component {
+
+
+
   state = {
     court_number: "",
     surface: "hard",
@@ -22,7 +25,8 @@ class CourtInput extends React.Component {
 
   handleSubmit = (event)=> {
     event.preventDefault()
-    this.props.addCourt(this.state, this.props.club.id)
+    this.props.addCourt(this.state, this.props.match.params.id)
+  
     this.setState({
       court_number: "",
       surface: "hard",
@@ -86,4 +90,4 @@ class CourtInput extends React.Component {
 
 }
 
-export default connect(null, {addCourt})(CourtInput)
+export default withRouter(connect(null, {addCourt})(CourtInput))

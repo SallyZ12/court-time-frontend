@@ -21,7 +21,7 @@ return (
   <br/>
   <Card style={{ width: '35rem' }} >
     <Card.Body>
-      <p> Please Register or Login to Reserve a Court</p>
+    
       <Card.Title> Club:   {club ? club.club_name : null} </Card.Title>
         <Card.Text className="courts">
          <br/>

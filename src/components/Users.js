@@ -7,7 +7,7 @@ const Users = ({users}) => {
 return (
 
   <div>
-    <h5> Players </h5>
+    <h5> Players - Count: {users.users.length} </h5>
      {users.users && users.users.map(user =>
       <p key={user.id}>
       <Link to={`/users/${user.id}`}> {user.first_name} {user.last_name}</Link>

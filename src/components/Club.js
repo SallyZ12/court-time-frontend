@@ -16,8 +16,8 @@ let club = props.clubs.clubs[props.match.params.id-1]
 // console.log("club:", club)
 
 
-let surface = club && club.courts.filter(court => court.surface )
-console.log(surface)
+// let surface = club && club.courts.filter(court => court.surface )
+// console.log(surface)
 
 
 return (

@@ -9,6 +9,7 @@ import { withRouter } from 'react-router-dom';
 
 class CourtInput extends React.Component {
 
+
   state = {
     court_number: "",
     surface: "hard",
@@ -64,7 +65,7 @@ class CourtInput extends React.Component {
                <option value = "har-tru">Har-Tru</option>
                <option value = "grass">Grass</option>
           </select>
-            <Button variant="primary"><input type="submit" value="New Court"/></Button>
+            <Button variant="primary"><input type="submit" value="Submit"/></Button>
         </Form.Group>
         </Form.Row>
 

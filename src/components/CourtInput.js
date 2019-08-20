@@ -26,7 +26,8 @@ class CourtInput extends React.Component {
 
   handleSubmit = (event)=> {
     event.preventDefault()
-    this.props.addCourt(this.state, this.props.match.params.id)
+    let clubId = this.props.match.params.id
+    this.props.addCourt(this.state, clubId)
     this.props.history.push('/')
     this.setState({
       court_number: "",
@@ -38,6 +39,7 @@ class CourtInput extends React.Component {
 
 
   render() {
+
     return (
       <div>
         <h5> New Court Entry </h5>

@@ -10,6 +10,17 @@ export const addClub = (data, history) => {
       body: JSON.stringify(data)
     })
       .then(response => response.json())
-      .then(club => dispatch({type: 'ADD_CLUB', payload: club}))
+      .then(club => {
+        if(club.error) {
+          alert(club.error)
+      } else {
+        dispatch({type: 'ADD_CLUB', payload: club})
+
+      }
+    })
   }
 }
+
+
+
+// history.push('/')

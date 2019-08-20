@@ -95,7 +95,7 @@ class CourtInput extends React.Component {
 }
 
 export default withRouter(connect(null, {addCourt})(CourtInput))
-// this.props.match.params.id
+
 
 // If I want to redirect to Club page after creating a new court
 // this.props.history.push(`/clubs/${this.props.match.params.id}`)

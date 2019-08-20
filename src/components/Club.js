@@ -42,7 +42,7 @@ return (
         <Card.Text className="courts">
          <br/>
           {club && club.courts.map(court => <li key={court.id}>
-            Court: {court.court_number} <br/>{court.surface} <br/><br/></li> )}
+            Court: {court.court_number} <br/>{court.surface} <br/><Button> Delete </Button><br/></li> )}
             <br/><br/>
         </Card.Text>
     </Card.Body>

@@ -9,6 +9,13 @@ export const addCourt = (court, clubId) => {
       body: JSON.stringify(court)
     })
       .then(response => response.json())
-      .then(club => dispatch({type: 'ADD_COURT', payload: club}))
+      .then(club => {
+        if (club.error) {
+          alert(club.error)
+        } else {
+          dispatch({type: 'ADD_COURT', payload: club})
   }
+})
+// .catch(console.log)
+}
 }

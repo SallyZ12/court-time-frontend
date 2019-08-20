@@ -9,8 +9,6 @@ import { withRouter } from 'react-router-dom';
 
 class CourtInput extends React.Component {
 
-
-
   state = {
     court_number: "",
     surface: "hard",
@@ -42,6 +40,7 @@ class CourtInput extends React.Component {
 
     return (
       <div>
+
         <h5> New Court Entry </h5>
         <Form onSubmit={this.handleSubmit} className="Input">
 
@@ -87,6 +86,7 @@ class CourtInput extends React.Component {
         </Form.Row>
 
         </Form>
+
         </div>
     )
   }

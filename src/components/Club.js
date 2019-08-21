@@ -16,8 +16,15 @@ let club = props.clubs.clubs[props.match.params.id-1]
 // console.log("club:", club)
 
 
-// let surface = club && club.courts.filter(court => court.surface )
-// console.log(surface)
+let court_surface = []
+club && club.courts.filter(court => {
+  if (court_surface.includes(court.surface)) {
+    return
+  } else {
+    court_surface.push(court.surface)
+  } })
+
+console.log("surface:", court_surface)
 
 
 return (

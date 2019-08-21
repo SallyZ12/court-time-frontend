@@ -1,21 +1,26 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-const NavBar =  ({ currentUser }) => {
+
+const NavBar =  ({ currentUser}) => {
 // console.log("currentUser:", currentUser)
   return (
     <div className="NavBar">
-      {currentUser ? <h3> Welcome, {currentUser.first_name} </h3> : ""}
+       {currentUser ? <h3> Welcome, {currentUser.first_name} </h3> : ""}
     </div>
   )
 }
 
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
 
   return {
     currentUser: state.currentUserReducer
+
   }
 }
 
 export default connect(mapStateToProps)(NavBar)
+
+
+  // { loggedIn ? <><p id="loggedin">Logged in as {currentUser.attributes.name}</p><Logout/></> : null}

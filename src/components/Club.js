@@ -7,24 +7,22 @@ import { NavLink } from 'react-router-dom'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import {connect} from 'react-redux'
+import {deleteCourt} from '../actions/deleteCourt'
+// import Courts from '../components/Courts'
+
 
 const Club = (props) => {
-// console.log("props:", props )
+// console.log("props:", props)
 
 let club = props.clubs.clubs[props.match.params.id-1]
-// let club = props.clubs.clubs.filter(club => club.id === props.match.params.id)[0]
-// console.log("club:", club)
 
+// working on render only unique courts with rates by club
 
-let court_surface = []
-club && club.courts.filter(court => {
-  if (court_surface.includes(court.surface)) {
-    return
-  } else {
-    court_surface.push(court.surface)
-  } })
+const handleDelete = (court) => {
+  props.deleteCourt(court.id, court.club_id)
+}
 
-console.log("surface:", court_surface)
 
 
 return (
@@ -47,10 +45,10 @@ return (
 
       <Card.Title> {club ? club.club_name : null} </Card.Title>
         <Card.Text className="courts">
-         <br/>
-          {club && club.courts.map(court => <li key={court.id}>
-            Court: {court.court_number} <br/>{court.surface} <br/><Button> Delete </Button><br/></li> )}
-            <br/><br/>
+        <br/>
+     {club && club.courts.map(court => <li key={court.id}>
+       Court: {court.court_number} <br/>{court.surface} <br/><Button onClick={()=> handleDelete(court)}> Delete </Button><br/></li> )}
+       <br/><br/>
         </Card.Text>
     </Card.Body>
   </Card>
@@ -59,4 +57,4 @@ return (
   </div>
   )
 }
-export default Club;
+export default connect(null, {deleteCourt})(Club);

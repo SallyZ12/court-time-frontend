@@ -27,15 +27,17 @@ class App extends React.Component {
 
 
   render () {
+    // console.log(this.props.loggedIn)
+    const { loggedIn} = this.props
     return (
       <div className="navmenu">
-
+      
       <br/>
       <Button variant="light"><NavLink exact activeClassName="current" to="/home"> Home  </NavLink></Button>
       <Button variant="light"><NavLink exact activeClassName="current" to="/users"> Players </NavLink></Button>
       <Button variant="light"><NavLink exact activeClassName="current" to="/signup"> Register </NavLink></Button>
       <Button variant="light"><NavLink exact activeClassName="current" to="/login"> Login </NavLink></Button>
-      <Button variant="light"><NavLink exact activeClassName="current" to="/clubs"> New Club </NavLink></Button>
+      <Button variant="light"><NavLink exact activeClassName="current" to="/clubs" > New Club </NavLink></Button>
 
       {/*<Button variant="light"><NavLink exact activeClassName="current" to="/logout"> Logout </NavLink></Button>*/}
       <br/>
@@ -52,7 +54,6 @@ class App extends React.Component {
       <br/>
       <UsersContainer/>
       <ClubsContainer/>
-
       <Logout/>
       </div>
     );
@@ -60,7 +61,7 @@ class App extends React.Component {
 }
 
 const mapStateToProps = state => {
-  // console.log("MSTP-APP:", state.usersReducer)
+  // console.log("MSTP-APP:", !!state.currentUserReducer)
 
   return ({
     loggedIn: !!state.currentUserReducer,

@@ -20,7 +20,7 @@ export default function clubsReducer(state = initialState, action) {
         }
       })
         return {...state, clubs: clubs}
-    
+
     default:
       return state
   }

@@ -1,6 +1,7 @@
 
 //asynchronous action creators
 export const addClub = (data, history) => {
+
   return (dispatch) => {
     fetch ('http://localhost:3000/api/v1/clubs', {
       headers: {

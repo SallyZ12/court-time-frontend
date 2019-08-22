@@ -5,13 +5,15 @@ import currentUserReducer from './reducers/currentUserReducer'
 import loginFormReducer from './reducers/loginFormReducer'
 import usersReducer from './reducers/usersReducer'
 import clubsReducer from './reducers/clubsReducer'
+import reservationsReducer from './reducers/reservationsReducer'
 
 const reducer = combineReducers({
   currentUserReducer,
   loginFormReducer,
   usersReducer,
   signupFormReducer,
-  clubsReducer
+  clubsReducer,
+  reservationsReducer
 })
 
 

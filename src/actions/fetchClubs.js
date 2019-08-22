@@ -18,5 +18,3 @@ export function fetchClubs() {
 
 
   // .then(clubs => console.log(clubs))
-  // .then(clubs=>dispatch(displayClubs(clubs))
-  // )

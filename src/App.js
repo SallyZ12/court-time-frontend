@@ -5,6 +5,7 @@ import Login from './components/Login'
 import Logout from './components/Logout'
 import ClubInput from './components/ClubInput'
 import CourtInput from './components/CourtInput'
+import Reservation from './components/Reservation'
 import NavBar from './components/NavBar'
 import { getCurrentUser } from './actions/currentUser'
 import { fetchUsers } from './actions/fetchUsers'
@@ -54,6 +55,7 @@ class App extends React.Component {
       <br/>
       <UsersContainer/>
       <ClubsContainer/>
+      <Reservation/>
       <Logout/>
       </div>
     );
@@ -73,6 +75,3 @@ const mapStateToProps = state => {
 
 
 export default connect(mapStateToProps, { getCurrentUser, fetchUsers, fetchClubs})(App);
-
-
-  

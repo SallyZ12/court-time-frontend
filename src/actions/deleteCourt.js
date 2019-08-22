@@ -6,6 +6,12 @@ export const deleteCourt = (courtId, clubId) => {
       method: 'DELETE'
     })
     .then(response => response.json())
-    .then(club => dispatch({type: 'DELETE_COURT', payload: club}))
+    .then(club => {
+      if (club.error){
+        alert(club.error)
+      } else {
+      (dispatch({type: 'DELETE_COURT', payload: club}))
   }
+})
+}
 }

@@ -30,4 +30,3 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps, {fetchClubs})(ClubsContainer)
-// <Route path="/clubs" render={(routerProps) => <Clubs {...routerProps} clubs={this.props.clubs}/>}/>

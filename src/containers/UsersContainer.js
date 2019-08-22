@@ -41,5 +41,3 @@ const mapStateToProps = state => {
 
 
 export default connect(mapStateToProps, {fetchUsers})(UsersContainer)
-
-  // <Route path="/users/:id" render={({match})=> <User user={this.getUser(match.params.id)}/>}/>

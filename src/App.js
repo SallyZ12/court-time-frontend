@@ -31,7 +31,7 @@ class App extends React.Component {
     const { loggedIn} = this.props
     return (
       <div className="navmenu">
-      
+
       <br/>
       <Button variant="light"><NavLink exact activeClassName="current" to="/home"> Home  </NavLink></Button>
       <Button variant="light"><NavLink exact activeClassName="current" to="/users"> Players </NavLink></Button>
@@ -75,4 +75,4 @@ const mapStateToProps = state => {
 export default connect(mapStateToProps, { getCurrentUser, fetchUsers, fetchClubs})(App);
 
 
-  // <Logout/>
+  

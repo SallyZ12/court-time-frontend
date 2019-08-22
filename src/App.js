@@ -29,7 +29,7 @@ class App extends React.Component {
 
   render () {
     // console.log(this.props.loggedIn)
-    const { loggedIn} = this.props
+    // const { loggedIn} = this.props
     return (
       <div className="navmenu">
 
@@ -63,13 +63,13 @@ class App extends React.Component {
 }
 
 const mapStateToProps = state => {
+
   console.log("MSTP-APP:", state.usersReducer)
 
   return ({
     loggedIn: !!state.currentUserReducer,
     users: state.usersReducer,
-    clubs: state.clubsReducer,
-    reservations: state.reservationsReducer
+    clubs: state.clubsReducer
   })
 }
 

@@ -17,9 +17,9 @@ const Club = (props) => {
 
 let club = props.clubs.clubs[props.match.params.id-1]
 
-let courtHours = club && club.courts[0]
+// let courtHours = club && club.courts
 
-console.log("courthours:", club && club.courts[0])
+// console.log("courthours:", club && club.courts)
 // working on render only unique courts with rates by club
 
 const handleDelete = (court) => {
@@ -51,19 +51,11 @@ return (
         <br/>
      {club && club.courts.map(court => <li key={court.id}>
        Court: {court.court_number} <br/>{court.surface} <br/>
-       <br/>{courtHours.hours.nine}<br/>
-       {courtHours.hours.ten}<br/>
-       {courtHours.hours.eleven}<br/>
-       {courtHours.hours.twelve}<br/>
-       {courtHours.hours.thirteen}<br/>
-       {courtHours.hours.fourteen}<br/>
-       {courtHours.hours.fifteen}<br/>
-      {courtHours.hours.sixteen}<br/>
-
-      {/*{club && courtHours.map(time => <li key={time.id}>
-      {time.hours})<br/></li>)}*/}
+       <>
+       <br/>{court.hours}<br/>
+      </>
        <br/><br/>
-       <Button onClick={()=> handleDelete(court)}> Delete </Button><br/><Button> Reserve Court </Button></li>)}
+       <Button onClick={()=> handleDelete(court)}> Delete </Button></li>)}
 
 
         </Card.Text>

@@ -55,7 +55,7 @@ class App extends React.Component {
       <br/>
       <UsersContainer/>
       <ClubsContainer/>
-      <Reservation reservation = {this.props.reservations}/>
+      <Reservation reservations = {this.props.currentUser} clubs={this.props.clubs}/>
       <Logout/>
       </div>
     );
@@ -64,10 +64,11 @@ class App extends React.Component {
 
 const mapStateToProps = state => {
 
-  console.log("MSTP-APP:", state.usersReducer)
+  // console.log("MSTP-APP:", state.currentUserReducer)
 
   return ({
     loggedIn: !!state.currentUserReducer,
+    currentUser: state.currentUserReducer,
     users: state.usersReducer,
     clubs: state.clubsReducer
   })

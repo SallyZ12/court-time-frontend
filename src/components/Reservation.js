@@ -4,6 +4,7 @@ import {connect} from 'react-redux'
 
 const Reservation = ({reservations, clubs}) => {
 
+
 const currentUserReservations = reservations && reservations.reservations
 const currentUser = reservations && reservations
 console.log("reservations:",currentUserReservations)
@@ -15,7 +16,7 @@ return (
   <h5> {currentUser && currentUser.first_name}'s Reservation History </h5>
   {currentUserReservations && currentUserReservations.map(currentUserReservation=>
   <p key={currentUserReservation.id}>
-  ConfirmID: {currentUserReservation.confirmID} Date: {currentUserReservation.day} 
+  ConfirmID: {currentUserReservation.confirmID} Date: {currentUserReservation.day}
     </p>)}
   </div>
 )

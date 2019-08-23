@@ -48,10 +48,9 @@ class App extends React.Component {
       <Route exact path = '/' render = {()=> <Redirect to='/home'/>}/>
       <Route exact path = '/home' render = {() => <Home home = {this.props.clubs}/>} />
       <Route exact path = '/clubs' render ={() => <ClubInput clubInput = {this.props.club}/>} />
-      {/*<Route exact path = '/clubs/:id/courts' render={() => <CourtInput courtInput={this.props.club}/>}/>*/}
       <Route exact path = '/clubs/:id/courts' component = {CourtInput}/>
       <Route exact path="/login" component = {Login} />
-      {/*<Route exact path="/logout" component = {Logout} />*/}
+
       <br/>
       <UsersContainer/>
       <ClubsContainer/>

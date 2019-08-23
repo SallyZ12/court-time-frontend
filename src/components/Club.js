@@ -30,15 +30,15 @@ return (
 
 <Container>
   <Row >
-  <Col> Surface </Col>
-  <Col> Prime </Col>
-  <Col> Non-Prime </Col>
+  <Col sm={2.0}> Surface </Col>
+  <Col sm={2.0}> Prime </Col>
+  <Col sm={2.5}> Non-Prime </Col>
   </Row>
 {club && club.courts.map(court => <span key={court.id}>
   <Row >
-  <Col> {court.surface} </Col>
-  <Col> {court.prime}</Col>
-  <Col> {court.non_prime}</Col>
+  <Col sm={2.0}> {court.surface} </Col>
+  <Col sm={2.0}> ${court.prime}</Col>
+  <Col sm={2.0}> ${court.non_prime}</Col>
     </Row></span>)}
   <Card style={{ width: '45rem' }} >
     <Card.Body>
@@ -48,7 +48,7 @@ return (
         <br/>
      {club && club.courts.map(court => <li key={court.id}>
        Court: {court.court_number} <br/>{court.surface} <br/>
-        
+
        <Button onClick={()=> handleDelete(court)}> Delete </Button><br/><Button> Reserve Court </Button></li> )}
 
        <br/><br/>

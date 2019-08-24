@@ -8,7 +8,7 @@ export const addReservation = (reservation, currentUserId, courtId) => {
       },
       body: JSON.stringify(reservation)
       .then(response => response.json())
-      .then(reservation => dispatch(type: 'ADD_RESERVATION', payload: reservation})
+      .then(user => dispatch(type: 'ADD_RESERVATION', payload: user })
     })
     }
   }

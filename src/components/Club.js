@@ -48,7 +48,7 @@ return (
      {club && club.courts.map(court => <li key={court.id}>
        Court: {court.court_number} <br/>{court.surface} <br/>
        <>
-       <br/>{court.hours}<br/>
+       <br/>{court.hours}><br/>
       </>
        <br/><br/>
        <Button onClick={()=> handleDelete(court)}> Delete </Button></li>)}
@@ -57,7 +57,7 @@ return (
         </Card.Text>
     </Card.Body>
   </Card>
-    <Button variant="light"><NavLink exact activeClassName="current" to={club ? `/clubs/${club.id}/courts`: '/'}> New Court</NavLink></Button>
+    <Button variant="light"><NavLink exact activeClassName="current" to={club ? `/clubs/${club.id}/courts`: '/'   }> New Court</NavLink></Button>
 </Container>
   </div>
   )

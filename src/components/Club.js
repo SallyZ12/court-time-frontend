@@ -30,6 +30,7 @@ const unique = Array.from(new Set(courts && courts.map(s => s.surface)))
     }
   })
 
+
 const handleDelete = (court) => {
   props.deleteCourt(court.id, court.club_id)
 }

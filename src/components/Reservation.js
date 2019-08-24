@@ -7,9 +7,9 @@ const Reservation = ({reservations, clubs}) => {
 
 const currentUserReservations = reservations && reservations.reservations
 const currentUser = reservations && reservations
-console.log("reservations:",currentUserReservations)
-console.log("clubs", clubs)
-console.log("currentUser:", currentUser)
+// console.log("reservations:",currentUserReservations)
+// console.log("clubs", clubs)
+// console.log("currentUser:", currentUser)
 
 return (
   <div>

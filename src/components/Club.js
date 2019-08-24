@@ -17,10 +17,6 @@ const Club = (props) => {
 
 let club = props.clubs.clubs[props.match.params.id-1]
 
-// let courtHours = club && club.courts
-
-// console.log("courthours:", club && club.courts)
-// working on render only unique courts with rates by club
 
 const handleDelete = (court) => {
   props.deleteCourt(court.id, court.club_id)
@@ -61,7 +57,7 @@ return (
         </Card.Text>
     </Card.Body>
   </Card>
-    <Button variant="light"><NavLink exact activeClassName="current" to={ club && `/clubs/${club.id}/courts`}> New Court</NavLink></Button>
+    <Button variant="light"><NavLink exact activeClassName="current" to={club ? `/clubs/${club.id}/courts`: '/'}> New Court</NavLink></Button>
 </Container>
   </div>
   )

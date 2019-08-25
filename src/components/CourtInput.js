@@ -47,8 +47,8 @@ class CourtInput extends React.Component {
 
           <Form.Row>
             <Form.Group as={Col} >
-          <input type= 'integer'
-                 placeholder = "Court #"
+              <input type= 'integer'
+                placeholder = "Court #"
                 value = {this.state.court_number}
                 name = 'court_number'
                 onChange={this.handleChange}/>
@@ -56,7 +56,7 @@ class CourtInput extends React.Component {
 
         <Form.Group as={Col} >
         <Form.Label>Surface</Form.Label>
-         <select
+              <select
                name = 'surface'
                value = {this.state.surface}
                onChange = {this.handleChange}>
@@ -64,7 +64,7 @@ class CourtInput extends React.Component {
                <option value = "hard">Hard</option>
                <option value = "har-tru">Har-Tru</option>
                <option value = "grass">Grass</option>
-          </select>
+            </select>
             <Button variant="primary"><input type="submit" value="Submit"/></Button>
         </Form.Group>
         </Form.Row>

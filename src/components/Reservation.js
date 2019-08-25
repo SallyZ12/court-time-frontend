@@ -3,7 +3,8 @@ import React from 'react'
 import {connect} from 'react-redux'
 
 const Reservation = ({reservations, clubs}) => {
-
+console.log("clubs:", clubs)
+console.log("reservations:", reservations)
 
 const currentUserReservations = reservations && reservations.reservations
 const currentUser = reservations && reservations

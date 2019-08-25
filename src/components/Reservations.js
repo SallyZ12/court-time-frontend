@@ -2,7 +2,7 @@ import React from 'react'
 
 import {connect} from 'react-redux'
 
-const Reservation = ({reservations, clubs}) => {
+const Reservations = ({reservations, clubs}) => {
 console.log("clubs:", clubs)
 console.log("reservations:", reservations)
 
@@ -23,4 +23,4 @@ return (
 )
 }
 
-export default connect(null)(Reservation)
+export default connect(null)(Reservations)

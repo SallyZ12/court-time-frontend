@@ -61,13 +61,11 @@ return (
      {club && club.courts.map(court => <li key={court.id}>
        Court: {court.court_number} <br/>{court.surface} <br/>
 
-       {/*<br/>{court.hours}<br/>*/}
-
        <br/><br/>
-       <Button variant="link"> Reserve</Button><br/>
-       {/*<ReservationInput/>*/}
-       <Button variant="danger" onClick={()=> handleDelete(court)}> Delete </Button></li>)}
 
+       <ReservationInput/><br/>
+
+       <Button variant="danger" onClick={()=> handleDelete(court)}> Delete </Button></li>)}
 
         </Card.Text>
     </Card.Body>

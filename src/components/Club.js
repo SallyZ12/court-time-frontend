@@ -9,6 +9,7 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import {connect} from 'react-redux'
 import {deleteCourt} from '../actions/deleteCourt'
+import ReservationInput from '../components/ReservationInput'
 // import Courts from '../components/Courts'
 
 
@@ -64,6 +65,7 @@ return (
 
        <br/><br/>
        <Button variant="link"> Reserve</Button><br/>
+       {/*<ReservationInput/>*/}
        <Button variant="danger" onClick={()=> handleDelete(court)}> Delete </Button></li>)}
 
 

@@ -29,7 +29,10 @@ class App extends React.Component {
 
   render () {
     // console.log(this.props.loggedIn)
-    // const { loggedIn} = this.props
+    const { currentUser} = this.props
+
+    let admin1 = currentUser && currentUser.admin === "Yes"
+
     return (
       <div className="navmenu">
 
@@ -38,9 +41,9 @@ class App extends React.Component {
       <Button variant="light"><NavLink exact activeClassName="current" to="/users"> Players </NavLink></Button>
       <Button variant="light"><NavLink exact activeClassName="current" to="/signup"> Register </NavLink></Button>
       <Button variant="light"><NavLink exact activeClassName="current" to="/login"> Login </NavLink></Button>
-      <Button variant="light"><NavLink exact activeClassName="current" to="/clubs" > New Club </NavLink></Button>
+      {/*<Button variant="light"><NavLink exact activeClassName="current" to="/clubs" > New Club </NavLink></Button>*/}
+      <Button variant="light"><NavLink exact activeClassName="current" to={currentUser && admin1 ? "/clubs" : '/'}> New Club</NavLink></Button>
 
-      {/*<Button variant="light"><NavLink exact activeClassName="current" to="/logout"> Logout </NavLink></Button>*/}
       <br/>
       <br/>
       <NavBar />

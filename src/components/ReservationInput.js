@@ -2,7 +2,7 @@ import React from 'react'
 import{connect} from 'react-redux'
 import uuid from 'uuid'
 import moment from 'moment'
-import { withRouter } from 'react-router-dom';
+// import { withRouter } from 'react-router-dom';
 // import Form from 'react-bootstrap/Form';
 // import Col from 'react-bootstrap/Col';
 
@@ -38,7 +38,7 @@ constructor() {
 
   handleSubmit = (event)=> {
     event.preventDefault()
-    
+
     this.setState({
 
       day: "",
@@ -51,9 +51,9 @@ constructor() {
 
   render() {
     return (
-      <div>
-      <h5> Reservation </h5>
       <form>
+        <label> Reserve </label>
+        <br/>
         <select
           name = 'day'
           value = {this.state.day}
@@ -80,10 +80,10 @@ constructor() {
           </select>
 
       </form>
-      </div>
+
 
     )
   }
 }
 
-export default connect(ReservationInput)
+export default connect(null)(ReservationInput)

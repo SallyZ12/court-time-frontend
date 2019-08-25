@@ -75,4 +75,9 @@ return (
   </div>
   )
 }
+
+
+
+
+
 export default connect(null, {deleteCourt})(Club);

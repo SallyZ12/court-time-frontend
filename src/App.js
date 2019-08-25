@@ -5,7 +5,7 @@ import Login from './components/Login'
 import Logout from './components/Logout'
 import ClubInput from './components/ClubInput'
 import CourtInput from './components/CourtInput'
-import Reservation from './components/Reservation'
+import Reservations from './components/Reservations'
 import NavBar from './components/NavBar'
 import { getCurrentUser } from './actions/currentUser'
 import { fetchUsers } from './actions/fetchUsers'
@@ -57,7 +57,7 @@ class App extends React.Component {
       <br/>
       <UsersContainer/>
       <ClubsContainer/>
-      <Reservation reservations = {this.props.currentUser} clubs={this.props.clubs}/>
+      <Reservations reservations = {this.props.currentUser} clubs={this.props.clubs}/>
       <Logout/>
       </div>
     );

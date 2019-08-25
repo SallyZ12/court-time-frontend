@@ -14,7 +14,7 @@ const currentUser = reservations && reservations
 
 return (
   <div>
-  <h5> {currentUser && currentUser.first_name}'s Reservation History </h5>
+  <h5> {currentUser && currentUser.first_name} </h5>
   {currentUserReservations && currentUserReservations.map(currentUserReservation=>
   <p key={currentUserReservation.id}>
   ConfirmID: {currentUserReservation.confirmID} Date: {currentUserReservation.day}

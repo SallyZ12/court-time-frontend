@@ -41,6 +41,7 @@ constructor() {
 
     event.preventDefault()
 
+    // need correct userId and courtId - not clubId
     let userId = this.props.match.params.id
     let courtId = this.props.match.params.id
 

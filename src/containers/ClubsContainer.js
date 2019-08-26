@@ -15,7 +15,7 @@ class ClubsContainer extends React.Component {
     return (
       <div>
       <Switch>
-        <Route path="/clubs/:id" render={(routerProps)=> <Club {...routerProps} clubs={this.props.clubs}/>}/>
+        <Route path="/clubs/:id" render={(routerProps)=> <Club {...routerProps} clubs={this.props.clubs} currentUser={this.props.currentUser}/>}/>
       </Switch>
 
       </div>
@@ -26,7 +26,8 @@ class ClubsContainer extends React.Component {
 const mapStateToProps = state => {
   // console.log("state:", state.clubsReducer)
   return {
-    clubs: state.clubsReducer
+    clubs: state.clubsReducer,
+    currentUser: state.currentUser
   }
 }
 

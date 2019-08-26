@@ -45,7 +45,9 @@ constructor() {
     let courtId = this.props.match.params.id
 
     this.props.addReservation(this.state, userId, courtId)
-    
+    console.log("this.state.day:", this.state.day)
+    console.log("userId:", userId)
+    console.log("courtId:", courtId)
     this.setState({
       day: "",
       hour: "",
@@ -64,13 +66,13 @@ constructor() {
           name = 'day'
           value = {this.state.day}
           onChange = {this.handleChange}>
-          <option value = "{this.dayOne}"> {this.dayOne} </option>
-          <option value = "{this.dayTwo}"> {this.dayTwo} </option>
-          <option value = "{this.dayThree}"> {this.dayThree} </option>
-          <option value = "{this.dayFour}"> {this.dayFour} </option>
-          <option value = "{this.dayFive}"> {this.dayFive} </option>
-          <option value = "{this.daySix}"> {this.daySix} </option>
-          <option value = "{this.daySeven}"> {this.daySeven} </option>
+          <option value = {this.dayOne}> {this.dayOne} </option>
+          <option value = {this.dayTwo}> {this.dayTwo} </option>
+          <option value = {this.dayThree}> {this.dayThree} </option>
+          <option value = {this.dayFour}> {this.dayFour} </option>
+          <option value = {this.dayFive}> {this.dayFive} </option>
+          <option value = {this.daySix}> {this.daySix} </option>
+          <option value = {this.daySeven}> {this.daySeven} </option>
           </select>
           <br/>
         <select

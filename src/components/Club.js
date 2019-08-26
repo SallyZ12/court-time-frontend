@@ -16,6 +16,7 @@ import ReservationInput from '../components/ReservationInput'
 const Club = (props) => {
 // console.log("props:", props)
 
+
 let club = props.clubs.clubs[props.match.params.id-1]
 // console.log ("club:", club)
 
@@ -76,8 +77,12 @@ return (
   )
 }
 
+const mapStateToProps = state => {
+  return ({
+    currentUser: state.currentUserReducer
+  })
+}
 
 
 
-
-export default connect(null, {deleteCourt})(Club);
+export default connect(mapStateToProps, {deleteCourt})(Club);

@@ -2,12 +2,13 @@ import React from 'react'
 
 import {connect} from 'react-redux'
 
-const Reservations = ({reservations, clubs}) => {
-console.log("clubs:", clubs)
-console.log("reservations:", reservations)
+const Reservations = ({currentUserRes, clubs}) => {
 
-const currentUserReservations = reservations && reservations.reservations
-const currentUser = reservations && reservations
+console.log("clubs:", clubs)
+console.log("currentUserRes:", currentUserRes)
+
+const currentUserReservations = currentUserRes && currentUserRes.reservations
+const currentUser = currentUserRes && currentUserRes
 // console.log("reservations:",currentUserReservations)
 // console.log("clubs", clubs)
 // console.log("currentUser:", currentUser)

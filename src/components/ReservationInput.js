@@ -43,7 +43,7 @@ constructor() {
 
     event.preventDefault()
 
-    // need correct userId and courtId - not clubId
+
     let userId = this.props.currentUser && this.props.currentUser.id
     let courtId = this.props.courtId
 

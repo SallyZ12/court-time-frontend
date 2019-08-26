@@ -24,9 +24,11 @@ constructor() {
   this.daySeven = moment(this.currentDate).add(7, 'days').format('MMM DD YYYY')
 
   this.state = {
+    court_id: "",
     day: "",
     hour: "",
     rate: "",
+    rate_type: "",
     confirmId: uuid()
   }
 }
@@ -42,17 +44,20 @@ constructor() {
     event.preventDefault()
 
     // need correct userId and courtId - not clubId
-    let userId = this.props.match.params.id
-    let courtId = this.props.match.params.id
+    let userId = this.props.currentUser
+    let courtId = this.props.courtId
 
-    this.props.addReservation(this.state, userId, courtId)
-    console.log("this.state.day:", this.state.day)
+    this.props.addReservation({...this.state, court_id: courtId}, userId )
+
     console.log("userId:", userId)
     console.log("courtId:", courtId)
+
     this.setState({
+      court_id: "",
       day: "",
       hour: "",
       rate: "",
+      rate_type: "",
       confirmId: uuid()
     })
   }

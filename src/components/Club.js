@@ -63,7 +63,7 @@ return (
 
        <br/><br/>
 
-       <ReservationInput/><br/>
+       <ReservationInput courtId = {court.id} currentUser = {props.currentUser}/><br/>
 
        <Button variant="danger" onClick={()=> handleDelete(court)}> Delete </Button></li>)}
 

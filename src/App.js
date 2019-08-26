@@ -59,7 +59,7 @@ class App extends React.Component {
       <br/>
       <UsersContainer/>
       <ClubsContainer/>
-      
+
       {/*<Reservations currentUserRes = {this.props.currentUser} clubs={this.props.clubs}/>*/}
       <Logout/>
       </div>

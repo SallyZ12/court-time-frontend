@@ -6,6 +6,7 @@ import Logout from './components/Logout'
 import ClubInput from './components/ClubInput'
 import CourtInput from './components/CourtInput'
 import Reservations from './components/Reservations'
+import ReservationInput from './components/ReservationInput'
 import NavBar from './components/NavBar'
 import { getCurrentUser } from './actions/currentUser'
 import { fetchUsers } from './actions/fetchUsers'
@@ -53,11 +54,13 @@ class App extends React.Component {
       <Route exact path = '/clubs' render ={() => <ClubInput clubInput = {this.props.club}/>} />
       <Route exact path = '/clubs/:id/courts' component = {CourtInput}/>
       <Route exact path="/login" component = {Login} />
+      <Route exact path="/users/:id/reservations" render ={() => <ReservationInput reservationInput = {this.props.currentUser}/>}/>
 
       <br/>
       <UsersContainer/>
       <ClubsContainer/>
-      <Reservations reservations = {this.props.currentUser} clubs={this.props.clubs}/>
+      
+      {/*<Reservations currentUserRes = {this.props.currentUser} clubs={this.props.clubs}/>*/}
       <Logout/>
       </div>
     );

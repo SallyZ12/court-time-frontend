@@ -44,7 +44,7 @@ constructor() {
     event.preventDefault()
 
     // need correct userId and courtId - not clubId
-    let userId = this.props.currentUser
+    let userId = this.props.currentUser && this.props.currentUser.id
     let courtId = this.props.courtId
 
     this.props.addReservation({...this.state, court_id: courtId}, userId )
@@ -86,12 +86,13 @@ constructor() {
           name = 'hour'
           value = {this.state.hour}
           onChange = {this.handleChange}>
-            <option value = "9:00am">9:00 am </option>
-            <option value = "10:00am">10:00 am </option>
-            <option value = "11:00am">11:00 am </option>
-            <option value = "12:00pm">12:00 pm</option>
-            <option value = "1:00pm">1:00 pm </option>
-            <option value = "2:00pm">2:00 pm </option>
+            <option value = "select"> Select Time </option>
+            <option value = "9:00 am">9:00 am </option>
+            <option value = "10:00 am">10:00 am </option>
+            <option value = "11:00 am">11:00 am </option>
+            <option value = "12:00 pm">12:00 pm</option>
+            <option value = "1:00 pm">1:00 pm </option>
+            <option value = "2:00 pm">2:00 pm </option>
           </select><br/>
   <Button variant="primary"><input type="submit" value="Reserve"/></Button>
       </form>
@@ -100,5 +101,7 @@ constructor() {
     )
   }
 }
+
+
 
 export default withRouter(connect(null, {addReservation})(ReservationInput))

@@ -67,6 +67,7 @@ constructor() {
           name = 'day'
           value = {this.state.day}
           onChange = {this.handleChange}>
+          <option value = "select"> Select Day </option>
           <option value = {this.dayOne}> {this.dayOne} </option>
           <option value = {this.dayTwo}> {this.dayTwo} </option>
           <option value = {this.dayThree}> {this.dayThree} </option>

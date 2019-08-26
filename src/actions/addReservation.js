@@ -1,14 +1,16 @@
 
-export const addReservation = (reservation, currentUserId, courtId) => {
+export const addReservation = (reservation, userId) => {
+
   return dispatch => {
-    fetch (`http://localhost:3000/api/v1/users/${currentUserId}/reservations`, {
+    fetch (`http://localhost:3000/api/v1/users/${userId}/reservations`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(reservation)
-      .then(response => response.json())
-      .then(user => dispatch(type: 'ADD_RESERVATION', payload: user })
     })
+      .then(response => response.json())
+      .then(user => dispatch({type: 'ADD_RESERVATION', payload: user })
+    )
     }
   }

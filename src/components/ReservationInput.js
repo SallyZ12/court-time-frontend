@@ -2,8 +2,9 @@ import React from 'react'
 import{connect} from 'react-redux'
 import uuid from 'uuid'
 import moment from 'moment'
-// import { withRouter } from 'react-router-dom';
-// import Form from 'react-bootstrap/Form';
+import {addReservation} from '../actions/addReservation'
+import { withRouter } from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
 // import Col from 'react-bootstrap/Col';
 
 
@@ -26,7 +27,7 @@ constructor() {
     day: "",
     hour: "",
     rate: "",
-    confirmId: ""
+    confirmId: uuid()
   }
 }
 
@@ -37,21 +38,26 @@ constructor() {
   }
 
   handleSubmit = (event)=> {
+
     event.preventDefault()
 
-    this.setState({
+    let userId = this.props.match.params.id
+    let courtId = this.props.match.params.id
 
+    this.props.addReservation(this.state, userId, courtId)
+    
+    this.setState({
       day: "",
       hour: "",
       rate: "",
-      confirmId: ""
+      confirmId: uuid()
     })
   }
 
 
   render() {
     return (
-      <form>
+      <form onSubmit={this.handleSubmit}>
         <label> Reserve </label>
         <br/>
         <select
@@ -77,8 +83,8 @@ constructor() {
             <option value = "12:00pm">12:00 pm</option>
             <option value = "1:00pm">1:00 pm </option>
             <option value = "2:00pm">2:00 pm </option>
-          </select>
-
+          </select><br/>
+  <Button variant="primary"><input type="submit" value="Reserve"/></Button>
       </form>
 
 
@@ -86,4 +92,4 @@ constructor() {
   }
 }
 
-export default connect(null)(ReservationInput)
+export default withRouter(connect(null, {addReservation})(ReservationInput))

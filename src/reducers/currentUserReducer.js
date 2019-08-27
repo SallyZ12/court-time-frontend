@@ -1,3 +1,5 @@
+import uuid from "uuid";
+
 export default (state = null, action) => {
 
   switch (action.type) {
@@ -8,6 +10,11 @@ export default (state = null, action) => {
 
     case "CLEAR_CURRENT_USER":
       return null
+
+      case 'ADD_RESERVATION':
+
+          return {...state, user: action.payload}
+
 
     default:
       return state

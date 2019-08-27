@@ -40,14 +40,12 @@ constructor() {
   }
 
   handleSubmit = (event)=> {
-
     event.preventDefault()
-
 
     let userId = this.props.currentUser && this.props.currentUser.id
     let courtId = this.props.courtId
 
-    this.props.addReservation({...this.state, court_id: courtId}, userId )
+    this.props.addReservation({...this.state, court_id: courtId, user_id: userId} )
 
     console.log("userId:", userId)
     console.log("courtId:", courtId)

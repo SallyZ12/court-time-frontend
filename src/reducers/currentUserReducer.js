@@ -1,4 +1,3 @@
-import uuid from "uuid";
 
 export default (state = null, action) => {
 
@@ -12,7 +11,6 @@ export default (state = null, action) => {
       return null
 
       case 'ADD_RESERVATION':
-
           return {...state, user: action.payload}
 
 

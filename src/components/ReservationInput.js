@@ -1,6 +1,5 @@
 import React from 'react'
 import{connect} from 'react-redux'
-import uuid from 'uuid'
 import moment from 'moment'
 import {addReservation} from '../actions/addReservation'
 import { withRouter } from 'react-router-dom';
@@ -45,7 +44,7 @@ constructor() {
     let userId = this.props.currentUser && this.props.currentUser.id
     let courtId = this.props.courtId
 
-    this.props.addReservation({...this.state, court_id: courtId, user_id: userId, confirmID: uuid()} )
+    this.props.addReservation({...this.state, court_id: courtId, user_id: userId, confirmID: Math.floor(Math.random() * 100000000)} )
 
     console.log("userId:", userId)
     console.log("courtId:", courtId)

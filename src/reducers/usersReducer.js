@@ -11,18 +11,6 @@ export default function usersReducer(state = initialState, action) {
      case "ADD_USER":
        return {...state, users: [...state.users, action.user]}
 
-     case 'ADD_RESERVATION':
-         let users = state.users.map(user => {
-           if(user.id === action.payload.id) {
-             return action.payload
-           } else {
-             return user
-           }
-         })
-         
-         return {...state, users: users}
-
-
     default:
 
       return state

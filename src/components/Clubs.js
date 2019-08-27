@@ -12,7 +12,7 @@ return (
   {clubs && clubs.map(club =>
     <p className ='text-center' key={club.id}>
 
-    <Link to={`/clubs/${club.id}`}> {club.club_name} - {club.location} -{club.courts.length} Courts </Link><br/>
+    <Link to={`/clubs/${club.id}`}> {club.club_name} - {club.location} - {club.courts.length} Courts </Link><br/>
     </p>)}
   </div>
   )

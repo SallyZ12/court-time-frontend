@@ -29,7 +29,7 @@ constructor() {
     hour: "",
     rate: "",
     rate_type: "",
-    confirmId: uuid()
+    confirmId: ""
   }
 }
 
@@ -45,7 +45,7 @@ constructor() {
     let userId = this.props.currentUser && this.props.currentUser.id
     let courtId = this.props.courtId
 
-    this.props.addReservation({...this.state, court_id: courtId, user_id: userId} )
+    this.props.addReservation({...this.state, court_id: courtId, user_id: userId, confirmID: uuid()} )
 
     console.log("userId:", userId)
     console.log("courtId:", courtId)
@@ -56,7 +56,7 @@ constructor() {
       hour: "",
       rate: "",
       rate_type: "",
-      confirmId: uuid()
+      confirmId: ""
     })
   }
 

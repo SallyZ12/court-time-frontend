@@ -10,7 +10,12 @@ export const addReservation = (reservation, userId) => {
       body: JSON.stringify(reservation)
     })
       .then(response => response.json())
-      .then(user => dispatch({type: 'ADD_RESERVATION', payload: user })
-    )
+      .then(user => {
+        if (user.error) {
+          alert(user.error)
+        } else {
+          dispatch({type: 'ADD_RESERVATION', payload: user })
     }
+  })
   }
+}

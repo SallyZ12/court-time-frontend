@@ -25,7 +25,7 @@ class UsersContainer extends React.Component {
       <br/>
       <Route exact path="/signup" component = {Signup} />
       <br/>
-      <Route path="/users/:id" render={(rProps)=> <User {...rProps} users={this.props.users}/>}/>
+      <Route path="/users/:id" render={(rProps)=> <User {...rProps} users={this.props.users} clubs={this.props.clubs}/>}/>
 
       </div>
     )
@@ -36,7 +36,8 @@ class UsersContainer extends React.Component {
 const mapStateToProps = state => {
   // console.log("MSTP:", state.usersReducer)
   return {
-    users: state.usersReducer
+    users: state.usersReducer,
+    clubs: state.clubsReducer
   }
 }
 

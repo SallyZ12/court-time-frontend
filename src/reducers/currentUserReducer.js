@@ -10,9 +10,7 @@ export default (state = null, action) => {
     case "CLEAR_CURRENT_USER":
       return null
 
-      case 'ADD_RESERVATION':
-          return {...state, user: action.payload}
-
+    
 
     default:
       return state

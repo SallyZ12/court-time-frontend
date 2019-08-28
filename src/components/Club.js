@@ -22,6 +22,7 @@ let club = props.clubs.clubs[props.match.params.id-1]
 
 let courts = club && club.courts
 
+// this is how I iterate and not repeat court surfaces with rates
 const unique = Array.from(new Set(courts && courts.map(s => s.surface)))
   .map(surface => {
     return {
@@ -53,6 +54,7 @@ return (
   <Col sm={2.0}> ${court.prime}</Col>
   <Col sm={2.0}> ${court.non_prime}</Col>
     </Row></span>)}
+</Container>
   <Card style={{ width: '45rem' }} >
     <Card.Body>
 
@@ -60,8 +62,7 @@ return (
         <Card.Text className="courts">
         <br/>
      {club && club.courts.map(court => <li key={court.id}>
-       Court: {court.court_number} <br/>{court.surface} <br/>
-
+       Court: {court.court_number} <br/>{court.surface}
        <br/><br/>
 
        <ReservationInput courtId = {court.id} currentUser = {props.currentUser}/><br/>
@@ -72,7 +73,7 @@ return (
     </Card.Body>
   </Card>
     <Button variant="light"><NavLink exact activeClassName="current" to={club ? `/clubs/${club.id}/courts`: '/'   }> New Court</NavLink></Button>
-</Container>
+
   </div>
   )
 }

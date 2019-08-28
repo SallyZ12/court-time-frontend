@@ -46,7 +46,7 @@ constructor() {
 
 
     this.props.addReservation({...this.state, court_id: courtId, user_id: userId, confirmID: Math.floor(Math.random() * 1000000)})
-  
+
     console.log("userId:", userId)
     console.log("courtId:", courtId)
 
@@ -64,7 +64,8 @@ constructor() {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <label> Reserve </label>
+        <label> Select </label><br/>
+        <label> Day & Time </label>
         <br/>
         <select
           name = 'day'
@@ -78,8 +79,9 @@ constructor() {
           <option value = {this.dayFive}> {this.dayFive} </option>
           <option value = {this.daySix}> {this.daySix} </option>
           <option value = {this.daySeven}> {this.daySeven} </option>
-          </select>
           <br/>
+          </select>
+          <br/><br/>
         <select
           name = 'hour'
           value = {this.state.hour}
@@ -91,7 +93,7 @@ constructor() {
             <option value = "12:00 pm">12:00 pm</option>
             <option value = "1:00 pm">1:00 pm </option>
             <option value = "2:00 pm">2:00 pm </option>
-          </select><br/>
+          </select><br/><br/><br/>
   <Button variant="primary"><input type="submit" value="Reserve"/></Button>
       </form>
 

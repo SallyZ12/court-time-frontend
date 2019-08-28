@@ -44,8 +44,9 @@ constructor() {
     let userId = this.props.currentUser && this.props.currentUser.id
     let courtId = this.props.courtId
 
-    this.props.addReservation({...this.state, court_id: courtId, user_id: userId, confirmID: Math.floor(Math.random() * 1000000)} )
 
+    this.props.addReservation({...this.state, court_id: courtId, user_id: userId, confirmID: Math.floor(Math.random() * 1000000)})
+  
     console.log("userId:", userId)
     console.log("courtId:", courtId)
 

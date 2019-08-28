@@ -7,14 +7,14 @@ import moment from 'moment'
 
 
 const User = (props) => {
-console.log("props:", props )
+// console.log("props:", props )
 
 let user = props.users.users[props.match.params.id-1]
 
 
 // need help here
 let club = props.clubs.clubs[props.match.params.id-1]
-console.log("club:", club)
+// console.log("club:", club)
 
 // steps to accessing today's date
 let date = new Date()
@@ -36,7 +36,7 @@ let currentDate = moment(date).format('MMM DD YYYY')
         Reservation Count: {user ? user.reservations.length : null}<br/><br/>
         Reservations <br/>
           {user && user.reservations.map(reservation => <li key={reservation.id}>
-             ConfirmID: {reservation.confirmID} - {reservation.day} - {reservation.hour}  </li>)}
+             ConfirmID: {reservation.confirmID} - {reservation.day} - {reservation.hour} - {reservation.court_id} </li>)}
         </Card.Text>
         <Button variant="light"><Link to='/users'>Players</Link></Button>
       </Card.Body>

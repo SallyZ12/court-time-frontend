@@ -1,9 +1,11 @@
 
-export const addReservation = (reservation, userId) => {
+export const addReservation = (reservation) => {
 
   return dispatch => {
-    fetch (`http://localhost:3000/api/v1/users/${userId}/reservations`, {
+  
+    fetch (`http://localhost:3000/api/v1/users/${reservation.user_id}/reservations`, {
       method: 'POST',
+      credentials: "include",
       headers: {
         'Content-Type': 'application/json',
       },

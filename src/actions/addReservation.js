@@ -19,3 +19,7 @@ export const addReservation = (reservation, userId) => {
   })
   }
 }
+
+
+
+// .then(user => {console.log(user)})

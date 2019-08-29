@@ -13,7 +13,7 @@ let user = props.users.users[props.match.params.id-1]
 
 
 // need help here
-let club = props.clubs.clubs[props.match.params.id-1]
+// let club = props.clubs.clubs[props.match.params.id-1]
 // console.log("club:", club)
 
 // steps to accessing today's date

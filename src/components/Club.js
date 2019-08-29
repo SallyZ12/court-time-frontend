@@ -54,6 +54,7 @@ return (
   <Col sm={2.0}> ${court.non_prime}</Col>
     </Row></span>)}
 </Container>
+
   <Card style={{ width: '45rem' }} >
     <Card.Body>
 
@@ -67,10 +68,11 @@ return (
        <ReservationInput courtId = {court.id} currentUser = {props.currentUser}/><br/>
 
        <Button variant="danger" onClick={()=> handleDelete(court)}> Delete </Button></li>)}
-
         </Card.Text>
+
     </Card.Body>
   </Card>
+
     <Button variant="light"><NavLink exact activeClassName="current" to={club ? `/clubs/${club.id}/courts`: '/'   }> New Court</NavLink></Button>
 
   </div>

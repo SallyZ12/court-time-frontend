@@ -4,6 +4,7 @@ export const addCourt = (court, clubId) => {
   return (dispatch) => {
     fetch (`http://localhost:3000/api/v1/clubs/${clubId}/courts`, {
       method: 'POST',
+      credentials: "include",
       headers: {
         'Content-Type': 'application/json',
       },

@@ -65,13 +65,11 @@ constructor() {
     return (
       <form onSubmit={this.handleSubmit}>
         <label> Select </label><br/>
-        <label> Day & Time </label>
-        <br/>
         <select
           name = 'day'
           value = {this.state.day}
           onChange = {this.handleChange}>
-          <option value = "select"> Select Day </option>
+          <option value = "select"> Day </option>
           <option value = {this.dayOne}> {this.dayOne} </option>
           <option value = {this.dayTwo}> {this.dayTwo} </option>
           <option value = {this.dayThree}> {this.dayThree} </option>
@@ -79,14 +77,13 @@ constructor() {
           <option value = {this.dayFive}> {this.dayFive} </option>
           <option value = {this.daySix}> {this.daySix} </option>
           <option value = {this.daySeven}> {this.daySeven} </option>
-          <br/>
           </select>
-          <br/><br/>
+          <br/>
         <select
           name = 'hour'
           value = {this.state.hour}
           onChange = {this.handleChange}>
-            <option value = "select"> Select Time </option>
+            <option value = "select"> Time </option>
             <option value = "9:00 am">9:00 am </option>
             <option value = "10:00 am">10:00 am </option>
             <option value = "11:00 am">11:00 am </option>

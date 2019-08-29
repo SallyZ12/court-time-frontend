@@ -45,7 +45,13 @@ constructor() {
     let courtId = this.props.courtId
 
 
-    this.props.addReservation({...this.state, court_id: courtId, user_id: userId, confirmID: Math.floor(Math.random() * 1000000)})
+    this.props.addReservation({...this.state, court_id: courtId, user_id: userId, confirmID: Math.floor(Math.random() * 1000000)}, userId)
+
+    // can also pass in one argument to addReservation action creator
+    // don't add , userId at end to this.props.addReservation
+    // this.props.addReservation({...this.state, court_id: courtId, user_id: userId, confirmID: Math.floor(Math.random() * 1000000)})
+    // then in addReservation action creator pass in only (reservation) and in url use
+    // reservation.user_id
 
     console.log("userId:", userId)
     console.log("courtId:", courtId)

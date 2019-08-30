@@ -3,7 +3,7 @@ import React from 'react'
 import Card from 'react-bootstrap/Card'
 import '../style.css'
 import Button from 'react-bootstrap/Button';
-import { NavLink, WithRouter } from 'react-router-dom'
+import { NavLink, withRouter } from 'react-router-dom'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
@@ -93,5 +93,4 @@ const mapStateToProps = state => {
 }
 
 
-
-export default connect(mapStateToProps, {deleteCourt, deleteClub})(Club);
+export default withRouter(connect(mapStateToProps, {deleteCourt, deleteClub})(Club));

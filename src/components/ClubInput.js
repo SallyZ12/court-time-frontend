@@ -19,7 +19,7 @@ class ClubInput extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault()
     this.props.addClub(this.state)
-    this.props.history.push("/")
+    this.props.history.push('/')
     this.setState({
       club_name:'',
       location: ''

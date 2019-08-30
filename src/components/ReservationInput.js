@@ -100,7 +100,6 @@ constructor() {
   <Button variant="primary"><input type="submit" value="Reserve"/></Button>
       </form>
 
-
     )
   }
 }

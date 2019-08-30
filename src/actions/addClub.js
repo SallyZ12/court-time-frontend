@@ -1,6 +1,6 @@
 
 //asynchronous action creators
-export const addClub = (data, history) => {
+export const addClub = (clubData, history) => {
 
   return (dispatch) => {
     fetch ('http://localhost:3000/api/v1/clubs', {
@@ -8,7 +8,7 @@ export const addClub = (data, history) => {
         'Content-Type': 'application/json',
       },
       method: 'POST',
-      body: JSON.stringify(data)
+      body: JSON.stringify(clubData)
     })
       .then(response => response.json())
       .then(club => {
@@ -16,6 +16,7 @@ export const addClub = (data, history) => {
           alert(club.error)
       } else {
         dispatch({type: 'ADD_CLUB', payload: club})
+
 
       }
     })
@@ -25,3 +26,4 @@ export const addClub = (data, history) => {
 
 
 // history.push('/')
+  // history.push(`/clubs/${club.id}`)

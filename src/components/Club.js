@@ -72,8 +72,8 @@ return (
        Court: {court.court_number} <br/>{court.surface}
        <br/><br/>
 
-       <ReservationInput courtId = {court.id} currentUser = {props.currentUser}/><br/>
-
+        <ReservationInput courtId = {court.id} currentUser = {props.currentUser}/><br/>
+        
        <Button variant="link" onClick={()=> handleDelete(court)}> Delete Court</Button></li>)}
         </Card.Text>
 

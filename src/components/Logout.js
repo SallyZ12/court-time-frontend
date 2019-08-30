@@ -14,7 +14,7 @@ const Logout = ({ logout, history }) => {
       }
     }>
     <br/><br/>
-      <Button variant="primary"><input type="submit" value="Log Out"/></Button>
+      <Button variant="link"><input type="submit" value="Log Out"/></Button>
     </form>
   )
 }

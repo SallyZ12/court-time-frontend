@@ -53,8 +53,8 @@ constructor() {
     // then in addReservation action creator pass in only (reservation) and in url use
     // reservation.user_id
 
-    console.log("userId:", userId)
-    console.log("courtId:", courtId)
+    // console.log("userId:", userId)
+    // console.log("courtId:", courtId)
 
     this.setState({
       court_id: "",
@@ -64,6 +64,7 @@ constructor() {
       rate_type: "",
       confirmId: ""
     })
+    this.props.history.push(`/users/${userId}`)
   }
 
 

@@ -4,7 +4,7 @@ import moment from 'moment'
 import {addReservation} from '../actions/addReservation'
 import { withRouter } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
-// import Col from 'react-bootstrap/Col';
+
 
 
 class ReservationInput extends React.Component {

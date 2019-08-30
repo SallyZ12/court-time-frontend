@@ -3,18 +3,19 @@ import React from 'react'
 import Card from 'react-bootstrap/Card'
 import '../style.css'
 import Button from 'react-bootstrap/Button';
-import { NavLink } from 'react-router-dom'
+import { NavLink, WithRouter } from 'react-router-dom'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import {connect} from 'react-redux'
 import {deleteCourt} from '../actions/deleteCourt'
+import {deleteClub} from '../actions/deleteClub'
 import ReservationInput from '../components/ReservationInput'
 // import Courts from '../components/Courts'
 
 
 const Club = (props) => {
-// console.log("props:", props)
+console.log("props:", props)
 
 
 let club = props.clubs.clubs[props.match.params.id-1]
@@ -35,6 +36,11 @@ const unique = Array.from(new Set(courts && courts.map(s => s.surface)))
 
 const handleDelete = (court) => {
   props.deleteCourt(court.id, court.club_id)
+}
+
+const handleDeleteClub = (club) => {
+  props.deleteClub(club.id)
+  props.history.push('/')
 }
 
 
@@ -58,7 +64,8 @@ return (
   <Card style={{ width: '45rem' }} >
     <Card.Body>
 
-      <Card.Title> {club ? club.club_name : null} </Card.Title>
+      <Card.Title> {club ? club.club_name : null}   </Card.Title>
+      <Button variant="link" onClick={()=> handleDeleteClub(club)}> Delete Club</Button>
         <Card.Text className="courts">
         <br/>
      {club && club.courts.map(court => <li key={court.id}>
@@ -87,4 +94,4 @@ const mapStateToProps = state => {
 
 
 
-export default connect(mapStateToProps, {deleteCourt})(Club);
+export default connect(mapStateToProps, {deleteCourt, deleteClub})(Club);

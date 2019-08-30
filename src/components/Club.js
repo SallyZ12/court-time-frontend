@@ -15,7 +15,7 @@ import ReservationInput from '../components/ReservationInput'
 
 
 const Club = (props) => {
-console.log("props:", props)
+// console.log("props:", props)
 
 
 let club = props.clubs.clubs[props.match.params.id-1]
@@ -40,12 +40,12 @@ const handleDelete = (court) => {
 
 const handleDeleteClub = (club) => {
   props.deleteClub(club.id)
-  props.history.push('/')
+  props.history.push("/")
 }
 
 
 return (
-<div>
+  <div>
 
 <Container>
   <Row >
@@ -74,7 +74,7 @@ return (
 
        <ReservationInput courtId = {court.id} currentUser = {props.currentUser}/><br/>
 
-       <Button variant="danger" onClick={()=> handleDelete(court)}> Delete </Button></li>)}
+       <Button variant="link" onClick={()=> handleDelete(court)}> Delete Court</Button></li>)}
         </Card.Text>
 
     </Card.Body>
@@ -82,7 +82,7 @@ return (
 
     <Button variant="light"><NavLink exact activeClassName="current" to={club ? `/clubs/${club.id}/courts`: '/'   }> New Court</NavLink></Button>
 
-  </div>
+    </div>
   )
 }
 

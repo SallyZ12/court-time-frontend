@@ -13,7 +13,9 @@ import { fetchUsers } from './actions/fetchUsers'
 import {fetchClubs} from './actions/fetchClubs'
 import { connect } from 'react-redux'
 import { Route, Redirect, NavLink } from 'react-router-dom'
-import Button from 'react-bootstrap/Button';
+import Button from 'react-bootstrap/Button'
+import DropdownButton from 'react-bootstrap/DropdownButton'
+import Dropdown from 'react-bootstrap/Dropdown'
 import './style.css';
 
 import ClubsContainer from './containers/ClubsContainer'
@@ -42,10 +44,11 @@ class App extends React.Component {
       <Button variant="light"><NavLink exact activeClassName="current" to="/users"> Players </NavLink></Button>
       <Button variant="light"><NavLink exact activeClassName="current" to="/signup"> Register </NavLink></Button>
       <Button variant="light"><NavLink exact activeClassName="current" to="/login"> Login </NavLink></Button>
-      {/*<Button variant="light"><NavLink exact activeClassName="current" to="/clubs" > New Club </NavLink></Button>*/}
-      <Button variant="light"><NavLink exact activeClassName="current" to={currentUser && admin1 ? "/clubs" : '/'}> New Club</NavLink></Button>
 
-      <br/>
+      <DropdownButton id="dropdown-basic-button" title="Admin">
+      <Dropdown.Item href = {currentUser && admin1 ? "/clubs": '/'}>New Club</Dropdown.Item>
+      </DropdownButton>
+
       <br/>
       <NavBar />
       <br/>
@@ -80,3 +83,6 @@ const mapStateToProps = state => {
 
 
 export default connect(mapStateToProps, { getCurrentUser, fetchUsers, fetchClubs})(App);
+
+
+  // <Button variant="light"><NavLink exact activeClassName="current" to={currentUser && admin1 ? "/clubs" : '/'}> New Club</NavLink></Button>

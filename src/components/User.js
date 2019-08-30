@@ -36,7 +36,7 @@ let currentDate = moment(date).format('MMM DD YYYY')
         Reservation Count: {user ? user.reservations.length : null}<br/><br/>
         Reservations <br/>
           {user && user.reservations.map(reservation => <li key={reservation.id}>
-             ConfirmID: {reservation.confirmID} - {dateFormat(reservation.day,"dddd, mmmm dS, yyyy")} - {reservation.hour} - {reservation.court_id} </li>)}
+             ConfirmID: {reservation.confirmID} - {dateFormat(reservation.day,"mmmm dS, yyyy")} - {reservation.hour} - {reservation.court_id} </li>)}
         </Card.Text>
         <Button variant="light"><Link to='/users'>Players</Link></Button>
       </Card.Body>

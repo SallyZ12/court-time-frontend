@@ -27,7 +27,7 @@ class CourtInput extends React.Component {
     event.preventDefault()
     let clubId = this.props.match.params.id
     this.props.addCourt(this.state, clubId)
-    this.props.history.push('/')
+    this.props.history.push(`/clubs/${clubId}`)
     this.setState({
       court_number: "",
       surface: "hard",

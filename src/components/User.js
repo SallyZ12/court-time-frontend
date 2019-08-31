@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button';
 import moment from 'moment'
+
 import dateFormat from 'dateformat'
 
 
@@ -21,7 +22,6 @@ let date = new Date()
 let currentDate = moment(date).format('MMM DD YYYY')
 
 
-
   return (
     <Card style={{ width: '35rem' }}>
       {/*<Card.Img variant="top" src="holder.js/100px180" />*/}
@@ -36,7 +36,7 @@ let currentDate = moment(date).format('MMM DD YYYY')
         Reservation Count: {user ? user.reservations.length : null}<br/><br/>
         Reservations <br/>
           {user && user.reservations.map(reservation => <li key={reservation.id}>
-             {reservation.reservation_club} - {dateFormat(reservation.day,"mmmm dS, yyyy")} - {reservation.hour} - ConfirmID: {reservation.confirmID} </li>)}
+             {reservation.reservation_club} - {dateFormat(reservation.day,"mmmm dS, yyyy")}  - {reservation.hour} - ConfirmID: {reservation.confirmID} </li>)}
         </Card.Text>
         <Button variant="light"><Link to='/users'>Players</Link></Button>
       </Card.Body>

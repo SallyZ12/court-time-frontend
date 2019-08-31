@@ -34,7 +34,7 @@ const unique = Array.from(new Set(courts && courts.map(s => s.surface)))
   })
 
 
-const handleDelete = (court) => {
+const handleDeleteCourt = (court) => {
   props.deleteCourt(court.id, court.club_id)
 }
 
@@ -73,8 +73,8 @@ return (
        <br/><br/>
 
         <ReservationInput courtId = {court.id} currentUser = {props.currentUser}/><br/>
-        
-       <Button variant="link" onClick={()=> handleDelete(court)}> Delete Court</Button></li>)}
+
+       <Button variant="link" onClick={()=> handleDeleteCourt(court)}> Delete Court</Button></li>)}
         </Card.Text>
 
     </Card.Body>

@@ -19,6 +19,24 @@ let user = props.users.users[props.match.params.id-1]
 let date = new Date()
 let currentDate = moment(date).format('MMM DD YYYY')
 
+function sortByDate(data) {
+  data.sort(function(a,b) {
+    let dateA = a.day
+      let dateB = b.day
+      let dateSort = dateA.localeCompare(dateB)
+        if(dateSort !== 0){
+          return dateSort
+        }
+  })
+}
+
+// function dateSortLatest(a,b) {
+//   return a.day > b.day
+// }
+// resulted in all reservations with day of Sep 2.2019
+
+// let sortedDay = reservation.sort((a,b) => (a.day > b.day) ? 1 : -1 )
+
 
   return (
     <Card style={{ width: '35rem' }}>
@@ -33,7 +51,7 @@ let currentDate = moment(date).format('MMM DD YYYY')
         Admin: {user ? user.admin : null} <br/>
         Reservation Count: {user ? user.reservations.length : null}<br/><br/>
         Reservations <br/>
-          {user && user.reservations.map(reservation => <li key={reservation.id}>
+            {user && user.reservations.map(reservation => <li key={reservation.id}>
              {reservation.reservation_club} - {moment(reservation.day).format('MMM DD YYYY')}  - {reservation.hour} - ConfirmID: {reservation.confirmID} </li>)}
         </Card.Text>
         <Button variant="light"><Link to='/users'>Players</Link></Button>
@@ -43,3 +61,5 @@ let currentDate = moment(date).format('MMM DD YYYY')
 }
 
 export default User;
+
+// {user && sortByDate(user.reservations).map(reservation => <li key={reservation.id}>

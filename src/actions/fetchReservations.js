@@ -14,3 +14,15 @@ export function fetchReservations(reservationId, currentUserId) {
     }
     )}
   }
+
+
+  // function sortByDate(data) {
+  //   data.sort(function(a,b) {
+  //     let dateA = a.day
+  //       let dateB = b.day
+  //       let dateSort = dateA.localeCompare(dateB)
+  //         if(dateSort !== 0){
+  //           return dateSort
+  //         }
+  //   })
+  // }

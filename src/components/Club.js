@@ -33,6 +33,7 @@ const unique = Array.from(new Set(courts && courts.map(s => s.surface)))
     }
   })
 
+let admin1 = props.currentUser && props.currentUser.admin === "Yes"
 
 const handleDeleteCourt = (court) => {
   props.deleteCourt(court.id, court.club_id)
@@ -80,7 +81,7 @@ return (
     </Card.Body>
   </Card>
 
-    <Button variant="light"><NavLink exact activeClassName="current" to={club ? `/clubs/${club.id}/courts`: '/'   }> New Court</NavLink></Button>
+    <Button variant="light"><NavLink exact activeClassName="current" to={club && props.currentUser && admin1 ? `/clubs/${club.id}/courts`: '/'}> New Court</NavLink></Button>
 
     </div>
   )

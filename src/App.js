@@ -46,7 +46,7 @@ class App extends React.Component {
       <Button variant="light"><NavLink exact activeClassName="current" to="/login"> Login </NavLink></Button>
 
       <DropdownButton id="dropdown-basic-button" title="Admin">
-      <Dropdown.Item href = {currentUser && admin1 ? "/clubs": '/'}>New Club</Dropdown.Item>
+      <Dropdown.Item href = {currentUser && admin1 ? "/clubs": '/'}>New Club </Dropdown.Item>
       </DropdownButton>
 
       <br/>
@@ -71,7 +71,7 @@ class App extends React.Component {
 }
 
 const mapStateToProps = state => {
-  // console.log("MSTP-APP:", state.currentUserReducer)
+  // console.log("MSTP-APP:", state.clubsReducer)
   return ({
     loggedIn: !!state.currentUserReducer,
     currentUser: state.currentUserReducer,

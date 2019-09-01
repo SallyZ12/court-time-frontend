@@ -4,8 +4,6 @@ import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button';
 import moment from 'moment'
 
-import dateFormat from 'dateformat'
-
 
 const User = (props) => {
 // console.log("props:", props )
@@ -36,7 +34,7 @@ let currentDate = moment(date).format('MMM DD YYYY')
         Reservation Count: {user ? user.reservations.length : null}<br/><br/>
         Reservations <br/>
           {user && user.reservations.map(reservation => <li key={reservation.id}>
-             {reservation.reservation_club} - {dateFormat(reservation.day,"mmmm dS, yyyy")}  - {reservation.hour} - ConfirmID: {reservation.confirmID} </li>)}
+             {reservation.reservation_club} - {moment(reservation.day).format('MMM DD YYYY')}  - {reservation.hour} - ConfirmID: {reservation.confirmID} </li>)}
         </Card.Text>
         <Button variant="light"><Link to='/users'>Players</Link></Button>
       </Card.Body>

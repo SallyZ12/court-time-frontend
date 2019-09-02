@@ -7,6 +7,7 @@ import ClubInput from './components/ClubInput'
 import CourtInput from './components/CourtInput'
 // import Reservations from './components/Reservations'
 import ReservationInput from './components/ReservationInput'
+import Reservation from './components/Reservation'
 import NavBar from './components/NavBar'
 import { getCurrentUser } from './actions/currentUser'
 import { fetchUsers } from './actions/fetchUsers'
@@ -58,7 +59,7 @@ class App extends React.Component {
       <Route exact path = '/clubs/:id/courts' component = {CourtInput}/>
       <Route exact path="/login" component = {Login} />
       <Route exact path="/users/:id/reservations" render ={() => <ReservationInput currentUser = {this.props.currentUser}/>}/>
-
+      <Route exact path="/reservations/:id" render = {(routerProps) => <Reservation {...routerProps} currentUser = {this.props.currentUser}/>}/>
       <br/>
       <UsersContainer/>
       <ClubsContainer/>
@@ -71,7 +72,7 @@ class App extends React.Component {
 }
 
 const mapStateToProps = state => {
-  // console.log("MSTP-APP:", state.clubsReducer)
+  // console.log("MSTP-APP:", state.currentUserReducer)
   return ({
     loggedIn: !!state.currentUserReducer,
     currentUser: state.currentUserReducer,

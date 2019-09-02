@@ -13,7 +13,7 @@ import { getCurrentUser } from './actions/currentUser'
 import { fetchUsers } from './actions/fetchUsers'
 import {fetchClubs} from './actions/fetchClubs'
 import { connect } from 'react-redux'
-import { Route, Redirect, NavLink } from 'react-router-dom'
+import { Route, Redirect, NavLink, Switch } from 'react-router-dom'
 import Button from 'react-bootstrap/Button'
 import DropdownButton from 'react-bootstrap/DropdownButton'
 import Dropdown from 'react-bootstrap/Dropdown'
@@ -53,13 +53,16 @@ class App extends React.Component {
       <br/>
       <NavBar />
       <br/>
+      <Switch>
       <Route exact path = '/' render = {()=> <Redirect to='/home'/>}/>
       <Route exact path = '/home' render = {() => <Home home = {this.props.clubs}/>} />
       <Route exact path = '/clubs' render ={() => <ClubInput clubInput = {this.props.club}/>} />
       <Route exact path = '/clubs/:id/courts' component = {CourtInput}/>
       <Route exact path="/login" component = {Login} />
-      <Route exact path="/users/:id/reservations" render ={() => <ReservationInput currentUser = {this.props.currentUser}/>}/>
       <Route exact path="/reservations/:id" render = {(routerProps) => <Reservation {...routerProps} currentUser = {this.props.currentUser}/>}/>
+      <Route exact path="/users/:id/reservations" render ={() => <ReservationInput currentUser = {this.props.currentUser}/>}/>
+
+      </Switch>
       <br/>
       <UsersContainer/>
       <ClubsContainer/>

@@ -19,6 +19,7 @@ let user = props.users.users[props.match.params.id-1]
 let date = new Date()
 let currentDate = moment(date).format('MMM DD YYYY')
 
+// working on this sort for sorting most recent reservation first
 function sortByDate(data) {
   data.sort(function(a,b) {
     let dateA = a.day
@@ -29,13 +30,6 @@ function sortByDate(data) {
         }
   })
 }
-
-// function dateSortLatest(a,b) {
-//   return a.day > b.day
-// }
-// resulted in all reservations with day of Sep 2.2019
-
-// let sortedDay = reservation.sort((a,b) => (a.day > b.day) ? 1 : -1 )
 
 
   return (

@@ -47,7 +47,7 @@ function sortByDate(data) {
         Reservations <br/>
             {user && user.reservations.map(reservation => (<><Link key={reservation.id}
              to={`/reservations/${reservation.id}`}> ConfirmID:{reservation.confirmID}: </Link>
-             {moment(reservation.day).format('MMM DD YYYY')} - 
+             {moment(reservation.day).format('MMM DD YYYY')} -
              {reservation.hour} - {reservation.reservation_club}-id: {reservation.id}  <br/> </>))}
         </Card.Text>
         <Button variant="light"><Link to='/users'>Players</Link></Button>

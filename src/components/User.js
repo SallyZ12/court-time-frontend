@@ -20,16 +20,16 @@ let date = new Date()
 let currentDate = moment(date).format('MMM DD YYYY')
 
 // working on this sort for sorting most recent reservation first
-function sortByDate(data) {
-  data.sort(function(a,b) {
-    let dateA = a.day
-      let dateB = b.day
-      let dateSort = dateA.localeCompare(dateB)
-        if(dateSort !== 0){
-          return dateSort
-        }
-  })
-}
+// function sortByDate(data) {
+//   data.sort(function(a,b) {
+//     let dateA = a.day
+//       let dateB = b.day
+//       let dateSort = dateA.localeCompare(dateB)
+//         if(dateSort !== 0){
+//           return dateSort
+//         }
+//   })
+// }
 
 
   return (
@@ -45,10 +45,10 @@ function sortByDate(data) {
         Admin: {user ? user.admin : null} <br/>
         Reservation Count: {user ? user.reservations.length : null}<br/><br/>
         Reservations <br/>
-            {user && user.reservations.map(reservation => (<><Link key={reservation.id}
+            {user && user.reservations.map(reservation => ( <li> <Link  key={reservation.id}
              to={`/reservations/${reservation.id}`}> ConfirmID:{reservation.confirmID}: </Link>
              {moment(reservation.day).format('MMM DD YYYY')} -
-             {reservation.hour} - {reservation.reservation_club}-id: {reservation.id}  <br/> </>))}
+             {reservation.hour} - {reservation.reservation_club}-id: {reservation.id}  <br/></li> ))}
         </Card.Text>
         <Button variant="light"><Link to='/users'>Players</Link></Button>
       </Card.Body>

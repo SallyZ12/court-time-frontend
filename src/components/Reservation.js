@@ -17,8 +17,9 @@ const Reservation = (props) => {
     reservation.id == props.match.params.id)[0]
 
 const handleDeleteReservation = (reservation) => {
-  props.deleteReservation(props.currentUser.id, reservation.id)
-  
+  props.deleteReservation(reservation.user_id, reservation.id)
+  props.history.push(`/users/${reservation.user_id}`)
+
 }
 
 

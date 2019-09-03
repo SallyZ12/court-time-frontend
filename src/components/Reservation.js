@@ -1,6 +1,10 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import moment from 'moment'
+import {deleteReservation} from '../actions/deleteReservation'
+import Button from 'react-bootstrap/Button';
+
+
 
 const Reservation = (props) => {
 // console.log("reservation:", props)
@@ -9,7 +13,13 @@ const Reservation = (props) => {
 
   // this will allow you to find a reservation through a link where a reservation is deleted or the
   // sequence of reservation.ids is not in order since various currentUsers will book reservations.
-  let reservation = props.currentUser && props.currentUser.reservations.filter(reservation => reservation.id == props.match.params.id)[0]
+  let reservation = props.currentUser && props.currentUser.reservations.filter(reservation =>
+    reservation.id == props.match.params.id)[0]
+
+const handleDeleteReservation = (reservation) => {
+  props.deleteReservation(props.currentUser.id, reservation.id)
+  
+}
 
 
 return (
@@ -19,9 +29,12 @@ return (
   ConfirmID: {reservation ? reservation.confirmID : null} <br/>
   Date: {reservation ? moment(reservation.day).format('MMM DD YYYY') : null} <br/>
   Time: {reservation ?  reservation.hour : null}
+ <br/><br/>
+  <Button variant="link" onClick={()=> handleDeleteReservation(reservation)} > Cancel Reservation </Button>
+
   </div>
 )
 
 }
 
-export default connect(null)(Reservation)
+export default connect(null, {deleteReservation})(Reservation)

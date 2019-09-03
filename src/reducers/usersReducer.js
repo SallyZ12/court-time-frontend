@@ -21,6 +21,17 @@ export default function usersReducer(state = initialState, action) {
         })
           return {...state, users: users}
 
+
+      case 'DELETE_RESERVATION':
+        let usersTwo = state.users.map(user => {
+          if (user.id === action.payload.id) {
+            return action.payload
+          } else {
+            return user
+          }
+        })
+        return {...state, users: usersTwo}
+
     default:
       return state
   }

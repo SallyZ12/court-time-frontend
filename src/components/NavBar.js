@@ -6,7 +6,7 @@ const NavBar =  ({ currentUser}) => {
 // console.log("currentUser:", currentUser)
   return (
     <div className="NavBar">
-       {currentUser ? <h3> Welcome, {currentUser.first_name} </h3> : ""}
+       {currentUser ? <h4> Welcome, {currentUser.first_name} </h4> : ""}
     </div>
   )
 }

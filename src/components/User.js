@@ -50,7 +50,7 @@ let currentDate = moment(date).format('MMM DD YYYY')
              {moment(reservation.day).format('MMM DD YYYY')} -
              {reservation.hour} - {reservation.reservation_club}-id: {reservation.id}  <br/></li> ))}
         </Card.Text>
-        <Button variant="light"><Link to='/users'>Players</Link></Button>
+        {/*<Button variant="light"><Link to='/users'>Players</Link></Button>*/}
       </Card.Body>
     </Card>
   )

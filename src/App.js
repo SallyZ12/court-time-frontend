@@ -42,14 +42,13 @@ class App extends React.Component {
 
       <br/>
       <Button variant="light"><NavLink exact activeClassName="current" to="/home"> Home  </NavLink></Button>
-      {/*<Button variant="light"><NavLink exact activeClassName="current" to="/users"> Players </NavLink></Button>*/}
       <Button variant="light"><NavLink exact activeClassName="current" to="/signup"> Register </NavLink></Button>
       <Button variant="light"><NavLink exact activeClassName="current" to="/login"> Login </NavLink></Button>
 
       <DropdownButton id="dropdown-basic-button" title="Admin">
       <Dropdown.Item href = {currentUser && admin1 ? "/clubs": null}>New Club </Dropdown.Item>
-        {/*<Dropdown.Item href = {currentUser && admin1 ? "/users": null}>Players </Dropdown.Item>*/}
-        <Dropdown.Item href =  "/users">Players </Dropdown.Item>
+      <Dropdown.Item href = {currentUser && admin1 ? "/users": null}>Players </Dropdown.Item>
+        {/*<Dropdown.Item href =  "/users">Players </Dropdown.Item>*/}
       </DropdownButton>
 
       <br/>

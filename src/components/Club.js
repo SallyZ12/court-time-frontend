@@ -70,7 +70,8 @@ return (
         <Card.Text className="courts">
         <br/>
      {club && club.courts.map(court => <li key={court.id}>
-       Court: {court.court_number} <br/>{court.surface}
+       Court: {court.court_number}
+         <br/>{court.surface}
        <br/><br/>
 
         <ReservationInput courtId = {court.id} currentUser = {props.currentUser}/><br/>
@@ -95,6 +96,3 @@ const mapStateToProps = state => {
 
 
 export default withRouter(connect(mapStateToProps, {deleteCourt, deleteClub})(Club));
-
-
-// <Button variant="light"><NavLink exact activeClassName="current" to={club && props.currentUser && admin1 ? `/clubs/${club.id}/courts`: '/'}> New Court</NavLink></Button>

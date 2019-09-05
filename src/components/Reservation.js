@@ -29,6 +29,8 @@ return (
   <div>
 
   Player: {props.currentUser ? props.currentUser.first_name : null} {props.currentUser ? props.currentUser.last_name : null}<br/>
+  <br/>
+  Club: {reservation ? reservation.reservation_club : null}<br/>
   ConfirmID: {reservation ? reservation.confirmID : null} <br/>
   Date: {reservation ? moment(reservation.day).format('MMM DD YYYY') : null} <br/>
   Time: {reservation ?  reservation.hour : null}

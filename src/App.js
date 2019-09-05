@@ -48,7 +48,6 @@ class App extends React.Component {
       <DropdownButton id="dropdown-basic-button" title="Admin">
       <Dropdown.Item href = {currentUser && admin1 ? "/clubs": null}>New Club </Dropdown.Item>
       <Dropdown.Item href = {currentUser && admin1 ? "/users": null}>Players </Dropdown.Item>
-        {/*<Dropdown.Item href =  "/users">Players </Dropdown.Item>*/}
       </DropdownButton>
 
       <br/>
@@ -56,7 +55,7 @@ class App extends React.Component {
       <br/>
       <Switch>
       <Route exact path = '/' render = {()=> <Redirect to='/home'/>}/>
-      <Route exact path = '/home' render = {() => <Home home = {this.props.clubs}/>} />
+      <Route exact path = '/home' render = {() => <Home home = {this.props.clubs}/>}/>
       <Route exact path = '/clubs' render ={() => <ClubInput clubInput = {this.props.club}/>} />
       <Route exact path = '/clubs/:id/courts' component = {CourtInput}/>
       <Route exact path="/login" component = {Login} />
@@ -68,7 +67,6 @@ class App extends React.Component {
       <UsersContainer/>
       <ClubsContainer/>
 
-      {/*<Reservations currentUserRes = {this.props.currentUser} clubs={this.props.clubs}/>*/}
       <Logout/>
       </div>
     );

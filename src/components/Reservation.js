@@ -39,7 +39,14 @@ return (
 
   </div>
 )
-
 }
+
+// const mapStateToProps = state => {
+//   return ({
+//     currentUser: state.currentUserReducer
+//   })
+// }
+
+
 
 export default withRouter(connect(null, {deleteReservation})(Reservation))

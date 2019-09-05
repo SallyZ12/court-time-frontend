@@ -82,7 +82,7 @@ return (
     </Card.Body>
   </Card>
 
-    <Button variant="light" ><NavLink exact activeClassName="current" to={club && props.currentUser && admin1 ? `/clubs/${club.id}/courts`: '/'}> New Court</NavLink></Button>
+    <Button variant="light" ><NavLink exact activeClassName="current" to={club && props.currentUser && admin1 ? `/clubs/${club.id}/courts`: "/"}> New Court</NavLink></Button>
 
     </div>
   )

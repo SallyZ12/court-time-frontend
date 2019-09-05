@@ -3,7 +3,8 @@ import {connect} from 'react-redux'
 import moment from 'moment'
 import {deleteReservation} from '../actions/deleteReservation'
 import Button from 'react-bootstrap/Button';
-import {Link} from 'react-router-dom'
+import {Link, withRouter} from 'react-router-dom'
+
 
 
 const Reservation = (props) => {
@@ -41,4 +42,4 @@ return (
 
 }
 
-export default connect(null, {deleteReservation})(Reservation)
+export default withRouter(connect(null, {deleteReservation})(Reservation))

@@ -44,8 +44,8 @@ let currentDate = moment(date).format('MMM DD YYYY')
         Admin: {user ? user.admin : null} <br/>
         Reservation Count: {user ? user.reservations.length : null}<br/><br/>
         Reservations <br/>
-            {user && user.reservations.map(reservation => ( <li> <Link  key={reservation.id}
-             to={`/reservations/${reservation.id}`}>
+            {user && user.reservations.map(reservation => ( <li key={reservation.id}>
+             <Link to={`/reservations/${reservation.id}`}>
              ConfirmID:{reservation.confirmID}: </Link>
              {moment(reservation.day).format('MMM DD YYYY')} -
              {reservation.hour} --

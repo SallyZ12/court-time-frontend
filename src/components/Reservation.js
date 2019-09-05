@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import moment from 'moment'
 import {deleteReservation} from '../actions/deleteReservation'
 import Button from 'react-bootstrap/Button';
-
+import {Link} from 'react-router-dom'
 
 
 const Reservation = (props) => {
@@ -27,7 +27,6 @@ const handleDeleteReservation = (reservation) => {
 
 return (
   <div>
-
   Player: {props.currentUser ? props.currentUser.first_name : null} {props.currentUser ? props.currentUser.last_name : null}<br/>
   <br/>
   Club: {reservation ? reservation.reservation_club : null}<br/>

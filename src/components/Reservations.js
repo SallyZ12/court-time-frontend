@@ -1,3 +1,5 @@
+// I'M NOT USING THIS COMPONENT FOR ANYTHING YET!
+
 import React from 'react'
 
 import {connect} from 'react-redux'

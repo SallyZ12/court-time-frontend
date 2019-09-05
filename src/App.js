@@ -59,8 +59,8 @@ class App extends React.Component {
       <Route exact path = '/clubs' render ={() => <ClubInput clubInput = {this.props.club}/>} />
       <Route exact path = '/clubs/:id/courts' component = {CourtInput}/>
       <Route exact path="/login" component = {Login} />
-      <Route exact path="/reservations/:id" render = {(routerProps) => <Reservation {...routerProps} currentUser = {this.props.currentUser}/>}/>
       <Route exact path="/users/:id/reservations" render ={() => <ReservationInput currentUser = {this.props.currentUser}/>}/>
+      <Route exact path="/reservations/:id" render = {(routerProps) => <Reservation {...routerProps} currentUser = {this.props.currentUser}/>}/>
 
       </Switch>
       <br/>
@@ -86,6 +86,3 @@ const mapStateToProps = state => {
 
 
 export default connect(mapStateToProps, { getCurrentUser, fetchUsers, fetchClubs})(App);
-
-
-  

@@ -88,4 +88,4 @@ const mapStateToProps = state => {
 export default connect(mapStateToProps, { getCurrentUser, fetchUsers, fetchClubs})(App);
 
 
-  // <Button variant="light"><NavLink exact activeClassName="current" to={currentUser && admin1 ? "/clubs" : '/'}> New Club</NavLink></Button>
+  

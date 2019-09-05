@@ -31,7 +31,6 @@ let currentDate = moment(date).format('MMM DD YYYY')
 //   })
 // }
 
-
   return (
     <Card style={{ width: '35rem' }}>
       {/*<Card.Img variant="top" src="holder.js/100px180" />*/}
@@ -49,9 +48,9 @@ let currentDate = moment(date).format('MMM DD YYYY')
              to={`/reservations/${reservation.id}`}>
              ConfirmID:{reservation.confirmID}: </Link>
              {moment(reservation.day).format('MMM DD YYYY')} -
-             {reservation.hour} -
-             {reservation.reservation_club}-
-             id: {reservation.id}  <br/></li> ))}
+             {reservation.hour} --
+              {reservation.reservation_club}
+             </li> ))}
         </Card.Text>
         {/*<Button variant="light"><Link to='/users'>Players</Link></Button>*/}
       </Card.Body>

@@ -10,7 +10,8 @@ export const deleteReservation = (userId, reservationId) => {
       if (user.error){
         alert(user.error)
       } else {
-      (dispatch({type: 'DELETE_RESERVATION', payload: user}))
+      dispatch({type: 'DELETE_RESERVATION', payload: user})
+      dispatch({type: 'DELETE_RESERVATION_FROM_CURRENT_USER', user: user})
   }
 })
 }

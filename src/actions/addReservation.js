@@ -1,4 +1,5 @@
 
+
 export const addReservation = (reservation, userId) => {
 
   return dispatch => {
@@ -17,6 +18,8 @@ export const addReservation = (reservation, userId) => {
           alert(user.error)
         } else {
           dispatch({type: 'ADD_RESERVATION', payload: user })
+          dispatch({type: 'ADD_RESERVATION_TO_CURRENT_USER', user: user})      
+
     }
   })
   }

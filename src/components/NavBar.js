@@ -2,12 +2,14 @@ import React from 'react'
 import { connect } from 'react-redux'
 import {Link} from 'react-router-dom'
 
-const NavBar =  ({ currentUser}) => {
-// console.log("currentUser:", currentUser)
+const NavBar =  ({ currentUser }) => {
+console.log("currentUser:", currentUser)
+
+
   return (
     <div className="NavBar">
-       {currentUser ? <h4> Welcome, {currentUser.first_name} </h4> : ""}
-       {currentUser ?  <p> <Link exact='true' to={`/users/${currentUser.id}`}>Reservations</Link></p> : ""}
+       {currentUser ? <h4> Welcome, {currentUser.first_name} </h4> : "" }
+       {currentUser ? <p> <Link exact='true' to={`/users/${currentUser.id}`}>Reservations</Link></p> : "" }
     </div>
   )
 }
@@ -17,7 +19,6 @@ const mapStateToProps = (state) => {
 
   return {
     currentUser: state.currentUserReducer
-
   }
 }
 

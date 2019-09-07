@@ -3,6 +3,7 @@ import UsersContainer from './containers/UsersContainer'
 import Home from './components/Home'
 import Login from './components/Login'
 import Logout from './components/Logout'
+import ClubsContainer from './containers/ClubsContainer'
 import ClubInput from './components/ClubInput'
 import CourtInput from './components/CourtInput'
 import ReservationInput from './components/ReservationInput'
@@ -17,8 +18,6 @@ import Button from 'react-bootstrap/Button'
 import DropdownButton from 'react-bootstrap/DropdownButton'
 import Dropdown from 'react-bootstrap/Dropdown'
 import './style.css';
-
-import ClubsContainer from './containers/ClubsContainer'
 
 
 class App extends React.Component {
@@ -44,6 +43,7 @@ class App extends React.Component {
       <Button variant="light"><NavLink exact activeClassName="current" to="/signup"> Register </NavLink></Button>
       <Button variant="light"><NavLink exact activeClassName="current" to="/login"> Login </NavLink></Button>
 
+
       <DropdownButton id="dropdown-basic-button" title="Admin">
       <Dropdown.Item href = {currentUser && admin1 ? "/clubs": null}>New Club </Dropdown.Item>
       <Dropdown.Item href = {currentUser && admin1 ? "/users": null}>Players </Dropdown.Item>
@@ -60,12 +60,11 @@ class App extends React.Component {
       <Route exact path="/login" component = {Login} />
       <Route exact path="/users/:id/reservations" render ={() => <ReservationInput currentUser = {this.props.currentUser}/>}/>
       <Route exact path="/reservations/:id" render = {(routerProps) => <Reservation {...routerProps} currentUser = {this.props.currentUser}/>}/>
-
       </Switch>
       <br/>
+
       <UsersContainer/>
       <ClubsContainer/>
-
       <Logout/>
       </div>
     );

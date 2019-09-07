@@ -12,9 +12,8 @@ const Reservation = (props) => {
 
   // let reservation =  props.currentUser && props.currentUser.reservations[props.match.params.id-1]
 
-  // this will allow you to find a reservation through a link where a reservation is deleted or the
+  //The following allows you to find a reservation through a link where a reservation is deleted or the
   // sequence of reservation.ids is not in order since various currentUsers will book reservations.
-
   let reservation = props.currentUser.reservations && props.currentUser.reservations.filter(reservation => reservation.id == props.match.params.id)[0]
 
 
@@ -42,11 +41,6 @@ return (
 )
 }
 
-// const mapStateToProps = state => {
-//   return ({
-//     currentUser: state.currentUserReducer
-//   })
-// }
 
 
 export default connect(null, {deleteReservation})(Reservation)

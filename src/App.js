@@ -5,7 +5,6 @@ import Login from './components/Login'
 import Logout from './components/Logout'
 import ClubInput from './components/ClubInput'
 import CourtInput from './components/CourtInput'
-// import Reservations from './components/Reservations'
 import ReservationInput from './components/ReservationInput'
 import Reservation from './components/Reservation'
 import NavBar from './components/NavBar'
@@ -74,7 +73,7 @@ class App extends React.Component {
 }
 
 const mapStateToProps = state => {
-  // console.log("MSTP-APP:", state.currentUserReducer)
+  // console.log("MSTP-APP:", !!state.currentUserReducer)
   return ({
     loggedIn: !!state.currentUserReducer,
     currentUser: state.currentUserReducer,

@@ -5,11 +5,10 @@ import {Link} from 'react-router-dom'
 const NavBar =  ({ currentUser }) => {
 console.log("currentUser:", currentUser)
 
-
   return (
     <div className="NavBar">
-       {currentUser ? <h4> Welcome, {currentUser.first_name} </h4> : "" }
-       {currentUser ? <p> <Link exact='true' to={`/users/${currentUser.id}`}>Reservations</Link></p> : "" }
+       {Object.keys(currentUser).length !== 0 ? <h4> Welcome, {currentUser.first_name} </h4> : "" }
+       {Object.keys(currentUser).length !== 0 ? <p> <Link exact='true' to={`/users/${currentUser.id}`}>Reservations</Link></p> :""  }
     </div>
   )
 }

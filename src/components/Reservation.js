@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import moment from 'moment'
 import {deleteReservation} from '../actions/deleteReservation'
 import Button from 'react-bootstrap/Button';
-import {Link, withRouter} from 'react-router-dom'
+// import {Link, withRouter} from 'react-router-dom'
 
 
 
@@ -32,7 +32,9 @@ return (
   Club: {reservation ? reservation.reservation_club : null}<br/>
   ConfirmID: {reservation ? reservation.confirmID : null} <br/>
   Date: {reservation ? moment(reservation.day).format('MMM DD YYYY') : null} <br/>
-  Time: {reservation ?  reservation.hour : null}
+  Time: {reservation ?  reservation.hour : null} <br/>
+  Court Number: {reservation ? reservation.res_court_number : null}<br/>
+  Surface: {reservation ? reservation.res_court_surface : null}
  <br/><br/>
   <Button variant="link" onClick={()=> handleDeleteReservation(reservation)} > Cancel Reservation </Button>
 
@@ -47,5 +49,5 @@ return (
 // }
 
 
-
-export default withRouter(connect(null, {deleteReservation})(Reservation))
+export default connect(null, {deleteReservation})(Reservation)
+// export default withRouter(connect(null, {deleteReservation})(Reservation))

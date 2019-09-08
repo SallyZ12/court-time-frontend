@@ -30,7 +30,7 @@ class CourtInput extends React.Component {
     this.props.history.push(`/clubs/${clubId}`)
     this.setState({
       court_number: "",
-      surface: "hard",
+      surface: "Hard",
       prime: "",
       non_prime: ""
     })
@@ -60,10 +60,10 @@ class CourtInput extends React.Component {
                name = 'surface'
                value = {this.state.surface}
                onChange = {this.handleChange}>
-               <option value = "clay">Clay</option>
-               <option value = "hard">Hard</option>
-               <option value = "har-tru">Har-Tru</option>
-               <option value = "grass">Grass</option>
+               <option value = "Clay">Clay</option>
+               <option value = "Hard">Hard</option>
+               <option value = "Har-Tru">Har-Tru</option>
+               <option value = "Grass">Grass</option>
             </select>
             <Button variant="primary"><input type="submit" value="Submit"/></Button>
         </Form.Group>

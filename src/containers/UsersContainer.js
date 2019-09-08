@@ -13,9 +13,6 @@ class UsersContainer extends React.Component {
     this.props.fetchUsers()
   }
 
-// getUser = (userId)=>{
-//   return this.props.users[userId-1]
-// }
 
   render() {
     return (

@@ -4,10 +4,12 @@ import Home from './components/Home'
 import Login from './components/Login'
 import Logout from './components/Logout'
 import ClubsContainer from './containers/ClubsContainer'
+import ReservationsContainer from './containers/ReservationsContainer'
 import ClubInput from './components/ClubInput'
 import CourtInput from './components/CourtInput'
-import ReservationInput from './components/ReservationInput'
-import Reservation from './components/Reservation'
+// import ReservationInput from './components/ReservationInput'
+// import Reservation from './components/Reservation'
+
 import NavBar from './components/NavBar'
 import { getCurrentUser } from './actions/currentUser'
 import { fetchUsers } from './actions/fetchUsers'
@@ -58,11 +60,10 @@ class App extends React.Component {
       <Route exact path = '/clubs' render ={() => <ClubInput clubInput = {this.props.club}/>} />
       <Route exact path = '/clubs/:id/courts' component = {CourtInput}/>
       <Route exact path="/login" component = {Login} />
-      <Route exact path="/users/:id/reservations" render ={() => <ReservationInput currentUser = {this.props.currentUser}/>}/>
-      <Route exact path="/reservations/:id" render = {(routerProps) => <Reservation {...routerProps} currentUser = {this.props.currentUser}/>}/>
+    
       </Switch>
       <br/>
-
+      <ReservationsContainer/>
       <UsersContainer/>
       <ClubsContainer/>
       <Logout/>

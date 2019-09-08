@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import {Link} from 'react-router-dom'
 
 const NavBar =  ({ currentUser }) => {
-console.log("currentUser:", currentUser)
+// console.log("currentUser:", currentUser)
 
   return (
     <div className="NavBar">

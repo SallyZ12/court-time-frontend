@@ -3,17 +3,17 @@ import {connect} from 'react-redux'
 import moment from 'moment'
 import {deleteReservation} from '../actions/deleteReservation'
 import Button from 'react-bootstrap/Button';
-// import {Link, withRouter} from 'react-router-dom'
-
 
 
 const Reservation = (props) => {
-// console.log("reservation:", props)
 
+  // not using below since retrieves id of reservation and not good when delete so use
+  // index instead
   // let reservation =  props.currentUser && props.currentUser.reservations[props.match.params.id-1]
 
   //The following allows you to find a reservation through a link where a reservation is deleted or the
   // sequence of reservation.ids is not in order since various currentUsers will book reservations.
+  // reservation.id returns an integer, props.match.params.id returns string
   let reservation = props.currentUser.reservations && props.currentUser.reservations.filter(reservation => reservation.id == props.match.params.id)[0]
 
 
@@ -42,6 +42,4 @@ return (
 }
 
 
-
 export default connect(null, {deleteReservation})(Reservation)
-// export default withRouter(connect(null, {deleteReservation})(Reservation))

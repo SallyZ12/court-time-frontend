@@ -12,7 +12,7 @@ class CourtInput extends React.Component {
 
   state = {
     court_number: "",
-    surface: "hard",
+    surface: "Hard",
     prime: "",
     non_prime: ""
   }
@@ -60,8 +60,8 @@ class CourtInput extends React.Component {
                name = 'surface'
                value = {this.state.surface}
                onChange = {this.handleChange}>
-               <option value = "Clay">Clay</option>
                <option value = "Hard">Hard</option>
+               <option value = "Clay">Clay</option>
                <option value = "Har-Tru">Har-Tru</option>
                <option value = "Grass">Grass</option>
             </select>

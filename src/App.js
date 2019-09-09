@@ -5,7 +5,6 @@ import Login from './components/Login'
 import Logout from './components/Logout'
 import ClubsContainer from './containers/ClubsContainer'
 import ReservationsContainer from './containers/ReservationsContainer'
-import ClubInput from './components/ClubInput'
 import CourtInput from './components/CourtInput'
 // import ReservationInput from './components/ReservationInput'
 // import Reservation from './components/Reservation'
@@ -57,10 +56,9 @@ class App extends React.Component {
       <Switch>
       <Route exact path = '/' render = {()=> <Redirect to='/home'/>}/>
       <Route exact path = '/home' render = {() => <Home home = {this.props.clubs}/>}/>
-      <Route exact path = '/clubs' render ={() => <ClubInput clubInput = {this.props.club}/>} />
       <Route exact path = '/clubs/:id/courts' component = {CourtInput}/>
       <Route exact path="/login" component = {Login} />
-    
+
       </Switch>
       <br/>
       <ReservationsContainer/>

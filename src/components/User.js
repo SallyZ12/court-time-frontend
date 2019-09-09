@@ -16,16 +16,18 @@ let date = new Date()
 let currentDate = moment(date).format('MMM DD YYYY')
 
 // working on this sort for sorting most recent reservation first
-// function sortByDate(data) {
-//   data.sort(function(a,b) {
-//     let dateA = a.day
-//       let dateB = b.day
-//       let dateSort = dateA.localeCompare(dateB)
-//         if(dateSort !== 0){
-//           return dateSort
-//         }
-//   })
-// }
+function sortByDate(data) {
+  return data.sort(function(a,b) {
+    let dateA = a.day
+      let dateB = b.day
+      let dateSort = dateB.localeCompare(dateA)
+        if(dateSort !== 0){
+          return dateSort
+        }
+  })
+}
+
+
 
   return (
     <Card style={{ width: '35rem' }}>
@@ -40,7 +42,7 @@ let currentDate = moment(date).format('MMM DD YYYY')
         Admin: {user ? user.admin : null} <br/>
         Reservation Count: {user ? user.reservations.length : null}<br/><br/>
         Reservations <br/>
-            {user && user.reservations.map(reservation => ( <li key={reservation.id}>
+            {user && sortByDate(user.reservations).map(reservation => ( <li key={reservation.id}>
              <Link to={`/reservations/${reservation.id}`}>
              ConfirmID:{reservation.confirmID}: </Link>
              {moment(reservation.day).format('MMM DD YYYY')} -

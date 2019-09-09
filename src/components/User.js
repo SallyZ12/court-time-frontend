@@ -11,10 +11,6 @@ const User = (props) => {
 let user = props.users.users[props.match.params.id-1]
 
 
-// need help here
-// let club = props.clubs.clubs[props.match.params.id-1]
-// console.log("club:", club)
-
 // steps to accessing today's date
 let date = new Date()
 let currentDate = moment(date).format('MMM DD YYYY')

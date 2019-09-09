@@ -1,15 +1,12 @@
 import React from 'react';
-import UsersContainer from './containers/UsersContainer'
 import Home from './components/Home'
 import Login from './components/Login'
 import Logout from './components/Logout'
+import CourtInput from './components/CourtInput'
+import NavBar from './components/NavBar'
+import UsersContainer from './containers/UsersContainer'
 import ClubsContainer from './containers/ClubsContainer'
 import ReservationsContainer from './containers/ReservationsContainer'
-import CourtInput from './components/CourtInput'
-// import ReservationInput from './components/ReservationInput'
-// import Reservation from './components/Reservation'
-
-import NavBar from './components/NavBar'
 import { getCurrentUser } from './actions/currentUser'
 import { fetchUsers } from './actions/fetchUsers'
 import {fetchClubs} from './actions/fetchClubs'

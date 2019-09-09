@@ -14,6 +14,7 @@ const Reservation = (props) => {
   //The following allows you to find a reservation through a link where a reservation is deleted or the
   // sequence of reservation.ids is not in order since various currentUsers will book reservations.
   // reservation.id returns an integer, props.match.params.id returns string
+  // eslint-disable-next-line
   let reservation = props.currentUser.reservations && props.currentUser.reservations.filter(reservation => reservation.id == props.match.params.id)[0]
 
 

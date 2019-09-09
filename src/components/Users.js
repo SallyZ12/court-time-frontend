@@ -10,10 +10,9 @@ function sortByName(data) {
     let nameA = a.first_name
       let nameB = b.first_name
       let nameSort = nameA.localeCompare(nameB)
-        if(nameSort !== 0){
         return nameSort
         }
-  })
+    )
 }
 
 

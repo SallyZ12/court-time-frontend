@@ -21,10 +21,9 @@ function sortByDate(data) {
     let dateA = a.day
     let dateB = b.day
       let dateSort = dateB.localeCompare(dateA)
-        if(dateSort !== 0){
-        return dateSort
+          return dateSort
         }
-  })
+    )
 }
 
 

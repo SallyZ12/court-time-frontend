@@ -15,18 +15,17 @@ let user = props.users.users[props.match.params.id-1]
 let date = new Date()
 let currentDate = moment(date).format('MMM DD YYYY')
 
-// working on this sort for sorting most recent reservation first
+
 function sortByDate(data) {
   return data.sort(function(a,b) {
     let dateA = a.day
-      let dateB = b.day
+    let dateB = b.day
       let dateSort = dateB.localeCompare(dateA)
         if(dateSort !== 0){
-          return dateSort
+        return dateSort
         }
   })
 }
-
 
 
   return (

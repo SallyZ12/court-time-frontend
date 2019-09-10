@@ -8,8 +8,10 @@ import moment from 'moment'
 const User = (props) => {
 // console.log("props:", props )
 
-let user = props.users.users[props.match.params.id-1]
-
+// let user = props.users.users[props.match.params.id-1]
+// User following instead, since sort order changes the order
+// eslint-disable-next-line
+let user = props.users.users && props.users.users.filter(user => user.id == props.match.params.id)[0]
 
 // steps to accessing today's date
 let date = new Date()

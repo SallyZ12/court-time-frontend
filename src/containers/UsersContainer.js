@@ -5,7 +5,6 @@ import Users from '../components/Users'
 import User from '../components/User'
 import Signup from '../components/Signup'
 import { Route } from 'react-router-dom'
-// import ReservationInput from '../components/ReservationInput'
 
 class UsersContainer extends React.Component {
 
@@ -22,7 +21,7 @@ class UsersContainer extends React.Component {
       <br/>
       <Route exact path="/signup" component = {Signup} />
       <br/>
-      <Route path="/users/:id" render={(rProps)=> <User {...rProps} users={this.props.users} clubs={this.props.clubs}/>}/>
+      <Route exact path="/users/:id" render={(rProps)=> <User {...rProps} users={this.props.users} clubs={this.props.clubs}/>}/>
 
       </div>
     )

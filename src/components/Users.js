@@ -6,13 +6,14 @@ const Users = ({users}) => {
  // console.log("users:", users)
 
 function sortByName(data) {
+
   return data.sort(function(a,b) {
     let nameA = a.first_name
-      let nameB = b.first_name
-      let nameSort = nameA.localeCompare(nameB)
+    let nameB = b.first_name
+        let nameSort = nameA.localeCompare(nameB)
         return nameSort
-        }
-    )
+      }
+  )
 }
 
 

@@ -22,6 +22,9 @@ export const clearCurrentUser = () => {
   }
 }
 
+
+
+
 // asynchronous action creators
 
 export const login = (credentials, history) => {
@@ -77,6 +80,31 @@ export const signup = (credentials, history) => {
        .catch(console.log)
   }
 }
+
+
+export const editUser = (userData, history) => {
+  // console.log("editUser:",userData)
+  return dispatch => {
+      const userInfo = {
+        user: userData
+      }
+    return fetch(`http://localhost:3000/api/v1/users/${userData.userId}`, {
+      credentials: "include",
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(userInfo)
+    })
+     .then(response => response.json())
+     .then(user => dispatch({type: "EDIT_USER", user: user}))
+
+     }
+
+  }
+
+
+
 
 
 export const logout = (event, history) => {

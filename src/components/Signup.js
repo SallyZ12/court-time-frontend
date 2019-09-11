@@ -10,7 +10,7 @@ import {addUser} from "../actions/currentUser"
 
 // const Signup = ({ signupFormData, updateSignupForm, editSignupForm, signup, addUser, history, editMode}) => {
 
-const Signup = ({ signupFormData, updateSignupForm, signup, addUser, history}) => {
+const Signup = ({ signupFormData, updateSignupForm, signup, addUser, history, editMode}) => {
 
   const handleUserInfoInputChange = event => {
     const { name, value } = event.target
@@ -71,7 +71,7 @@ const Signup = ({ signupFormData, updateSignupForm, signup, addUser, history}) =
               </label>
           <br/>
           <br/>
-      <input type="submit" value="Register"/>
+      <input type="submit" value={editMode ? "Update Player Info" : "Register"}/>
     </form>
 
   )

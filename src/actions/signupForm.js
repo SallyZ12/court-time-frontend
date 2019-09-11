@@ -28,6 +28,7 @@ export const setFormDataForEdit = user => {
     email: user.email,
     username: user.username,
     password: user.password
+    admin: user.admin
   }
 
   return {

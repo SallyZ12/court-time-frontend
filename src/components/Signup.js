@@ -3,12 +3,14 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {signup} from '../actions/currentUser'
 import {updateSignupForm} from "../actions/signupForm"
-import {editSignupForm}  from "../actions/signupForm"
+// import {editSignupForm}  from "../actions/signupForm"
 import {addUser} from "../actions/currentUser"
 
 
 
-const Signup = ({ signupFormData, updateSignupForm, editSignupForm, signup, addUser, history, editMode}) => {
+// const Signup = ({ signupFormData, updateSignupForm, editSignupForm, signup, addUser, history, editMode}) => {
+
+const Signup = ({ signupFormData, updateSignupForm, signup, addUser, history}) => {
 
   const handleUserInfoInputChange = event => {
     const { name, value } = event.target
@@ -69,7 +71,7 @@ const Signup = ({ signupFormData, updateSignupForm, editSignupForm, signup, addU
               </label>
           <br/>
           <br/>
-      <input type="submit" value={editMode ? "Edit User" : "Register"}/>
+      <input type="submit" value="Register"/>
     </form>
 
   )
@@ -82,4 +84,6 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, { updateSignupForm, editSignupForm, signup, addUser})(Signup)
+export default connect(mapStateToProps, { updateSignupForm,  signup, addUser})(Signup)
+// export default connect(mapStateToProps, { updateSignupForm,  signup, addUser})(Signup)
+  // <input type="submit" value={editMode ? "Edit User" : "Register"}/>

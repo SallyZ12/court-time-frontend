@@ -28,7 +28,7 @@ const Signup = ({ signupFormData, updateSignupForm, signup, addUser, history, ed
 
   return (
     <form onSubmit={handleSubmit}>
-        <h5> Register </h5>
+        <h5> Register/Edit </h5>
       <input  type="text"
             placeholder="First Name"
             value={signupFormData.first_name}

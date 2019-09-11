@@ -4,9 +4,9 @@ import {fetchUsers} from '../actions/fetchUsers'
 import Users from '../components/Users'
 import User from '../components/User'
 import Signup from '../components/Signup'
-import NewSignupFormWrapper from '../components/NewSignupFormWrapper'
+// import NewSignupFormWrapper from '../components/NewSignupFormWrapper'
 // import EditSignupFormWrapper from '../components/EditSignupFormWrapper'
-import { Route, Switch } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 
 class UsersContainer extends React.Component {
 
@@ -14,28 +14,27 @@ class UsersContainer extends React.Component {
     this.props.fetchUsers()
   }
 
-
+debugger
   render() {
     return (
       <div>
-      <Switch>
+
       <Route exact path="/users" render={(routerProps) => <Users {...routerProps} users={this.props.users}/>}/>
-      <br/>
-      <Route exact path="/signup" component = {NewSignupFormWrapper} />
+
+      <Route exact path="/signup" component = {Signup} />
       <br/>
 
       <Route exact path="/users/:id" render={(rProps)=> <User {...rProps} users={this.props.users} clubs={this.props.clubs}/>}/>
 
-    }/>
-    </Switch>
       </div>
+
     )
   }
 }
 
 
 const mapStateToProps = state => {
-  console.log("MSTP:", state.usersReducer)
+  // console.log("MSTP:", state.usersReducer)
   return {
     users: state.usersReducer,
     clubs: state.clubsReducer

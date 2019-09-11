@@ -3,8 +3,8 @@ import {connect} from 'react-redux'
 import {fetchUsers} from '../actions/fetchUsers'
 import Users from '../components/Users'
 import User from '../components/User'
-import Signup from '../components/Signup'
-// import NewSignupFormWrapper from '../components/NewSignupFormWrapper'
+// import Signup from '../components/Signup'
+import NewSignupFormWrapper from '../components/NewSignupFormWrapper'
 // import EditSignupFormWrapper from '../components/EditSignupFormWrapper'
 import { Route } from 'react-router-dom'
 
@@ -21,7 +21,7 @@ debugger
 
       <Route exact path="/users" render={(routerProps) => <Users {...routerProps} users={this.props.users}/>}/>
 
-      <Route exact path="/signup" component = {Signup} />
+      <Route exact path="/signup" component = {NewSignupFormWrapper} />
       <br/>
 
       <Route exact path="/users/:id" render={(rProps)=> <User {...rProps} users={this.props.users} clubs={this.props.clubs}/>}/>

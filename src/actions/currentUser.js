@@ -82,13 +82,14 @@ export const signup = (credentials, history) => {
 }
 
 
-export const editUser = (userData, history) => {
+export const editUser = (credentials, history) => {
+
   // console.log("editUser:",userData)
   return dispatch => {
       const userInfo = {
-        user: userData
+        user: credentials
       }
-    return fetch(`http://localhost:3000/api/v1/users/${userData.userId}`, {
+    return fetch(`http://localhost:3000/api/v1/users/${credentials.userId}`, {
       credentials: "include",
       method: "PATCH",
       headers: {

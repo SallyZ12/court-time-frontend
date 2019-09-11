@@ -8,7 +8,11 @@ import { connect } from 'react-redux'
 class EditSignupFormWrapper extends React.Component {
 
   componentDidMount() {
-    this.props.user && this.props.setFormDataForEdit(this.props.user)
+    this.props.users && this.props.setFormDataForEdit(this.props.users)
+  }
+
+  componentDidUpdate(prevProps) {
+    this.props.user && !prevProps.user && this.props.setFormDataForEdit(this.props.user)
   }
 
   // componentWillUnmount(){
@@ -17,6 +21,7 @@ class EditSignupFormWrapper extends React.Component {
 
   handleSubmit = (formData) => {
     const { editUser, user, history } = this.props
+
       editUser({
         ...formData,
         userId: user.id
@@ -26,6 +31,7 @@ class EditSignupFormWrapper extends React.Component {
 
 render() {
   const { history, user} = this.props
+
   const userId = user ? user.id : null
   return <>
     <Signup editMode handleSubmit={this.handleSubmit} />

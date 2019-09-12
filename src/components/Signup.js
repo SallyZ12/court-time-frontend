@@ -1,17 +1,14 @@
 
 import React from 'react'
 import {connect} from 'react-redux'
-import {signup} from '../actions/currentUser'
+// import {signup} from '../actions/currentUser'
 import {updateSignupForm} from "../actions/signupForm"
 // import {editSignupForm}  from "../actions/signupForm"
 import {addUser} from "../actions/currentUser"
 
 
-
-// const Signup = ({ signupFormData, updateSignupForm, editSignupForm, signup, addUser, history, editMode}) => {
-
-const Signup = ({ signupFormData, updateSignupForm, signup, addUser, history, handleSubmit, editMode}) => {
-
+const Signup = ({ signupFormData, updateSignupForm, addUser, history, handleSubmit, editMode}) => {
+// const Signup = ({ signupFormData, updateSignupForm, signup, addUser, history, handleSubmit, editMode}) => {
   const handleUserInfoInputChange = event => {
     const { name, value } = event.target
     const updatedFormInfo = {
@@ -21,6 +18,7 @@ const Signup = ({ signupFormData, updateSignupForm, signup, addUser, history, ha
     updateSignupForm(updatedFormInfo)
   }
 
+// handle submit is in each wrapper new and edit
   // const handleSubmit = event => {
   //   event.preventDefault()
   //   signup(signupFormData, history)
@@ -87,6 +85,6 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, { updateSignupForm,  signup, addUser})(Signup)
+export default connect(mapStateToProps, { updateSignupForm, addUser})(Signup)
 // export default connect(mapStateToProps, { updateSignupForm,  signup, addUser})(Signup)
   // <input type="submit" value={editMode ? "Edit User" : "Register"}/>

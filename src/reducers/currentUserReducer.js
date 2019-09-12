@@ -14,6 +14,9 @@ export default (state = {}, action) => {
     case "SET_FORM_DATA_FOR_EDIT":
      return action.userFormData
 
+       case "ADD_EDITED_USER_TO_CURRENT_USER":
+        return action.user
+
     default:
       return state
 

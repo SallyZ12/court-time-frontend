@@ -104,13 +104,13 @@ export const editUser = (user, history) => {
        } else {
        dispatch({type: "EDIT_USER", user: user})
        dispatch({type: "ADD_EDITED_USER_TO_CURRENT_USER", user:user})
-       dispatch(resetSignupForm())
+
      }
    })
    }
   }
 
-
+// dispatch(resetSignupForm())
  // dispatch({type: "ADD_EDITED_USER_TO_CURRENT_USER", user:user})
 
 

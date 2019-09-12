@@ -12,7 +12,6 @@ class EditSignupFormWrapper extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-
     this.props.currentUser && !prevProps.currentUser && this.props.setFormDataForEdit(this.props.currentUser)
   }
 

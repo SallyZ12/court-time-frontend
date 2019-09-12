@@ -21,9 +21,7 @@ class EditSignupFormWrapper extends React.Component {
   }
 
   handleSubmit = (userFormData) => {
-
     const { editUser, currentUser, history } = this.props
-
       editUser({
         ...userFormData,
         currentUserId: currentUser.id

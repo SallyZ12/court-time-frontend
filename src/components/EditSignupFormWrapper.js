@@ -15,9 +15,9 @@ class EditSignupFormWrapper extends React.Component {
     this.props.currentUser && !prevProps.currentUser && this.props.setFormDataForEdit(this.props.currentUser)
   }
 
-  // componentWillUnmount(){
-  //   this.props.resetSignupForm()
-  // }
+  componentWillUnmount(){
+    this.props.resetSignupForm()
+  }
 
   handleSubmit = (userFormData) => {
 

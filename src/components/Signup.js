@@ -10,7 +10,7 @@ import {addUser} from "../actions/currentUser"
 
 // const Signup = ({ signupFormData, updateSignupForm, editSignupForm, signup, addUser, history, editMode}) => {
 
-const Signup = ({ signupFormData, updateSignupForm, signup, addUser, history, editMode}) => {
+const Signup = ({ signupFormData, updateSignupForm, signup, addUser, history, handleSubmit, editMode}) => {
 
   const handleUserInfoInputChange = event => {
     const { name, value } = event.target
@@ -21,13 +21,16 @@ const Signup = ({ signupFormData, updateSignupForm, signup, addUser, history, ed
     updateSignupForm(updatedFormInfo)
   }
 
-  const handleSubmit = event => {
-    event.preventDefault()
-    signup(signupFormData, history)
-  }
+  // const handleSubmit = event => {
+  //   event.preventDefault()
+  //   signup(signupFormData, history)
+  // }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={event => {
+      event.preventDefault()
+      handleSubmit(signupFormData)
+    }}>
         <h5> Register/Edit </h5>
       <input  type="text"
             placeholder="First Name"

@@ -85,10 +85,11 @@ export const signup = (credentials, history) => {
 export const editUser = (user, history) => {
 
   return dispatch => {
+    console.log("user:", user)
       const userInfo = {
         user: user
       }
-    return fetch(`http://localhost:3000/api/v1/users/${user.userId}`, {
+    return fetch(`http://localhost:3000/api/v1/users/${user.currentUserId}`, {
       credentials: "include",
       method: "PATCH",
       headers: {
@@ -97,14 +98,20 @@ export const editUser = (user, history) => {
       body: JSON.stringify(userInfo)
     })
      .then(response => response.json())
-     .then(user => dispatch({type: "EDIT_USER", user: user}))
-
+     .then(user => {
+       if (user.error) {
+         alert(user.error)
+       } else {
+       dispatch({type: "EDIT_USER", user: user})
+       dispatch({type: "ADD_EDITED_USER_TO_CURRENT_USER", user:user})
+       dispatch(resetSignupForm())
      }
-
+   })
+   }
   }
 
 
-
+ // dispatch({type: "ADD_EDITED_USER_TO_CURRENT_USER", user:user})
 
 
 export const logout = (event, history) => {

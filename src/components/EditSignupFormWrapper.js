@@ -27,7 +27,6 @@ class EditSignupFormWrapper extends React.Component {
         ...userFormData,
         currentUserId: currentUser.id
       }, history)
-      history.push('/')
 
   }
 

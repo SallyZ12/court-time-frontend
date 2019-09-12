@@ -26,12 +26,7 @@ debugger
 
       <Route exact path="/users/:id" render={(rProps)=> <User {...rProps} users={this.props.users} clubs={this.props.clubs}/>}/>
 
-      <Route exact path= "/users/:id/edit" render={props=> {
-        const user = props.users && props.users.find(user => user.id === props.match.params.id)
-
-        return <EditSignupFormWrapper user={user} {...props} />
-      }
-    }/>
+      <Route exact path="/users/:id/edit" render={(rProps)=> <EditSignupFormWrapper {...rProps} currentUser={this.props.currentUser} />}/>
       </div>
 
     )
@@ -43,7 +38,8 @@ const mapStateToProps = state => {
   // console.log("MSTP:", state.usersReducer)
   return {
     users: state.usersReducer,
-    clubs: state.clubsReducer
+    clubs: state.clubsReducer,
+    currentUser: state.currentUserReducer
   }
 }
 

@@ -14,10 +14,10 @@ export const resetSignupForm = () => {
 }
 
 // start of editing user info
-export const editSignupForm = user => {
+export const editSignupForm = currentUser => {
   return {
     type: "EDIT_SIGNUP_FORM",
-    user
+    currentUser
   }
 }
 
@@ -27,7 +27,7 @@ export const setFormDataForEdit = user => {
     last_name: user.last_name,
     email: user.email,
     username: user.username,
-    password: user.password,
+    password: user.password_digest,
     admin: user.admin
   }
 

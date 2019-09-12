@@ -8,31 +8,33 @@ import { connect } from 'react-redux'
 class EditSignupFormWrapper extends React.Component {
 
   componentDidMount() {
-    this.props.users && this.props.setFormDataForEdit(this.props.users)
+    this.props.currentUser && this.props.setFormDataForEdit(this.props.currentUser)
   }
 
   componentDidUpdate(prevProps) {
-    this.props.user && !prevProps.user && this.props.setFormDataForEdit(this.props.user)
+
+    this.props.currentUser && !prevProps.currentUser && this.props.setFormDataForEdit(this.props.currentUser)
   }
 
   // componentWillUnmount(){
   //   this.props.resetSignupForm()
   // }
 
-  handleSubmit = (formData) => {
-    const { editUser, user, history } = this.props
+  handleSubmit = (userFormData) => {
+
+    const { editUser, currentUser, history } = this.props
 
       editUser({
-        ...formData,
-        userId: user.id
+        ...userFormData,
+        currentUserId: currentUser.id
       }, history)
   }
 
 
 render() {
-  const { history, user} = this.props
+  // const { history, currentUser} = this.props
 
-  const userId = user ? user.id : null
+  // const curerentUserid = currentUser ? currentUser.id : null
   return <>
     <Signup editMode handleSubmit={this.handleSubmit} />
     <br/>

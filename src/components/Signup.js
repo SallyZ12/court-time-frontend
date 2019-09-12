@@ -16,6 +16,7 @@ const Signup = ({ signupFormData, updateSignupForm, addUser, history, handleSubm
       [name]: value
     }
     updateSignupForm(updatedFormInfo)
+    // updateSignupForm(name, value)
   }
 
 // handle submit is in each wrapper new and edit

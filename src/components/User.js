@@ -6,7 +6,7 @@ import moment from 'moment'
 
 
 const User = (props) => {
-// console.log("props:", props )
+
 
 // let user = props.users.users[props.match.params.id-1]
 // User following instead, since sort order changes the order
@@ -58,5 +58,3 @@ function sortByDate(data) {
 }
 
 export default User;
-
-// {user && sortByDate(user.reservations).map(reservation => <li key={reservation.id}>

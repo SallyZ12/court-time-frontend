@@ -13,6 +13,7 @@ class EditSignupFormWrapper extends React.Component {
 
 
   componentDidUpdate(prevProps) {
+    console.log("CDU prevProps:", prevProps)
     this.props.currentUser && !prevProps.currentUser && this.props.setFormDataForEdit(this.props.currentUser)
   }
 
@@ -31,9 +32,7 @@ class EditSignupFormWrapper extends React.Component {
 
 
 render() {
-  // const { history, currentUser} = this.props
-
-  // const currentUserId = currentUser ? currentUser.id : null
+  
   return <>
     <Signup editMode handleSubmit={this.handleSubmit} />
     <br/>

@@ -85,7 +85,7 @@ export const signup = (credentials, history) => {
 export const editUser = (user, history) => {
 
   return dispatch => {
-    console.log("user:", user)
+    
       const userInfo = {
         user: user
       }

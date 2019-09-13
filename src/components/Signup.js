@@ -7,15 +7,6 @@ import {addUser} from "../actions/currentUser"
 
 const Signup = ({ signupFormData, updateSignupForm, addUser, history, handleSubmit, editMode }) => {
 
-// const { first_name, last_name, email, username, password_digest, admin } = updatedFormInfo
-
-// const handleUserInfoInputChange = event => {
-//   const {name, value} = event.target
-//   updateSignupForm(name, value)
-// }
-
-
-
   const handleUserInfoInputChange = event => {
     const { name, value } = event.target
     const updatedFormInfo = {
@@ -26,7 +17,6 @@ const Signup = ({ signupFormData, updateSignupForm, addUser, history, handleSubm
   }
 
 
-
   return (
     <form onSubmit={event => {
       event.preventDefault()
@@ -35,38 +25,38 @@ const Signup = ({ signupFormData, updateSignupForm, addUser, history, handleSubm
         <h5> Register/Edit </h5>
       <input  type="text"
             placeholder="First Name"
-            value={signupFormData.first_name}
+            value={updateSignupForm.first_name}
             name="first_name"
             onChange={handleUserInfoInputChange} />
             <br/>
       <input  type="text"
               placeholder="Last Name"
-              value={signupFormData.last_name}
+              value={updateSignupForm.last_name}
               name="last_name"
               onChange={handleUserInfoInputChange} />
               <br/>
       <input  type="text"
               placeholder="email"
-              value={signupFormData.email}
+              value={updateSignupForm.email}
               name="email"
               onChange={handleUserInfoInputChange} />
               <br/>
       <input  type="text"
               placeholder="username"
-              value={signupFormData.username}
+              value={updateSignupForm.username}
               name="username"
               onChange={handleUserInfoInputChange} />
               <br/>
       <input  type="text"
               placeholder="password >= 8 chars"
-              value={signupFormData.password}
+              value={updateSignupForm.password}
               name="password"
               onChange={handleUserInfoInputChange} />
               <br/>
               <label>
               <br/>
               Admin:
-      <select value={signupFormData.admin}
+      <select value={updateSignupForm.admin}
               onChange={handleUserInfoInputChange}
               name="admin">
               <option value="No">No</option>

@@ -9,7 +9,7 @@ const User = (props) => {
 
 
 // let user = props.users.users[props.match.params.id-1]
-// User following instead, since sort order changes the order
+// User following instead, need id not index of array since sort order changes the order
 // eslint-disable-next-line
 let user = props.users.users && props.users.users.filter(user => user.id == props.match.params.id)[0]
 

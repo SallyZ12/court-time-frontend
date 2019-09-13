@@ -1,14 +1,21 @@
 
 import React from 'react'
 import {connect} from 'react-redux'
-// import {signup} from '../actions/currentUser'
 import {updateSignupForm} from "../actions/signupForm"
-// import {editSignupForm}  from "../actions/signupForm"
 import {addUser} from "../actions/currentUser"
 
 
-const Signup = ({ signupFormData, updateSignupForm, addUser, history, handleSubmit, editMode}) => {
-// const Signup = ({ signupFormData, updateSignupForm, signup, addUser, history, handleSubmit, editMode}) => {
+const Signup = ({ signupFormData, updateSignupForm, addUser, history, handleSubmit, editMode }) => {
+
+// const { first_name, last_name, email, username, password_digest, admin } = updatedFormInfo
+
+// const handleUserInfoInputChange = event => {
+//   const {name, value} = event.target
+//   updateSignupForm(name, value)
+// }
+
+
+
   const handleUserInfoInputChange = event => {
     const { name, value } = event.target
     const updatedFormInfo = {
@@ -16,14 +23,9 @@ const Signup = ({ signupFormData, updateSignupForm, addUser, history, handleSubm
       [name]: value
     }
     updateSignupForm(updatedFormInfo)
-    // updateSignupForm(name, value)
   }
 
-// handle submit is in each wrapper new and edit
-  // const handleSubmit = event => {
-  //   event.preventDefault()
-  //   signup(signupFormData, history)
-  // }
+
 
   return (
     <form onSubmit={event => {
@@ -75,9 +77,8 @@ const Signup = ({ signupFormData, updateSignupForm, addUser, history, handleSubm
           <br/>
       <input type="submit" value={editMode ? "Update Player Info" : "Register"}/>
     </form>
+)}
 
-  )
-}
 
 const mapStateToProps = state => {
   // console.log("MSTP - Signup:", state.signupFormReducer)
@@ -87,5 +88,3 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps, { updateSignupForm, addUser})(Signup)
-// export default connect(mapStateToProps, { updateSignupForm,  signup, addUser})(Signup)
-  // <input type="submit" value={editMode ? "Edit User" : "Register"}/>

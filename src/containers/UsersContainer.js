@@ -3,7 +3,6 @@ import {connect} from 'react-redux'
 import {fetchUsers} from '../actions/fetchUsers'
 import Users from '../components/Users'
 import User from '../components/User'
-// import Signup from '../components/Signup'
 import NewSignupFormWrapper from '../components/NewSignupFormWrapper'
 import EditSignupFormWrapper from '../components/EditSignupFormWrapper'
 import { Route } from 'react-router-dom'
@@ -32,7 +31,6 @@ debugger
 
 
 const mapStateToProps = state => {
-  // console.log("MSTP:", state.usersReducer)
   return {
     users: state.usersReducer,
     clubs: state.clubsReducer,

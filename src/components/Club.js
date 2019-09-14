@@ -67,6 +67,8 @@ return (
 
       <Card.Title> {club ? club.club_name : null}   </Card.Title>
       <Button variant="link" onClick={()=> handleDeleteClub(club)} disabled={!admin1}> Delete Club</Button>
+      <Button variant="light" ><NavLink exact activeClassName="current" to={club && props.currentUser && admin1 ? `/clubs/${club.id}/courts`: "/"}> New Court</NavLink></Button>
+
         <Card.Text className="courts">
         <br/>
      {club && club.courts.map(court => <li key={court.id}>
@@ -81,8 +83,6 @@ return (
 
     </Card.Body>
   </Card>
-
-    <Button variant="light" ><NavLink exact activeClassName="current" to={club && props.currentUser && admin1 ? `/clubs/${club.id}/courts`: "/"}> New Court</NavLink></Button>
 
     </div>
   )

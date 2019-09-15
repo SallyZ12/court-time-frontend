@@ -81,11 +81,10 @@ export const signup = (credentials, history) => {
   }
 }
 
-
 export const editUser = (user, history) => {
 
   return dispatch => {
-    
+
       const userInfo = {
         user: user
       }

@@ -5,17 +5,19 @@ import {updateSignupForm} from "../actions/signupForm"
 
 
 
-const Signup = ({ signupFormData, updateSignupForm, history, handleSubmit, editMode }) => {
+const Signup = ({ signupFormData, updateSignupForm, history, currentUser, handleSubmit, editMode }) => {
+
+  const { first_name, last_name, username, email, password, admin} = signupFormData
 
   const handleUserInfoInputChange = event => {
     const { name, value } = event.target
+
     const updatedFormInfo = {
       ...signupFormData,
       [name]: value
     }
     updateSignupForm(updatedFormInfo)
-  }
-
+}
 
   return (
     <form onSubmit={event => {
@@ -25,38 +27,38 @@ const Signup = ({ signupFormData, updateSignupForm, history, handleSubmit, editM
         <h5> Register/Edit </h5>
       <input  type="text"
             placeholder="First Name"
-            value={updateSignupForm.first_name}
+            value={first_name}
             name="first_name"
             onChange={handleUserInfoInputChange} />
             <br/>
       <input  type="text"
               placeholder="Last Name"
-              value={updateSignupForm.last_name}
+              value={last_name}
               name="last_name"
               onChange={handleUserInfoInputChange} />
               <br/>
       <input  type="text"
               placeholder="email"
-              value={updateSignupForm.email}
+              value={email}
               name="email"
               onChange={handleUserInfoInputChange} />
               <br/>
       <input  type="text"
               placeholder="username"
-              value={updateSignupForm.username}
+              value={username}
               name="username"
               onChange={handleUserInfoInputChange} />
               <br/>
       <input  type="text"
               placeholder="password >= 8 chars"
-              value={updateSignupForm.password}
+              value={password}
               name="password"
               onChange={handleUserInfoInputChange} />
               <br/>
               <label>
               <br/>
               Admin:
-      <select value={updateSignupForm.admin}
+      <select value={admin}
               onChange={handleUserInfoInputChange}
               name="admin">
               <option value="No">No</option>
@@ -71,9 +73,10 @@ const Signup = ({ signupFormData, updateSignupForm, history, handleSubmit, editM
 
 
 const mapStateToProps = state => {
-  // console.log("MSTP - Signup:", state.signupFormReducer)
+
   return {
     signupFormData: state.signupFormReducer
+    // currentUser: state.currentUserReducer
   }
 }
 

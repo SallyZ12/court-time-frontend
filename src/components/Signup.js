@@ -7,7 +7,9 @@ import {updateSignupForm} from "../actions/signupForm"
 
 const Signup = ({ signupFormData, updateSignupForm, history, currentUser, handleSubmit, editMode }) => {
 
+// when const signupFormData in the value only need to use the name rather than signupFormData.first_name, etc.
   const { first_name, last_name, username, email, password, admin} = signupFormData
+
 
   const handleUserInfoInputChange = event => {
     const { name, value } = event.target
@@ -76,8 +78,8 @@ const mapStateToProps = state => {
 
   return {
     signupFormData: state.signupFormReducer
-    // currentUser: state.currentUserReducer
+
   }
 }
 
-export default connect(mapStateToProps, { updateSignupForm})(Signup)
+export default connect(mapStateToProps, { updateSignupForm })(Signup)

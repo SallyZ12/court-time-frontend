@@ -5,6 +5,7 @@ import {updateSignupForm} from "../actions/signupForm"
 
 
 
+
 const Signup = ({ signupFormData, updateSignupForm, history, currentUser, handleSubmit, editMode }) => {
 
 // when const signupFormData in the value only need to use the name rather than signupFormData.first_name, etc.
@@ -20,6 +21,23 @@ const Signup = ({ signupFormData, updateSignupForm, history, currentUser, handle
     }
     updateSignupForm(updatedFormInfo)
 }
+
+//   const handleUserInfoInputChange = event => {
+//     const { name, value } = event.target
+//
+//     const updatedFormInfo = {
+//       ...setFormDataForEdit,
+//       [name]: value
+//     }
+//     updateSignupForm(updatedFormInfo)
+// }
+
+
+// const handleUserInfoInputChange = event => {
+//     const { name, value } = event.target
+//     updateSignupForm(name, value)
+//   }
+
 
   return (
     <form onSubmit={event => {
@@ -75,7 +93,7 @@ const Signup = ({ signupFormData, updateSignupForm, history, currentUser, handle
 
 
 const mapStateToProps = state => {
-
+// console.log("MSTP-signupFormData:", state.signupFormReducer)
   return {
     signupFormData: state.signupFormReducer
 

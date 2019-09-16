@@ -21,6 +21,12 @@ const Signup = ({ signupFormData, updateSignupForm, history, handleSubmit, editM
 }
 
 
+  // const handleUserInfoInputChange = event => {
+  //   const { name, value } = event.target
+  //   updateSignupForm(name, value)
+  // }
+
+
   return (
     <form onSubmit={event => {
       event.preventDefault()

@@ -12,9 +12,6 @@ export default (state = {}, action) => {
     case "CLEAR_CURRENT_USER":
       return {}
 
-    case "SET_FORM_DATA_FOR_EDIT":
-     return action.userFormData
-
     default:
       return state
 

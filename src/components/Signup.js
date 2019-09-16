@@ -4,7 +4,7 @@ import {connect} from 'react-redux'
 import {updateSignupForm} from "../actions/signupForm"
 
 
-const Signup = ({ signupFormData, updateSignupForm, history, currentUser, handleSubmit, editMode }) => {
+const Signup = ({ signupFormData, updateSignupForm, history, handleSubmit, editMode }) => {
 
 // when const signupFormData in the value only need to use the name rather than signupFormData.first_name, etc.
   const { first_name, last_name, username, email, password, admin} = signupFormData

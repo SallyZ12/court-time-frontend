@@ -1,6 +1,4 @@
 import React from 'react'
-// import {Link} from 'react-router-dom'
-import Card from 'react-bootstrap/Card'
 import '../style.css'
 import Button from 'react-bootstrap/Button';
 import { NavLink, withRouter } from 'react-router-dom'
@@ -11,7 +9,7 @@ import {connect} from 'react-redux'
 import {deleteCourt} from '../actions/deleteCourt'
 import {deleteClub} from '../actions/deleteClub'
 import ReservationInput from '../components/ReservationInput'
-// import Courts from '../components/Courts'
+
 
 
 const Club = (props) => {
@@ -62,27 +60,27 @@ return (
     </Row></span>)}
 </Container>
 
-  <Card style={{ width: '45rem' }} >
-    <Card.Body>
 
-      <Card.Title> {club ? club.club_name : null}   </Card.Title>
+  <Container>
+      <br/>
+      <h3> {club ? club.club_name : null}   </h3>
       <Button variant="light" ><NavLink exact activeClassName="current" to={club && props.currentUser && admin1 ? `/clubs/${club.id}/courts`: "/"}> New Court</NavLink></Button>
       <Button variant="link" onClick={()=> handleDeleteClub(club)} disabled={!admin1}> Delete Club</Button>
 
-        <Card.Text className="courts">
+        <span className="courts">
         <br/>
-     {club && club.courts.map(court => <li key={court.id}>
-       Court: {court.court_number}
-         <br/>{court.surface}
+          {club && club.courts.map(court => <li key={court.id}>
+                Court: {court.court_number} <br/>
+                       {court.surface}
        <br/><br/>
 
         <ReservationInput courtId = {court.id} currentUser = {props.currentUser}/><br/>
 
        <Button variant="link" onClick={()=> handleDeleteCourt(court)} disabled={!admin1}> Delete Court</Button></li>)}
-        </Card.Text>
+        </span>
 
-    </Card.Body>
-  </Card>
+  </Container>
+
 
     </div>
   )

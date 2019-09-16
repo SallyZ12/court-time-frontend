@@ -47,7 +47,7 @@ function sortByDate(data) {
              ConfirmID:{reservation.confirmID}: </Link>
              {moment(reservation.day).format('MMM DD YYYY')} -
              {reservation.hour} --
-              {reservation.reservation_club}
+              {reservation.reservation_club} 
              </li> ))}
         </Card.Text>
         {/*<Button variant="light"><Link to='/users'>Players</Link></Button>*/}

@@ -19,10 +19,7 @@ export default (state = initialState, action)=> {
       return initialState
 
     case "SET_FORM_DATA_FOR_EDIT":
-      return action.userFormData  
-
-    case "EDIT_SIGNUP_FORM":
-     return action.userFormData
+      return action.userFormData
 
     default:
       return state

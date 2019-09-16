@@ -13,13 +13,6 @@ export const resetSignupForm = () => {
   }
 }
 
-// start of editing user info
-export const editSignupForm = currentUser => {
-  return {
-    type: "EDIT_SIGNUP_FORM",
-    currentUser
-  }
-}
 
 export const setFormDataForEdit = user => {
   const userFormData = {

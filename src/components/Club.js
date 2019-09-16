@@ -66,8 +66,8 @@ return (
     <Card.Body>
 
       <Card.Title> {club ? club.club_name : null}   </Card.Title>
-      <Button variant="link" onClick={()=> handleDeleteClub(club)} disabled={!admin1}> Delete Club</Button>
       <Button variant="light" ><NavLink exact activeClassName="current" to={club && props.currentUser && admin1 ? `/clubs/${club.id}/courts`: "/"}> New Court</NavLink></Button>
+      <Button variant="link" onClick={()=> handleDeleteClub(club)} disabled={!admin1}> Delete Club</Button>
 
         <Card.Text className="courts">
         <br/>

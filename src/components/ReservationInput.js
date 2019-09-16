@@ -106,5 +106,7 @@ constructor() {
 }
 
 
-
 export default withRouter(connect(null, {addReservation})(ReservationInput))
+
+// start of attempt to disable an option in dropdown
+  // <option value = "10:00 am" disabled={this.dayFour ? true : null}>10:00 am </option>

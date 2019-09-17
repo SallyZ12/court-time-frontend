@@ -13,7 +13,7 @@ import ReservationInput from '../components/ReservationInput'
 
 
 const Club = (props) => {
-// console.log("props:", props)
+console.log("props:", props)
 
 
 let club = props.clubs.clubs[props.match.params.id-1]
@@ -74,19 +74,27 @@ return (
                        {court.surface}
        <br/><br/>
 
-        <ReservationInput courtId = {court.id} currentUser = {props.currentUser}/><br/>
+        <ReservationInput courtId = {court.id} currentUser = {props.currentUser} club = {props.clubs}/><br/>
 
        <Button variant="link" onClick={()=> handleDeleteCourt(court)} disabled={!admin1}> Delete Court</Button></li>)}
         </span>
 
+
   </Container>
 
+  <Container>
+  <span className="reservations">
+  {club && club.club_res.map(reservation => <li key={reservation.id}>
+  {reservation.court_id} {reservation.day} {reservation.hour}</li>)}
+  </span>
+  </Container>
 
     </div>
   )
 }
 
 const mapStateToProps = state => {
+
   return ({
     currentUser: state.currentUserReducer
   })

@@ -70,6 +70,7 @@ constructor() {
 
   render() {
     return (
+
       <form onSubmit={this.handleSubmit}>
         <label> Select </label><br/>
         <select
@@ -104,6 +105,7 @@ constructor() {
     )
   }
 }
+
 
 
 export default withRouter(connect(null, {addReservation})(ReservationInput))

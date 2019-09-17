@@ -36,6 +36,7 @@ constructor() {
     this.setState({
       [event.target.name]: event.target.value
     })
+      console.log("handlechange:", event.target.value)
   }
 
   handleSubmit = (event)=> {
@@ -73,6 +74,7 @@ constructor() {
 
       <form onSubmit={this.handleSubmit}>
         <label> Select </label><br/>
+
         <select
           name = 'day'
           value = {this.state.day}
@@ -86,7 +88,9 @@ constructor() {
           <option value = {this.daySix}> {this.daySix} </option>
           <option value = {this.daySeven}> {this.daySeven} </option>
           </select>
+
           <br/>
+
         <select
           name = 'hour'
           value = {this.state.hour}
@@ -99,7 +103,9 @@ constructor() {
             <option value = "1:00 pm">1:00 pm </option>
             <option value = "2:00 pm">2:00 pm </option>
           </select><br/><br/><br/>
+
   <Button variant="primary"><input type="submit" value="Reserve"/></Button>
+
       </form>
 
     )
@@ -109,6 +115,8 @@ constructor() {
 
 
 export default withRouter(connect(null, {addReservation})(ReservationInput))
+  // <option value = "10:00 am">10:00 am </option>
 
 // start of attempt to disable an option in dropdown
   // <option value = "10:00 am" disabled={this.dayFour ? true : null}>10:00 am </option>
+// <option value = "10:00 am" disabled={this.state.hour ? true : this.state.hour}>10:00 am </option>

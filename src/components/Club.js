@@ -9,7 +9,7 @@ import {connect} from 'react-redux'
 import {deleteCourt} from '../actions/deleteCourt'
 import {deleteClub} from '../actions/deleteClub'
 import ReservationInput from '../components/ReservationInput'
-
+import moment from 'moment'
 
 
 const Club = (props) => {
@@ -72,16 +72,17 @@ return (
           {club && club.courts.map(court => <li key={court.id}>
                 Court: {court.court_number} <br/>
                        {court.surface} <br/>
-                       
        <br/><br/>
 
         <ReservationInput courtId = {court.id} currentUser = {props.currentUser} club = {props.clubs}/><br/>
 
+        <label> Reservations </label><br/>
+        {court.court_res.map((reservation =>   <p key={reservation.id}>
+        {moment(reservation.day).format('MMM DD YYYY')} <br/>{reservation.hour}</p>))}
+
        <Button variant="link" onClick={()=> handleDeleteCourt(court)} disabled={!admin1}> Delete Court</Button></li>)}
         </span>
   </Container>
-
-
     </div>
   )
 }

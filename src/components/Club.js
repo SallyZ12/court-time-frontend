@@ -42,6 +42,18 @@ const handleDeleteClub = (club) => {
   props.history.push("/")
 }
 
+function sortByDate(data) {
+  return data.sort(function(a,b) {
+    let dateA = a.day
+    let dateB = b.day
+      let dateSort = dateB.localeCompare(dateA)
+          return dateSort
+        }
+    )
+}
+
+
+
 
 return (
   <div>
@@ -77,7 +89,7 @@ return (
         <ReservationInput courtId = {court.id} currentUser = {props.currentUser} club = {props.clubs}/><br/>
 
         <label> Reservations </label><br/>
-        {court.court_res.map((reservation =>   <p key={reservation.id}>
+        {sortByDate(court.court_res).map((reservation =>   <p key={reservation.id}>
         {moment(reservation.day).format('MMM DD YYYY')} <br/>{reservation.hour}</p>))}
 
        <Button variant="link" onClick={()=> handleDeleteCourt(court)} disabled={!admin1}> Delete Court</Button></li>)}

@@ -17,7 +17,7 @@ const Club = (props) => {
 
 
 let club = props.clubs.clubs[props.match.params.id-1]
-// console.log ("club:", club)
+console.log ("club:", club)
 
 // this is how I iterate and not repeat court surfaces with rates
 let courts = club && club.courts
@@ -71,23 +71,16 @@ return (
         <br/>
           {club && club.courts.map(court => <li key={court.id}>
                 Court: {court.court_number} <br/>
-                       {court.surface}
+                       {court.surface} <br/>
+                       
        <br/><br/>
 
         <ReservationInput courtId = {court.id} currentUser = {props.currentUser} club = {props.clubs}/><br/>
 
        <Button variant="link" onClick={()=> handleDeleteCourt(court)} disabled={!admin1}> Delete Court</Button></li>)}
         </span>
-
-
   </Container>
 
-  <Container>
-  <span className="reservations">
-  {club && club.club_res.map(reservation => <li key={reservation.id}>
-  ID: {reservation.court_id} Day: {reservation.day} Time: {reservation.hour}</li>)}
-  </span>
-  </Container>
 
     </div>
   )
@@ -102,3 +95,10 @@ const mapStateToProps = state => {
 
 
 export default withRouter(connect(mapStateToProps, {deleteCourt, deleteClub})(Club));
+
+//   <Container>
+// <span className="reservations">
+// {club && club.club_res.map(reservation => <li key={reservation.id}>
+// ID: {reservation.court_id} Day: {reservation.day} Time: {reservation.hour}</li>)}
+// </span>
+// </Container>

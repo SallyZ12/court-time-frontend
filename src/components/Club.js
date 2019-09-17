@@ -85,7 +85,7 @@ return (
   <Container>
   <span className="reservations">
   {club && club.club_res.map(reservation => <li key={reservation.id}>
-  {reservation.court_id} {reservation.day} {reservation.hour}</li>)}
+  ID: {reservation.court_id} Day: {reservation.day} Time: {reservation.hour}</li>)}
   </span>
   </Container>
 

@@ -13,7 +13,7 @@ import ReservationInput from '../components/ReservationInput'
 
 
 const Club = (props) => {
-console.log("props:", props)
+// console.log("props:", props)
 
 
 let club = props.clubs.clubs[props.match.params.id-1]

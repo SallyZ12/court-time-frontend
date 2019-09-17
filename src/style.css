@@ -28,6 +28,14 @@
   width: 25%;
 }
 
-.rates{  
+.rates{
   list-style: none;
+}
+
+
+.reservations{
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  align-items: left
 }

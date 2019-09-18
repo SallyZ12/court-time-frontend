@@ -5,7 +5,7 @@ import moment from 'moment'
 
 
 const User = (props) => {
-
+console.log("user:", props)
 // let user = props.users.users[props.match.params.id-1]
 // User following instead, need id not index of array since sort order changes the order
 // eslint-disable-next-line

@@ -25,6 +25,22 @@ export default function clubsReducer(state = initialState, action) {
       })
         return {...state, clubs: clubs}
 
+    case 'ADD_RESERVATION_TO_COURT':
+
+        let clubs1 = state.clubs.map(club => {
+          club.courts.map(court => {
+            court.court_res.map(res => {
+              if(res.id === action.payload.id){
+              return action.payload
+            } else {
+              return club
+            }
+            })
+          })
+        })
+
+      return {...state, court_res: action.payload}
+
 
     default:
       return state

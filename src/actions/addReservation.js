@@ -17,8 +17,9 @@ export const addReservation = (reservation, userId) => {
         if (user.error) {
           alert(user.error)
         } else {
-          dispatch({type: 'ADD_RESERVATION', payload: user })
-          dispatch({type: 'ADD_RESERVATION_TO_CURRENT_USER', user: user})      
+          dispatch({type: 'ADD_RESERVATION', payload: user.user })
+          dispatch({type: 'ADD_RESERVATION_TO_CURRENT_USER', user: user.user})
+          dispatch({type: 'ADD_RESERVATION_TO_COURT', payload: user.reservation})
 
     }
   })

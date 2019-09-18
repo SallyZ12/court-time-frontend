@@ -36,7 +36,7 @@ constructor() {
     this.setState({
       [event.target.name]: event.target.value
     })
-      console.log("handlechange:", event.target.value)
+      // console.log("handlechange:", event.target.value)
   }
 
   handleSubmit = (event)=> {

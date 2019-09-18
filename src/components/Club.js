@@ -17,7 +17,7 @@ const Club = (props) => {
 
 
 let club = props.clubs.clubs[props.match.params.id-1]
-console.log ("club:", club)
+// console.log ("club:", club)
 
 // this is how I iterate and not repeat court surfaces with rates
 let courts = club && club.courts

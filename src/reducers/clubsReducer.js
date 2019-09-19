@@ -4,8 +4,7 @@ export default function clubsReducer(state = initialState, action) {
   switch (action.type) {
 
     case 'ADD_CLUB':
-      return {...state, clubs: [...state.clubs,
-      action.payload]}
+      return {...state, clubs: [...state.clubs, action.payload]}
 
     case 'DISPLAY_CLUBS':
      return {clubs: action.clubs}
@@ -25,21 +24,16 @@ export default function clubsReducer(state = initialState, action) {
       })
         return {...state, clubs: clubs}
 
+
     case 'ADD_RESERVATION_TO_COURT':
 
-        let clubs1 = state.clubs.map(club => {
-          club.courts.map(court => {
-            court.court_res.map(res => {
-              if(res.id === action.payload.id){
-              return action.payload
-            } else {
-              return club
-            }
-            })
-          })
-        })
-
-      return {...state, court_res: action.payload}
+    let clubs2 = state.clubs.map(club => {
+      	if (club.club_name === action.payload.reservations[action.payload.reservations.length-1].reservation_club) {
+              let court = club.courts.find(court => court.id === action.payload.reservations[action.payload.reservations.length-1].court_id)
+      		court.court_res.push(action.payload.reservations[action.payload.reservations.length-1])}
+      	return club
+      })
+      return {...state, clubs: clubs2}
 
 
     default:

@@ -30,7 +30,7 @@ export default function clubsReducer(state = initialState, action) {
     let clubs2 = state.clubs.map(club => {
       	if (club.club_name === action.payload.reservations[action.payload.reservations.length-1].reservation_club) {
               let court = club.courts.find(court => court.id === action.payload.reservations[action.payload.reservations.length-1].court_id)
-      		court.court_res.push(action.payload.reservations[action.payload.reservations.length-1])}
+      		court.court_res.push(action.payload.reservations.find(reservation => reservation.id === (Math.max(...action.payload.reservations.map(reservation => reservation.id)))))}
       	return club
       })
       return {...state, clubs: clubs2}

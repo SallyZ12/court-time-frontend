@@ -12,6 +12,7 @@ export const deleteReservation = (userId, reservationId) => {
       } else {
       dispatch({type: 'DELETE_RESERVATION', user: user})
       dispatch({type: 'DELETE_RESERVATION_FROM_CURRENT_USER', user: user})
+      dispatch({type: 'DELETE_RESERVATION_FROM_COURT', payload: reservationId, user})
   }
 })
 }

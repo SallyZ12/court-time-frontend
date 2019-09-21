@@ -37,8 +37,9 @@ export default function clubsReducer(state = initialState, action) {
             return {...state, clubs: clubs2}
 
     case 'DELETE_RESERVATION_FROM_COURT':
-  
-     return state
+    
+       return state
+
 
 
     default:

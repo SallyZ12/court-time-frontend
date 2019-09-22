@@ -37,9 +37,14 @@ export default function clubsReducer(state = initialState, action) {
             return {...state, clubs: clubs2}
 
     case 'DELETE_RESERVATION_FROM_COURT':
-    
-       return state
 
+        let clubs3 = state.clubs.map(club => {
+            if (club.club_res.find(reservation => reservation.id === action.payload)) {
+                let court = club.courts.find(court => court.id === (club.club_res.find(reservation => reservation.id === action.payload)).court_id)
+                court.court_res.filter(reservation => reservation.id !== action.payload)}
+              return club
+    })
+     return {...state, clubs: clubs3}
 
 
     default:

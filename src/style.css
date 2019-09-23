@@ -20,6 +20,7 @@
 .courts{
   display: flex;
   flex-direction: row;
+  justify-content: center;
   list-style: none;
 }
 

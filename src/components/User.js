@@ -28,7 +28,7 @@ function sortByDate(data) {
 
 
   return (
-    <Card style={{ width: '35rem' }}>
+    <Card bg="light"  className="text-left" style={{ width: '45rem' }}>
       {/*<Card.Img variant="top" src="holder.js/100px180" />*/}
       <Card.Body>
         <Card.Title> Today's Date: {currentDate} <br/><br/> Player Information </Card.Title>
@@ -40,7 +40,7 @@ function sortByDate(data) {
         email: {user ? user.email : null} <br/>
         Admin: {user ? user.admin : null} <br/>
         Reservation Count: {user ? user.reservations.length : null}<br/><br/>
-        Reservations <br/>
+        Reservations: <br/>
             {user && sortByDate(user.reservations).map(reservation => ( <li key={reservation.id}>
              <Link to={`/reservations/${reservation.id}`}>
              ConfirmID:{reservation.confirmID}: </Link>

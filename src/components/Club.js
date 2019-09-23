@@ -48,8 +48,7 @@ function sortByDate(data) {
     let dateB = b.day
       let dateSort = dateB.localeCompare(dateA)
           return dateSort
-        }
-    )
+    })
 }
 
 
@@ -80,12 +79,11 @@ return (
       <Button variant="link" onClick={()=> handleDeleteClub(club)} disabled={!admin1}> Delete Club</Button>
 
         <span className="courts">
-        <br/>
+
           {club && club.courts.map(court => <li key={court.id}>
-                Court: {court.court_number} <br/>
-                       {court.surface} <br/>
-                       Court_id: {court.id}
-       <br/><br/>
+            Court:    {court.court_number} <br/>
+                      {court.surface} <br/>
+       <br/>
 
         <ReservationInput courtId = {court.id} currentUser = {props.currentUser} club = {props.clubs}/><br/>
 

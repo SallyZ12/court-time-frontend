@@ -35,6 +35,20 @@ export default function clubsReducer(state = initialState, action) {
 
         return {...state, clubs: clubs4}
 
+        case 'DELETE_RESERVATION_FROM_CLUB':
+        
+        let clubs5 = state.clubs.map(club => {
+            if (club.club_res.find(reservation => reservation.id === action.payload)) {
+                  let new_clubs_array = club.club_res.filter(reservation => reservation.id !== action.payload)
+                    club.club_res = new_clubs_array}
+
+              return club
+        })
+        return {...state, clubs: clubs5}
+
+
+
+
     case 'ADD_RESERVATION_TO_COURT':
       let maxResId = (Math.max(...action.payload.reservations.map(reservation => reservation.id)))
 
@@ -45,8 +59,6 @@ export default function clubsReducer(state = initialState, action) {
       	        return club
            })
             return {...state, clubs: clubs2}
-
-
 
 
     case 'DELETE_RESERVATION_FROM_COURT':

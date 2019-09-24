@@ -36,7 +36,7 @@ constructor() {
     this.setState({
       [event.target.name]: event.target.value
     })
-      // console.log("handlechange:", event.target.value)
+    console.log("event.target.name:", event.target.name, event.target.value)
   }
 
   handleSubmit = (event)=> {
@@ -54,8 +54,6 @@ constructor() {
     // then in addReservation action creator pass in only (reservation) and in url use
     // reservation.user_id
 
-    // console.log("userId:", userId)
-    // console.log("courtId:", courtId)
 
     this.setState({
       court_id: "",
@@ -69,7 +67,21 @@ constructor() {
   }
 
 
+
   render() {
+    const time = [{id: 0, value: 'Hour', label: 'time'}, {id: 1, value:'9:00 am',label:'9:00 am'}, {id: 2,value:'10:00 am',label:'10:00 am'},{id: 3, value:'11:00 am',label:'11:00 am'}, {id: 4, value:'12:00 pm',label:'12:00 pm'}, {id: 5, value:'1:00 pm',label:'1:00 pm'},{id: 6, value:'2:00 pm',label:'2:00 pm'}]
+
+
+    function Options({ options }) {
+    return (
+        options.map(option =>
+                    <option key={option.id} value={option.value}>
+                    {option.value}
+                    </option>)
+                   );
+      }
+
+
     return (
 
       <form onSubmit={this.handleSubmit}>
@@ -91,20 +103,14 @@ constructor() {
 
           <br/>
 
-        <select
+          <select>
           name = 'hour'
           value = {this.state.hour}
-          onChange = {this.handleChange}>
-            <option value = "select"> Time </option>
+          onChange = {this.handleChange}
+          <Options options = {time}  />
+          </select>
 
-            <option value = "9:00 am">9:00 am </option>
-            <option value = "10:00 am">10:00 am </option>
-            <option value = "11:00 am">11:00 am </option>
-            <option value = "12:00 pm">12:00 pm</option>
-            <option value = "1:00 pm">1:00 pm </option>
-            <option value = "2:00 pm">2:00 pm </option>
-          </select><br/><br/><br/>
-
+        <br/><br/>
   <Button variant="primary"><input type="submit" value="Reserve"/></Button>
 
       </form>
@@ -116,8 +122,12 @@ constructor() {
 
 
 export default withRouter(connect(null, {addReservation})(ReservationInput))
-  // <option value = "10:00 am">10:00 am </option>
 
-// start of attempt to disable an option in dropdown
-  // <option value = "10:00 am" disabled={this.dayFour ? true : null}>10:00 am </option>
-// <option value = "10:00 am" disabled={this.state.hour ? true : this.state.hour}>10:00 am </option>
+// name = 'hour'
+// value = {this.state.hour}
+// onChange = {this.handleChange}>
+// <option value = "select"> Time </option>
+
+
+
+// </Select><br/><br/><br/>

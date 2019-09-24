@@ -4,7 +4,7 @@ import moment from 'moment'
 import {addReservation} from '../actions/addReservation'
 import { withRouter } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
-
+import Options from '../components/Options'
 
 
 class ReservationInput extends React.Component {
@@ -36,7 +36,6 @@ constructor() {
     this.setState({
       [event.target.name]: event.target.value
     })
-    console.log("event.target.name:", event.target.name, event.target.value)
   }
 
   handleSubmit = (event)=> {
@@ -71,17 +70,6 @@ constructor() {
   render() {
     const time = [{id: 0, value: 'Hour', label: 'time'}, {id: 1, value:'9:00 am',label:'9:00 am'}, {id: 2,value:'10:00 am',label:'10:00 am'},{id: 3, value:'11:00 am',label:'11:00 am'}, {id: 4, value:'12:00 pm',label:'12:00 pm'}, {id: 5, value:'1:00 pm',label:'1:00 pm'},{id: 6, value:'2:00 pm',label:'2:00 pm'}]
 
-
-    function Options({ options }) {
-    return (
-        options.map(option =>
-                    <option key={option.id} value={option.value}>
-                    {option.value}
-                    </option>)
-                   );
-      }
-
-
     return (
 
       <form onSubmit={this.handleSubmit}>
@@ -103,11 +91,11 @@ constructor() {
 
           <br/>
 
-          <select>
-          name = 'hour'
+          <select
+          name = "hour"
           value = {this.state.hour}
-          onChange = {this.handleChange}
-          <Options options = {time}  />
+          onChange = {this.handleChange}>
+          <Options options = {time}/>
           </select>
 
         <br/><br/>

@@ -15,7 +15,6 @@ import moment from 'moment'
 const Club = (props) => {
 // console.log("props:", props)
 
-
 let club = props.clubs.clubs[props.match.params.id-1]
 // console.log ("club:", club)
 
@@ -52,8 +51,6 @@ function sortByDate(data) {
 }
 
 
-
-
 return (
   <div>
 
@@ -61,36 +58,32 @@ return (
 <h3> {club ? club.club_name : null}   </h3>
 <Button variant="light" ><NavLink exact activeClassName="current" to={club && props.currentUser && admin1 ? `/clubs/${club.id}/courts`: "/"}> New Court</NavLink></Button>
 <Button variant="link" onClick={()=> handleDeleteClub(club)} disabled={!admin1}> Delete Club</Button>
-  <Row >
-  <Col sm={2.0}> Surface </Col>
-  <Col sm={2.0}> Prime </Col>
-  <Col sm={2.5}> Non-Prime </Col>
-  </Row>
-  {unique && unique.map(court => <span key={court.id}>
-  <Row >
-  <Col sm={2.0}> {court.surface} </Col>
-  <Col sm={2.0}> ${court.prime}</Col>
-  <Col sm={2.0}> ${court.non_prime}</Col>
-    </Row></span>)}
+
+<Row >
+<Col sm={2.0}> Surface </Col>
+<Col sm={2.0}> Prime </Col>
+<Col sm={2.5}> Non-Prime </Col>
+</Row>
+{unique && unique.map(court => <span key={court.id}>
+<Row >
+<Col sm={2.0}> {court.surface} </Col>
+<Col sm={2.0}> ${court.prime}</Col>
+<Col sm={2.0}> ${court.non_prime}</Col>
+  </Row></span>)}
 </Container>
 
 
-  <Container>
+<Container>
       <br/><br/>
-      {/*<h3> {club ? club.club_name : null}</h3>*/}
-      {/*<Button variant="light" ><NavLink exact activeClassName="current" to={club && props.currentUser && admin1 ? `/clubs/${club.id}/courts`: "/"}> New Court</NavLink></Button>*/}
-      {/*<Button variant="link" onClick={()=> handleDeleteClub(club)} disabled={!admin1}> Delete Club</Button>*/}
-
         <span className="courts">
 
           {club && club.courts.map(court => <li key={court.id}>
             Court:    {court.court_number} <br/>
                       {court.surface} <br/>
-       <br/>
+        <br/>
 
         <ReservationInput court = {court} currentUser = {props.currentUser} club = {props.clubs}/><br/>
 
-        {/*<label> Reservations </label><br/>*/}
         {sortByDate(court.court_res).map((reservation =>   <p key={reservation.id}>
         {moment(reservation.day).format('MMM DD YYYY')} <br/>{reservation.hour}</p>))}
 
@@ -102,7 +95,6 @@ return (
 }
 
 const mapStateToProps = state => {
-
   return ({
     currentUser: state.currentUserReducer
   })

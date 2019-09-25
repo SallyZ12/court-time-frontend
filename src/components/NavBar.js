@@ -2,8 +2,9 @@ import React from 'react'
 import { connect } from 'react-redux'
 import {Link} from 'react-router-dom'
 
-const NavBar =  ({ currentUser }) => {
-// console.log("currentUser:", currentUser)
+
+const NavBar =  ({ currentUser}) => {
+
 
   return (
     <div className="NavBar">
@@ -22,6 +23,3 @@ const mapStateToProps = (state) => {
 }
 
 export default connect(mapStateToProps)(NavBar)
-
-
-  // { loggedIn ? <><p id="loggedin">Logged in as {currentUser.attributes.name}</p><Logout/></> : null}

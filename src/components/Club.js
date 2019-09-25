@@ -88,7 +88,7 @@ return (
                       {court.surface} <br/>
        <br/>
 
-        <ReservationInput courtId = {court.id} currentUser = {props.currentUser} club = {props.clubs}/><br/>
+        <ReservationInput court = {court} currentUser = {props.currentUser} club = {props.clubs}/><br/>
 
         {/*<label> Reservations </label><br/>*/}
         {sortByDate(court.court_res).map((reservation =>   <p key={reservation.id}>

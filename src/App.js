@@ -1,7 +1,6 @@
 import React from 'react';
 import Home from './components/Home'
 import Login from './components/Login'
-import Logout from './components/Logout'
 import CourtInput from './components/CourtInput'
 import NavBar from './components/NavBar'
 import UsersContainer from './containers/UsersContainer'
@@ -46,7 +45,7 @@ class App extends React.Component {
       <Dropdown.Item href = {currentUser && admin1 ? "/users": null}>Players </Dropdown.Item>
       </DropdownButton>
 
-    
+
       <NavBar />
       <br/>
       <Switch>

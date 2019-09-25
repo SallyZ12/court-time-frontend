@@ -76,6 +76,18 @@ constructor() {
                  {id: 5, value:'1:00 pm',label:'1:00 pm'},
                  {id: 6, value:'2:00 pm',label:'2:00 pm'}]
 
+    let court = this.props.court
+
+    // console.log("court:", court.court_res)
+
+    let day_court = court.court_res.map(reservation => reservation.day)
+    console.log("day_court:", day_court)
+
+    
+
+
+
+
     return (
 
       <form onSubmit={this.handleSubmit}>

@@ -40,12 +40,13 @@ class App extends React.Component {
       <Button variant="light"><NavLink exact activeClassName="current" to="/signup"> Register </NavLink></Button>
       <Button variant="light"><NavLink exact activeClassName="current" to="/login"> Login </NavLink></Button>
 
+
       <DropdownButton id="dropdown-basic-button" title="Admin">
       <Dropdown.Item href = {currentUser && admin1 ? "/clubs": null}>New Club </Dropdown.Item>
       <Dropdown.Item href = {currentUser && admin1 ? "/users": null}>Players </Dropdown.Item>
       </DropdownButton>
-      <Logout/>
-      <br/>
+
+    
       <NavBar />
       <br/>
       <Switch>

@@ -5,7 +5,7 @@ import {addReservation} from '../actions/addReservation'
 import { withRouter } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Options from '../components/Options'
-
+import {time} from '../data'
 
 class ReservationInput extends React.Component {
 
@@ -68,22 +68,13 @@ constructor() {
 
 
   render() {
-    const time = [{id: 0, value: 'Hour', label: 'time'},
-                 {id: 1, value:'9:00 am',label:'9:00 am'},
-                 {id: 2, value:'10:00 am',label:'10:00 am'},
-                 {id: 3, value:'11:00 am',label:'11:00 am'},
-                 {id: 4, value:'12:00 pm',label:'12:00 pm'},
-                 {id: 5, value:'1:00 pm',label:'1:00 pm'},
-                 {id: 6, value:'2:00 pm',label:'2:00 pm'}]
 
     let court = this.props.court
-
-    // console.log("court:", court.court_res)
 
     let day_court = court.court_res.map(reservation => reservation.day)
     console.log("day_court:", day_court)
 
-    
+
 
 
 

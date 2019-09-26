@@ -74,8 +74,17 @@ constructor() {
     let day_court = court.court_res.map(reservation => reservation.day)
     console.log("day_court:", day_court)
 
+    let hour_court = court.court_res.map(reservation => reservation.hour)
+    console.log("hour_court:", hour_court)
 
+    // a check to see if can access the hour defined as the value key in time array
+    let existing_time = time.map(hour => hour.value)
+    // console.log("hour:", existing_time)
 
+    // just a test, only hour_court providing data when debug, new_time variable returning
+    // original time object
+    let new_time = time.filter(hour => hour.hour !== hour_court )
+    console.log("new_time_object:", new_time)
 
 
 

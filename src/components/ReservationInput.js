@@ -83,7 +83,10 @@ constructor() {
 
     // just a test, only hour_court providing data when debug, new_time variable returning
     // original time object
-    let new_time = time.filter(hour => hour.hour !== hour_court )
+    let new_time = time.map(hour => {
+      if (hour.value === hour_court){
+        let adjusted_time = time.filter(hour => hour.value !== hour_court)}})
+
     console.log("new_time_object:", new_time)
 
 

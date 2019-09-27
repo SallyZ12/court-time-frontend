@@ -70,24 +70,28 @@ constructor() {
   render() {
 
     let court = this.props.court
+    let day_string = JSON.stringify(this.state.day)
+    // let old_format_day = moment(day_string).format("YYYY MMM DD")
+    console.log("day_string:", day_string)
+    // an array of objects with reservations
 
-    let day_court = court.court_res.map(reservation => reservation.day)
+    let day_court = court.court_res.filter(reservation => reservation.day === this.state.day)
     console.log("day_court:", day_court)
 
-    let hour_court = court.court_res.map(reservation => reservation.hour)
+    // an array of strings for hours booked by court
+    let hour_court = day_court.map(reservation => reservation.hour)
     console.log("hour_court:", hour_court)
 
-    // a check to see if can access the hour defined as the value key in time array
-    let existing_time = time.map(hour => hour.value)
-    // console.log("hour:", existing_time)
+  // an array of strings with hours reflecting the dropdown
+    // let existing_time = time.map(hour => hour.value)
+    // console.log("existing-time:", existing_time)
 
-    // just a test, only hour_court providing data when debug, new_time variable returning
-    // original time object
-    let new_time = time.map(hour => {
-      if (hour.value === hour_court){
-        let adjusted_time = time.filter(hour => hour.value !== hour_court)}})
+    
+    let new_time = time.filter(time => !hour_court.includes(time.value))
 
-    console.log("new_time_object:", new_time)
+
+
+    // console.log("new_time_object:", new_time)
 
 
 

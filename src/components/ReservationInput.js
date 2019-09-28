@@ -13,14 +13,24 @@ class ReservationInput extends React.Component {
 constructor() {
   super()
 
+  // this.currentDate = new Date()
+  // this.dayOne = moment(this.currentDate).add(1, 'days').format('MMM DD YYYY')
+  // this.dayTwo = moment(this.currentDate).add(2, 'days').format('MMM DD YYYY')
+  // this.dayThree = moment(this.currentDate).add(3, 'days').format('MMM DD YYYY')
+  // this.dayFour = moment(this.currentDate).add(4, 'days').format('MMM DD YYYY')
+  // this.dayFive = moment(this.currentDate).add(5, 'days').format('MMM DD YYYY')
+  // this.daySix = moment(this.currentDate).add(6, 'days').format('MMM DD YYYY')
+  // this.daySeven = moment(this.currentDate).add(7, 'days').format('MMM DD YYYY')
+
   this.currentDate = new Date()
-  this.dayOne = moment(this.currentDate).add(1, 'days').format('MMM DD YYYY')
-  this.dayTwo = moment(this.currentDate).add(2, 'days').format('MMM DD YYYY')
-  this.dayThree = moment(this.currentDate).add(3, 'days').format('MMM DD YYYY')
-  this.dayFour = moment(this.currentDate).add(4, 'days').format('MMM DD YYYY')
-  this.dayFive = moment(this.currentDate).add(5, 'days').format('MMM DD YYYY')
-  this.daySix = moment(this.currentDate).add(6, 'days').format('MMM DD YYYY')
-  this.daySeven = moment(this.currentDate).add(7, 'days').format('MMM DD YYYY')
+  this.dayOne = moment(this.currentDate).add(1, 'days').format('YYYY-MM-DD')
+  this.dayTwo = moment(this.currentDate).add(2, 'days').format('YYYY-MM-DD')
+  this.dayThree = moment(this.currentDate).add(3, 'days').format('YYYY-MM-DD')
+  this.dayFour = moment(this.currentDate).add(4, 'days').format('YYYY-MM-DD')
+  this.dayFive = moment(this.currentDate).add(5, 'days').format('YYYY-MM-DD')
+  this.daySix = moment(this.currentDate).add(6, 'days').format('YYYY-MM-DD')
+  this.daySeven = moment(this.currentDate).add(7, 'days').format('YYYY-MM-DD')
+
 
   this.state = {
     court_id: "",
@@ -70,14 +80,16 @@ constructor() {
   render() {
 
     let court = this.props.court
+
     let day_string = JSON.stringify(this.state.day)
-    // let old_format_day = moment(day_string).format("YYYY MMM DD")
     console.log("day_string:", day_string)
-    // an array of objects with reservations
+    console.log("this.state.day:", this.state.day)
 
-    let day_court = court.court_res.filter(reservation => reservation.day === this.state.day)
+    // let day_court = court.court_res.filter(reservation => reservation.day === this.state.day)
+    let day_court = court.court_res.filter(reservation => reservation.day === day_string)
+
     console.log("day_court:", day_court)
-
+    
     // an array of strings for hours booked by court
     let hour_court = day_court.map(reservation => reservation.hour)
     console.log("hour_court:", hour_court)
@@ -86,7 +98,7 @@ constructor() {
     // let existing_time = time.map(hour => hour.value)
     // console.log("existing-time:", existing_time)
 
-    
+
     let new_time = time.filter(time => !hour_court.includes(time.value))
 
 

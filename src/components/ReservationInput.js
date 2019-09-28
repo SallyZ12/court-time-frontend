@@ -13,23 +13,14 @@ class ReservationInput extends React.Component {
 constructor() {
   super()
 
-  // this.currentDate = new Date()
-  // this.dayOne = moment(this.currentDate).add(1, 'days').format('MMM DD YYYY')
-  // this.dayTwo = moment(this.currentDate).add(2, 'days').format('MMM DD YYYY')
-  // this.dayThree = moment(this.currentDate).add(3, 'days').format('MMM DD YYYY')
-  // this.dayFour = moment(this.currentDate).add(4, 'days').format('MMM DD YYYY')
-  // this.dayFive = moment(this.currentDate).add(5, 'days').format('MMM DD YYYY')
-  // this.daySix = moment(this.currentDate).add(6, 'days').format('MMM DD YYYY')
-  // this.daySeven = moment(this.currentDate).add(7, 'days').format('MMM DD YYYY')
-
   this.currentDate = new Date()
-  this.dayOne = moment(this.currentDate).add(1, 'days').format('YYYY-MM-DD')
-  this.dayTwo = moment(this.currentDate).add(2, 'days').format('YYYY-MM-DD')
-  this.dayThree = moment(this.currentDate).add(3, 'days').format('YYYY-MM-DD')
-  this.dayFour = moment(this.currentDate).add(4, 'days').format('YYYY-MM-DD')
-  this.dayFive = moment(this.currentDate).add(5, 'days').format('YYYY-MM-DD')
-  this.daySix = moment(this.currentDate).add(6, 'days').format('YYYY-MM-DD')
-  this.daySeven = moment(this.currentDate).add(7, 'days').format('YYYY-MM-DD')
+  this.dayOne = moment(this.currentDate).add(1, 'days').format('MMM DD YYYY')
+  this.dayTwo = moment(this.currentDate).add(2, 'days').format('MMM DD YYYY')
+  this.dayThree = moment(this.currentDate).add(3, 'days').format('MMM DD YYYY')
+  this.dayFour = moment(this.currentDate).add(4, 'days').format('MMM DD YYYY')
+  this.dayFive = moment(this.currentDate).add(5, 'days').format('MMM DD YYYY')
+  this.daySix = moment(this.currentDate).add(6, 'days').format('MMM DD YYYY')
+  this.daySeven = moment(this.currentDate).add(7, 'days').format('MMM DD YYYY')
 
 
   this.state = {
@@ -80,10 +71,13 @@ constructor() {
 
     // The following modifies dropdown to exclude hours by day previously reserved
     let court = this.props.court
+
     // reservation objects reserved by day of dropdown (the value = this.state.day)
-    let day_court = court.court_res.filter(reservation => reservation.day === this.state.day)
+    let day_court = court.court_res.filter(reservation => moment(reservation.day).format('MMM DD YYYY') === this.state.day)
+
     // an array of strings for hours booked by court by day
     let hour_court = day_court.map(reservation => reservation.hour)
+
     // new time object that excludes hours already reserved by day
     let new_time = time.filter(time => !hour_court.includes(time.value))
 

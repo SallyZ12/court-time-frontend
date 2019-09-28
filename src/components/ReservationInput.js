@@ -76,35 +76,16 @@ constructor() {
   }
 
 
-
   render() {
 
+    // The following modifies dropdown to exclude hours by day previously reserved
     let court = this.props.court
-
-    let day_string = JSON.stringify(this.state.day)
-    console.log("day_string:", day_string)
-    console.log("this.state.day:", this.state.day)
-
-    // let day_court = court.court_res.filter(reservation => reservation.day === this.state.day)
-    let day_court = court.court_res.filter(reservation => reservation.day === day_string)
-
-    console.log("day_court:", day_court)
-    
-    // an array of strings for hours booked by court
+    // reservation objects reserved by day of dropdown (the value = this.state.day)
+    let day_court = court.court_res.filter(reservation => reservation.day === this.state.day)
+    // an array of strings for hours booked by court by day
     let hour_court = day_court.map(reservation => reservation.hour)
-    console.log("hour_court:", hour_court)
-
-  // an array of strings with hours reflecting the dropdown
-    // let existing_time = time.map(hour => hour.value)
-    // console.log("existing-time:", existing_time)
-
-
+    // new time object that excludes hours already reserved by day
     let new_time = time.filter(time => !hour_court.includes(time.value))
-
-
-
-    // console.log("new_time_object:", new_time)
-
 
 
     return (
@@ -132,7 +113,7 @@ constructor() {
           name = "hour"
           value = {this.state.hour}
           onChange = {this.handleChange}>
-          <Options options = {time}/>
+          <Options options = {new_time}/>
           </select>
 
         <br/><br/>

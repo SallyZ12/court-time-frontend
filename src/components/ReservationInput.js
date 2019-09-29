@@ -122,12 +122,3 @@ constructor() {
 
 
 export default withRouter(connect(null, {addReservation})(ReservationInput))
-
-// name = 'hour'
-// value = {this.state.hour}
-// onChange = {this.handleChange}>
-// <option value = "select"> Time </option>
-
-
-
-// </Select><br/><br/><br/>

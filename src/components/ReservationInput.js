@@ -46,7 +46,7 @@ constructor() {
     let courtId = this.props.court.id
     let randomId = Math.floor(Math.random() * 1000000)
 
-    this.props.addReservation({...this.state, court_id: courtId, user_id: userId, confirmID: randomId }, userId)
+    this.props.addReservation({...this.state, court_id: courtId, user_id: userId, confirmID: randomId }, userId, this.props.history)
 
     // can also pass in one argument to addReservation action creator
     // don't add , userId at end to this.props.addReservation
@@ -63,7 +63,7 @@ constructor() {
       rate_type: "",
       confirmId: ""
     })
-    this.props.history.push(`/users/${userId}`)
+
   }
 
 

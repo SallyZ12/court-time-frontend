@@ -48,13 +48,7 @@ constructor() {
 
     this.props.addReservation({...this.state, court_id: courtId, user_id: userId, confirmID: randomId }, userId, this.props.history)
 
-    // can also pass in one argument to addReservation action creator
-    // don't add , userId at end to this.props.addReservation
-    // this.props.addReservation({...this.state, court_id: courtId, user_id: userId, confirmID: randomId})
-    // then in addReservation action creator pass in only (reservation) and in url use
-    // reservation.user_id
-
-
+    
     this.setState({
       court_id: "",
       day: "",
@@ -63,27 +57,21 @@ constructor() {
       rate_type: "",
       confirmId: ""
     })
-
   }
-
 
   render() {
 
     // The following modifies dropdown to exclude hours by day previously reserved
     let court = this.props.court
-
     // reservation objects reserved by day of dropdown (the value = this.state.day)
     let day_court = court.court_res.filter(reservation => moment(reservation.day).format('MMM DD YYYY') === this.state.day)
-
     // an array of strings for hours booked by court by day
     let hour_court = day_court.map(reservation => reservation.hour)
-
     // new time object that excludes hours already reserved by day
     let new_time = time.filter(time => !hour_court.includes(time.value))
 
 
     return (
-
       <form onSubmit={this.handleSubmit}>
         <label> Select </label><br/>
 
@@ -112,7 +100,6 @@ constructor() {
 
         <br/><br/>
   <Button variant="primary"><input type="submit" value="Reserve"/></Button>
-
       </form>
 
     )

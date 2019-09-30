@@ -1,3 +1,4 @@
+// Use for values of hour in dropdown in ReservationInput
 
 export const time = [{id: 0, value: 'Hour', label: 'time'},
              {id: 1, value:'9:00 am',label:'9:00 am'},

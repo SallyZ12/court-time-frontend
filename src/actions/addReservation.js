@@ -1,6 +1,6 @@
 
 
-export const addReservation = (reservation, userId) => {
+export const addReservation = (reservation, userId, history) => {
 
   return dispatch => {
 
@@ -21,6 +21,7 @@ export const addReservation = (reservation, userId) => {
           dispatch({type: 'ADD_RESERVATION_TO_CURRENT_USER', user: user})
           dispatch({type: 'ADD_RESERVATION_TO_CLUB', payload: user})
           dispatch({type: 'ADD_RESERVATION_TO_COURT', payload: user})
+          history.push(`/users/${userId}`)
     }
   })
   }

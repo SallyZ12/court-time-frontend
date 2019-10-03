@@ -52,7 +52,7 @@ const Signup = ({ signupFormData, updateSignupForm, history, handleSubmit, editM
               onChange={handleUserInfoInputChange} />
               <br/>
       <input  type="text"
-              placeholder="password >= 8 chars"
+              placeholder="enter PW >= 8 chars"
               value={password}
               name="password"
               onChange={handleUserInfoInputChange} />

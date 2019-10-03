@@ -7,15 +7,15 @@ import Button from 'react-bootstrap/Button';
 
 const Reservation = (props) => {
 
-  // not using below since retrieves id of reservation and not good when delete so use
-  // index instead
+  // not using line 12 below since retrieves reservation by index rather than id and not good when delete or sort so use
+  // id instead
   // let reservation =  props.currentUser && props.currentUser.reservations[props.match.params.id-1]
 
-  //The following allows you to find a reservation through a link where a reservation is deleted or the
-  // sequence of reservation.ids is not in order since various currentUsers will book reservations.
+  //The following allows you to find a reservation through a link where a reservation is deleted or sorted
+  // sequence of reservation.ids changes (via sort). use [0] since an array of an object is returned and need just the object.
   // reservation.id returns an integer, props.match.params.id returns string
-  // eslint-disable-next-line
-  let reservation = props.currentUser.reservations && props.currentUser.reservations.filter(reservation => reservation.id == props.match.params.id)[0]
+
+  let reservation = props.currentUser.reservations && props.currentUser.reservations.filter(reservation => reservation.id === parseInt(props.match.params.id))[0]
 
 
 const handleDeleteReservation = (reservation) => {

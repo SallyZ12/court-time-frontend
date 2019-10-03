@@ -5,8 +5,6 @@ import Button from 'react-bootstrap/Button';
 
 const Courts = ({club}) => {
 
-console.log("courts component:", club)
-
 const handleDelete = (court) => {
   club.deleteCourt(court.id, court.club_id)
 }

@@ -109,9 +109,6 @@ export const editUser = (user, history) => {
    }
   }
 
-// dispatch(resetSignupForm())
- // dispatch({type: "ADD_EDITED_USER_TO_CURRENT_USER", user:user})
-
 
 export const logout = (event, history) => {
   return dispatch => {

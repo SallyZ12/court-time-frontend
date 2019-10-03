@@ -23,7 +23,7 @@ export const setFormDataForEdit = user => {
     username: user.username,
     password: "",
     admin: user.admin
-  }
+}
 
   return {
     type: "SET_FORM_DATA_FOR_EDIT",

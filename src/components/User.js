@@ -5,11 +5,11 @@ import moment from 'moment'
 
 
 const User = (props) => {
-// console.log("user:", props)
-// let user = props.users.users[props.match.params.id-1]
-// User following instead, need id not index of array since sort order changes the order
-// eslint-disable-next-line
-let user = props.users.users && props.users.users.filter(user => user.id == props.match.params.id)[0]
+
+// let user = props.users.users[props.match.params.id-1](this returns object by index of aray)
+
+// Use following instead, need id not index of array since sort order changes the order
+let user = props.users.users && props.users.users.filter(user => user.id === parseInt(props.match.params.id))[0]
 
 // steps to accessing today's date
 let date = new Date()

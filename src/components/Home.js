@@ -14,6 +14,7 @@ const Home = (props) => {
         <h2 className = "text-center"> It's Court Time! </h2>
         <h6 className = "text-center"> Register/Login To Begin </h6>
         <h4 className = "text-center"> Select a Club </h4>
+        <br/>
       <Clubs clubs = {props.home.clubs}/>
       <br/>
 

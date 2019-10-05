@@ -27,7 +27,7 @@ class App extends React.Component {
 
 
   render () {
-    // console.log(this.props.loggedIn)
+    // console.log("curentUser:",this.props.clubs)
     const { currentUser} = this.props
 
     let admin1 = currentUser && currentUser.admin === "Yes"
@@ -66,7 +66,7 @@ class App extends React.Component {
 }
 
 const mapStateToProps = state => {
-  // console.log("MSTP-APP:", !!state.currentUserReducer)
+  // console.log("MSTP-APP:", state.clubsReducer)
   return ({
     loggedIn: !!state.currentUserReducer,
     currentUser: state.currentUserReducer,

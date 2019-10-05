@@ -12,8 +12,6 @@ import {fetchClubs} from './actions/fetchClubs'
 import { connect } from 'react-redux'
 import { Route, Redirect, NavLink, Switch } from 'react-router-dom'
 import Button from 'react-bootstrap/Button'
-import DropdownButton from 'react-bootstrap/DropdownButton'
-import Dropdown from 'react-bootstrap/Dropdown'
 import './style.css';
 
 
@@ -27,23 +25,13 @@ class App extends React.Component {
 
 
   render () {
-    // console.log("curentUser:",this.props.clubs)
-    const { currentUser} = this.props
-
-    let admin1 = currentUser && currentUser.admin === "Yes"
-
+  
     return (
       <div className="navmenu">
 
       <Button variant="light"><NavLink exact activeClassName="current" to="/home"> Home  </NavLink></Button>
       <Button variant="light"><NavLink exact activeClassName="current" to="/signup"> Register </NavLink></Button>
       <Button variant="light"><NavLink exact activeClassName="current" to="/login"> Login </NavLink></Button>
-
-
-      <DropdownButton id="dropdown-basic-button" title="Admin">
-      <Dropdown.Item href = {currentUser && admin1 ? "/clubs": null}>New Club </Dropdown.Item>
-      <Dropdown.Item href = {currentUser && admin1 ? "/users": null}>Players </Dropdown.Item>
-      </DropdownButton>
 
 
       <NavBar />

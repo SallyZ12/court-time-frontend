@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import {fetchClubs} from '../actions/fetchClubs'
 import ClubInput from '../components/ClubInput'
 import Club from '../components/Club'
+import CourtInput from '../components/CourtInput'
 import { Route, Switch } from 'react-router-dom'
 
 class ClubsContainer extends React.Component {
@@ -15,8 +16,9 @@ class ClubsContainer extends React.Component {
     return (
       <div>
       <Switch>
-        <Route path="/clubs/:id" render={(routerProps)=> <Club {...routerProps} clubs={this.props.clubs} currentUser={this.props.currentUser}/>}/>
+        <Route exact path="/clubs/:id" render={(routerProps)=> <Club {...routerProps} clubs={this.props.clubs} currentUser={this.props.currentUser}/>}/>
         <Route exact path = '/clubs' render ={() => <ClubInput clubInput = {this.props.club}/>} />
+        <Route exact path = '/clubs/:id/courts' component = {CourtInput}/>
       </Switch>
 
       </div>

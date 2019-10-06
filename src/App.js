@@ -1,7 +1,6 @@
 import React from 'react';
 import Home from './components/Home'
 import Login from './components/Login'
-import CourtInput from './components/CourtInput'
 import NavBar from './components/NavBar'
 import UsersContainer from './containers/UsersContainer'
 import ClubsContainer from './containers/ClubsContainer'
@@ -39,7 +38,6 @@ class App extends React.Component {
       <Switch>
       <Route exact path = '/' render = {()=> <Redirect to='/home'/>}/>
       <Route exact path = '/home' render = {() => <Home home = {this.props.clubs}/>}/>
-      {/*<Route exact path = '/clubs/:id/courts' component = {CourtInput}/>*/}
       <Route exact path="/login" component = {Login} />
 
       </Switch>

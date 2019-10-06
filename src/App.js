@@ -25,7 +25,7 @@ class App extends React.Component {
 
 
   render () {
-  
+
     return (
       <div className="navmenu">
 
@@ -39,7 +39,7 @@ class App extends React.Component {
       <Switch>
       <Route exact path = '/' render = {()=> <Redirect to='/home'/>}/>
       <Route exact path = '/home' render = {() => <Home home = {this.props.clubs}/>}/>
-      <Route exact path = '/clubs/:id/courts' component = {CourtInput}/>
+      {/*<Route exact path = '/clubs/:id/courts' component = {CourtInput}/>*/}
       <Route exact path="/login" component = {Login} />
 
       </Switch>

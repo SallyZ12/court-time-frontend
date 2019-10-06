@@ -49,7 +49,6 @@ function sortByDate(data) {
               {reservation.reservation_club}
              </li> ))}
         </Card.Text>
-        {/*<Button variant="light"><Link to='/users'>Players</Link></Button>*/}
       </Card.Body>
     </Card>
   )

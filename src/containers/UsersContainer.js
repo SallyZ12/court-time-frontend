@@ -13,7 +13,6 @@ class UsersContainer extends React.Component {
     this.props.fetchUsers()
   }
 
-debugger
   render() {
     return (
       <div>

@@ -40,13 +40,14 @@ class CourtInput extends React.Component {
   render() {
 
     return (
-      <div>
+      <div className = "Input">
 
         <h5> New Court Entry </h5>
+
         <Form onSubmit={this.handleSubmit} className="Input">
 
           <Form.Row>
-            <Form.Group as={Col} >
+            <Form.Group as={Col}>
               <input type= 'integer'
                 placeholder = "Court #"
                 value = {this.state.court_number}

@@ -36,7 +36,7 @@ export default function clubsReducer(state = initialState, action) {
         return {...state, clubs: clubs4}
 
         case 'DELETE_RESERVATION_FROM_CLUB':
-        
+
         let clubs5 = state.clubs.map(club => {
             if (club.club_res.find(reservation => reservation.id === action.payload)) {
                   let new_clubs_array = club.club_res.filter(reservation => reservation.id !== action.payload)

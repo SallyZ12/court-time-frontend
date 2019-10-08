@@ -18,7 +18,7 @@ const Home = (props) => {
       <Clubs clubs = {props.home.clubs}/>
       <br/>
 
-      <img src={court} width = '500' height = "250" alt="Court" className="center" />
+      <img src={court} width = '800' height = "500" alt="Court" className="center" />
     </div>
     )
   }

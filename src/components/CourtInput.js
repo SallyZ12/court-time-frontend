@@ -14,7 +14,7 @@ class CourtInput extends React.Component {
     courtNumber: "",
     surface: "Hard",
     prime: "",
-    non_prime: ""
+    nonPrime: ""
   }
 
   handleChange = (event) => {
@@ -33,7 +33,7 @@ class CourtInput extends React.Component {
       courtNumber: "",
       surface: "Hard",
       prime: "",
-      non_prime: ""
+      nonPrime: ""
     })
   }
 
@@ -82,8 +82,8 @@ class CourtInput extends React.Component {
 
           <input type= 'integer'
                   placeholder = "Non-Prime Rate"
-                  value = {this.state.non_prime}
-                  name = 'non_prime'
+                  value = {this.state.nonPrime}
+                  name = 'nonPrime'
                   onChange={this.handleChange}/><br/>
         </Form.Group>
         </Form.Row>

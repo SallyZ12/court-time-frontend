@@ -13,7 +13,7 @@
   {/*  <div>
     {club.club.courts && club.club.courts.map(court =>
     <li key={court.id}>
-    {court.court_number} - {court.surface} - {court.prime} - {court.non_prime}<br/>
+    {court.courtNumber} - {court.surface} - {court.prime} - {court.non_prime}<br/>
     <Button onClick={()=> handleDelete(court)}> Delete </Button><br/></li>
   )}
   </div>*/}

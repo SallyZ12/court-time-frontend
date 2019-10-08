@@ -55,7 +55,7 @@ return (
   <div>
 
 <Container className="justify-content-md-center">
-<h3> {club ? club.club_name : null}   </h3>
+<h3> {club ? club.clubName : null}   </h3>
 (<Button variant="light" ><NavLink exact activeClassName="current" to={club && props.currentUser && admin1 ? `/clubs/${club.id}/courts`: '/'}> New Court</NavLink></Button>
 <Button variant="link" onClick={()=> handleDeleteClub(club)} disabled={!admin1}> Delete Club</Button>)
 
@@ -78,7 +78,7 @@ return (
         <span className="courts">
 
           {club && club.courts.map(court => <li key={court.id}>
-            Court:    {court.court_number} <br/>
+            Court:    {court.courtNumber} <br/>
                       {court.surface} <br/>
         <br/>
 

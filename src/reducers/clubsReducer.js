@@ -28,7 +28,7 @@ export default function clubsReducer(state = initialState, action) {
         let maxResId1 = (Math.max(...action.payload.reservations.map(reservation => reservation.id)))
 
           let clubs4 = state.clubs.map(club => {
-            if (club.club_name === (action.payload.reservations.find(reservation => reservation.id === maxResId1)).reservation_club) {
+            if (club.clubName === (action.payload.reservations.find(reservation => reservation.id === maxResId1)).reservation_club) {
               club.club_res.push(action.payload.reservations.find(reservation => reservation.id === maxResId1))}
               return club
           })
@@ -53,7 +53,7 @@ export default function clubsReducer(state = initialState, action) {
       let maxResId = (Math.max(...action.payload.reservations.map(reservation => reservation.id)))
 
            let clubs2 = state.clubs.map(club => {
-      	        if (club.club_name === (action.payload.reservations.find(reservation => reservation.id === maxResId)).reservation_club) {
+      	        if (club.clubName === (action.payload.reservations.find(reservation => reservation.id === maxResId)).reservation_club) {
                    let court = club.courts.find(court => court.id === (action.payload.reservations.find(reservation => reservation.id === maxResId)).court_id)
       		           court.court_res.push(action.payload.reservations.find(reservation => reservation.id === maxResId))}
       	        return club

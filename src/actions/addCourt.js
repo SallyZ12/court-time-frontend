@@ -15,10 +15,13 @@ export const addCourt = (court, clubId) => {
         if (club.error) {
           alert(club.error)
         } else {
+        
           dispatch({type: 'ADD_COURT', payload: club})
-  }
-})
+        }
+    })
 
 // .catch(console.log)
-}
+
+  }
+
 }

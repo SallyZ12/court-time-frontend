@@ -11,7 +11,7 @@ class CourtInput extends React.Component {
 
 
   state = {
-    court_number: "",
+    courtNumber: "",
     surface: "Hard",
     prime: "",
     non_prime: ""
@@ -27,9 +27,10 @@ class CourtInput extends React.Component {
     event.preventDefault()
     let clubId = this.props.match.params.id
     this.props.addCourt(this.state, clubId)
+
     this.props.history.push(`/clubs/${clubId}`)
     this.setState({
-      court_number: "",
+      courtNumber: "",
       surface: "Hard",
       prime: "",
       non_prime: ""
@@ -50,8 +51,8 @@ class CourtInput extends React.Component {
             <Form.Group as={Col}>
               <input type= 'integer'
                 placeholder = "Court #"
-                value = {this.state.court_number}
-                name = 'court_number'
+                value = {this.state.courtNumber}
+                name = 'courtNumber'
                 onChange={this.handleChange}/>
           </Form.Group>
 

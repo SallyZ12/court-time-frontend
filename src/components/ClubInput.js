@@ -7,7 +7,7 @@ import { withRouter } from 'react-router-dom';
 class ClubInput extends React.Component {
 
   state= {
-    club_name: '',
+    clubName: '',
     location: ''
   }
   handleChange = (event) => {
@@ -21,7 +21,7 @@ class ClubInput extends React.Component {
     this.props.addClub(this.state)
     this.props.history.push('/')
     this.setState({
-      club_name:'',
+      clubName:'',
       location: ''
     })
   }
@@ -35,8 +35,8 @@ class ClubInput extends React.Component {
         <label> Club Name </label>
         <input type='text'
                 placeholder='Name'
-                value={this.state.club_name}
-                name = 'club_name'
+                value={this.state.clubName}
+                name = 'clubName'
                 onChange={this.handleChange}/><br/>
         <label> Location </label>
         <input type='text'

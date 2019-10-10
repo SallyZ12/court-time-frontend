@@ -8,7 +8,7 @@ export const addClub = (clubData, history) => {
         club_name: clubData.clubName,
         location: clubData.location
       }
-    
+
     fetch ('http://localhost:3000/api/v1/clubs', {
       headers: {
         'Content-Type': 'application/json',
@@ -28,8 +28,3 @@ export const addClub = (clubData, history) => {
     })
   }
 }
-
-
-
-// history.push('/')
-  // history.push(`/clubs/${club.id}`)

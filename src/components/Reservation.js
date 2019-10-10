@@ -33,7 +33,7 @@ return (
   ConfirmID: {reservation ? reservation.confirmID : null} <br/>
   Date: {reservation ? moment(reservation.day).format('MMM DD YYYY') : null} <br/>
   Time: {reservation ?  reservation.hour : null} <br/>
-  Court Number: {reservation ? reservation.res_courtNumber : null}<br/>
+  Court Number: {reservation ? reservation.res_court_number : null}<br/>
   Surface: {reservation ? reservation.res_court_surface : null}
  <br/><br/>
   <Button variant="link" onClick={()=> handleDeleteReservation(reservation)} > Cancel Reservation </Button>

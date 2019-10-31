@@ -55,23 +55,20 @@ return (
   <div>
 
 <Container className="justify-content-md-center">
+
 <h3> {club ? club.club_name : null}   </h3>
 (<Button variant="light" ><NavLink exact activeClassName="current" to={club && props.currentUser && admin1 ? `/clubs/${club.id}/courts`: '/'}> New Court</NavLink></Button>
-<Button variant="link" onClick={()=> handleDeleteClub(club)} disabled={!admin1}> Delete Club</Button>)
+<Button variant="link" onClick={()=> handleDeleteClub(club)} disabled={!admin1}> Delete Club</Button>)<br/>
 
-<Row >
-<Col sm={2.0}> Surface </Col>
-<Col sm={2.0}> Prime </Col>
-<Col sm={2.5}> Non-Prime </Col>
-</Row>
+Surface -- Prime -- Non-Prime
+
 {unique && unique.map(court => <span key={court.id}>
-<Row >
-<Col sm={2.0}> {court.surface} </Col>
-<Col sm={2.0}> ${court.prime}</Col>
-<Col sm={2.0}> ${court.non_prime}</Col>
-  </Row></span>)}
-</Container>
+<br/>
+{court.surface} --- ${court.prime} --- ${court.non_prime}
+</span>
+)}
 
+</Container>
 
 <Container>
       <br/><br/>
@@ -90,7 +87,8 @@ return (
        <Button variant="link" onClick={()=> handleDeleteCourt(court)} disabled={!admin1}> Delete Court</Button></li>)}
         </span>
   </Container>
-    </div>
+
+  </div>
   )
 }
 

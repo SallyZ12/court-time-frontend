@@ -19,7 +19,7 @@ class UsersContainer extends React.Component {
 
       <Route exact path="/users" render={(routerProps) => <Users {...routerProps} users={this.props.users}/>}/>
       <Route exact path="/signup" component = {NewSignupFormWrapper} />
-      <Route exact path="/users/:id" render={(rProps)=> <User {...rProps} users={this.props.users} clubs={this.props.clubs}/>}/>
+      <Route exact path="/users/:id" render={(rProps)=> <User {...rProps} currentUser={this.props.currentUser} users={this.props.users} clubs={this.props.clubs}/>}/>
       <Route exact path="/users/:id/edit" render={(rProps)=> <EditSignupFormWrapper {...rProps} currentUser={this.props.currentUser} />}/>
 
       </div>

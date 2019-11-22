@@ -26,12 +26,15 @@ function sortByDate(data) {
     )
 }
 
+let user1 = user ? user.username: null
+let currentUser1 = props.currentUser.username
+
 
   return (
     <Card bg="light"  className="text-left" style={{ width: '45rem' }}>
       {/*<Card.Img variant="top" src="holder.js/100px180" />*/}
       <Card.Body>
-        <Card.Title> Today's Date: {currentDate} <br/><br/> Player Information </Card.Title>
+        <Card.Title> Today's Date: {currentDate} <br/><br/> Player Information: {props.currentUser.username}</Card.Title>
         <Link to={user ? `/users/${user.id}/edit`: '/'}> Edit Player Information </Link>
         <Card.Text>
          <br/>
@@ -41,12 +44,16 @@ function sortByDate(data) {
         Admin: {user ? user.admin : null} <br/>
         Reservation Count: {user ? user.reservations.length : null}<br/><br/>
         Reservations: <br/>
+
+
             {user && sortByDate(user.reservations).map(reservation => ( <li key={reservation.id}>
-             <Link to={`/reservations/${reservation.id}`} >
-             ConfirmID:{reservation.confirmID}: </Link>
+               user1 === currentUser1  <Link to={`/reservations/${reservation.id}`} >
+             ConfirmID {reservation.confirmID} - </Link>
              {moment(reservation.day).format('MMM DD YYYY')} -
              {reservation.hour} --
-              {reservation.reservation_club}
+              {reservation.reservation_club} :
+              
+              ConfirmID {reservation.confirmID}
              </li> ))}
         </Card.Text>
       </Card.Body>

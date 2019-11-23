@@ -5,7 +5,7 @@ import moment from 'moment'
 
 
 const User = (props) => {
-console.log("props", props)
+
 // let user = props.users.users[props.match.params.id-1](this returns object by index of aray)
 
 // Use following instead, need id not index of array since sort order changes the order

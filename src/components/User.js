@@ -47,7 +47,7 @@ let currentUser1 = props.currentUser.username
 
             {/* ternary used so that admin can't access players specific reservation from player's main reservation screen*/}
 
-            {user1 == currentUser1 ?
+            {user1 === currentUser1 ?
 
               user && sortByDate(user.reservations).map(reservation => ( <li key={reservation.id}>
                <Link to={`/reservations/${reservation.id}`} >

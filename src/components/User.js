@@ -51,7 +51,7 @@ let currentUser1 = props.currentUser.username
 
               user && sortByDate(user.reservations).map(reservation => ( <li key={reservation.id}>
                <Link to={`/reservations/${reservation.id}`} >
-               ConfirmID {reservation.confirmID} - </Link>
+               ConfirmID: {reservation.confirmID} - </Link>
                {moment(reservation.day).format('MMM DD YYYY')} -
                {reservation.hour} --
               {reservation.reservation_club}

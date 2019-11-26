@@ -40,3 +40,23 @@
   list-style: none;
   align-items: left
 }
+
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+table {
+    width: 75%;
+}
+
+th {
+    height: 50px;
+}
+
+td {
+    text-align: center;
+}

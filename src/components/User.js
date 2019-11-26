@@ -35,7 +35,10 @@ let currentUser1 = props.currentUser.username
       {/*<Card.Img variant="top" src="holder.js/100px180" />*/}
       <Card.Body>
         <Card.Title> Today's Date: {currentDate} <br/><br/> Player Information:</Card.Title>
-        <Link to={user ? `/users/${user.id}/edit`: '/'}> Edit Player Information </Link>
+
+        {/*only player logged in can edit their own player information*/}
+        { user1 === currentUser1 ? <Link to={`/users/${user.id}/edit`}> Edit Player Information </Link> : ""}
+
         <Card.Text>
          <br/>
         Name: {user ? user.first_name : null} {user ? user.last_name : null} <br/>

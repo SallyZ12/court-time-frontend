@@ -1,10 +1,9 @@
 import React from 'react'
 import '../style.css'
 import Button from 'react-bootstrap/Button';
+import Table from 'react-bootstrap/Table';
 import { NavLink, withRouter } from 'react-router-dom'
 import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
 import {connect} from 'react-redux'
 import {deleteCourt} from '../actions/deleteCourt'
 import {deleteClub} from '../actions/deleteClub'
@@ -52,21 +51,36 @@ function sortByDate(data) {
 
 
 return (
-  <div>
+
+<div>
 
 <Container className="justify-content-md-center">
-
 <h3> {club ? club.club_name : null}   </h3>
 (<Button variant="light" ><NavLink exact activeClassName="current" to={club && props.currentUser && admin1 ? `/clubs/${club.id}/courts`: '/'}> New Court</NavLink></Button>
 <Button variant="link" onClick={()=> handleDeleteClub(club)} disabled={!admin1}> Delete Club</Button>)<br/>
 
-Surface -- Prime -- Non-Prime
 
-{unique && unique.map(court => <span key={court.id}>
-<br/>
-{court.surface} --- ${court.prime} --- ${court.non_prime}
-</span>
-)}
+  <Table striped bordered size="sm">
+
+    <thead>
+     <tr>
+      <th> Surface </th>
+      <th> Prime Rate </th>
+      <th> Non-Prime Rate</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {unique && unique.map(court => <React.Fragment key={court.id}>
+        <tr>
+         <td> {court.surface}</td>
+         <td> ${court.prime} </td>
+         <td> ${court.non_prime} </td>
+        </tr>
+     </React.Fragment>
+     )}
+    </tbody>
+  </Table>
 
 </Container>
 
@@ -86,9 +100,9 @@ Surface -- Prime -- Non-Prime
 
        <Button variant="link" onClick={()=> handleDeleteCourt(court)} disabled={!admin1}> Delete Court</Button></li>)}
         </span>
-  </Container>
+</Container>
 
-  </div>
+</div>
   )
 }
 

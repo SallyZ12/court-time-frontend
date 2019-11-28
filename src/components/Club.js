@@ -57,13 +57,14 @@ return (
 <Container className="justify-content-md-center">
 <h3> {club ? club.club_name : null}   </h3>
 
+{/*only admin can see New Court link*/}
 {admin1 ? <NavLink exact activeClassName="current" to={`/clubs/${club.id}/courts`}> New Court</NavLink> : ""}
 
-{admin1 ? <Button variant="link" onClick={()=> handleDeleteClub(club)} disabled={!admin1}> Delete Club</Button> : ""}
+{/*only admin can see New Court link*/}
+{admin1 ? <Button variant="link" onClick={()=> handleDeleteClub(club)}> Delete Club</Button> : ""}
 
 
   <Table striped bordered size="sm">
-
     <thead>
      <tr>
       <th> Surface </th>
@@ -71,7 +72,6 @@ return (
       <th> Non-Prime Rate</th>
       </tr>
     </thead>
-
     <tbody>
       {unique && unique.map(court => <React.Fragment key={court.id}>
         <tr>
@@ -91,6 +91,7 @@ return (
         <span className="courts">
 
           {club && club.courts.map(court => <li key={court.id}>
+
             Court:    {court.court_number} <br/>
                       {court.surface} <br/>
         <br/>
@@ -100,8 +101,9 @@ return (
         {sortByDate(court.court_res).map((reservation =>   <p key={reservation.id}>
         {moment(reservation.day).format('MMM DD YYYY')} <br/>{reservation.hour}</p>))}
 
-       <Button variant="link" onClick={()=> handleDeleteCourt(court)} disabled={!admin1}> Delete Court</Button></li>)}
-        </span>
+        {/*only admin can see delete court link*/}
+        {admin1 ? <Button variant="link" onClick={()=> handleDeleteCourt(court)}> Delete Court </Button> : ""} </li> )}
+       </span>
 </Container>
 
 </div>

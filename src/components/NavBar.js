@@ -6,7 +6,7 @@ import DropdownButton from 'react-bootstrap/DropdownButton'
 import Dropdown from 'react-bootstrap/Dropdown'
 
 const NavBar =  ({ currentUser}) => {
-  
+
 let admin1 = currentUser && currentUser.admin === "Yes"
 
   return (
@@ -24,19 +24,10 @@ let admin1 = currentUser && currentUser.admin === "Yes"
   )
 }
 
-
 const mapStateToProps = (state) => {
-
   return {
     currentUser: state.currentUserReducer
   }
 }
 
 export default connect(mapStateToProps)(NavBar)
-
-
-// <div className="NavBar">
-//    {Object.keys(currentUser).length !== 0 ? <Logout/> : ""}
-//    {Object.keys(currentUser).length !== 0 ? <h4> Welcome, {currentUser.first_name} </h4> : "" }
-//    {Object.keys(currentUser).length !== 0 ? <p> <Link exact='true' to={`/users/${currentUser.id}`}>Reservations</Link></p> :""  }
-// </div>

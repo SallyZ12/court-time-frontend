@@ -37,7 +37,7 @@ const handleDeleteCourt = (court) => {
 
 const handleDeleteClub = (club) => {
   props.deleteClub(club.id)
-  // props.history.push("/")
+  props.history.push("/")
 }
 
 function sortByDate(data) {
@@ -115,6 +115,5 @@ const mapStateToProps = state => {
     currentUser: state.currentUserReducer
   })
 }
-
 
 export default withRouter(connect(mapStateToProps, {deleteCourt, deleteClub})(Club));

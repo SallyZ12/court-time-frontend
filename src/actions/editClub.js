@@ -24,3 +24,24 @@ export const editClub = (club, history) => {
    })
    }
   }
+
+
+  export const setClubFormDataForEdit = club => {
+    const clubFormData = {
+      id: club.id,
+      club_name: club.club_name,
+      location: club.location,
+  }
+
+    return {
+      type: "SET_CLUB_FORM_DATA_FOR_EDIT",
+      clubFormData
+    }
+  }
+
+  export const updateClubForm = (clubFormData) => {
+      return {
+        type: "UPDATE_CLUB_FORM",
+        clubFormData
+      }
+    }

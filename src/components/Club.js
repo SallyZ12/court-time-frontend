@@ -55,7 +55,7 @@ return (
 <div>
 
 <Container className="justify-content-md-center">
-<h3> {club ? club.club_name : null}   </h3>
+<h3> {club ? club.club_name : null} - {club ? club.location : null} </h3>
 
 {/*only admin can see New Court link*/}
 {admin1 ? <NavLink exact activeClassName="current" to={`/clubs/${club.id}/courts`}> New Court</NavLink> : ""}

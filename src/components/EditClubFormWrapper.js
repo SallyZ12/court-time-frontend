@@ -1,7 +1,7 @@
 import React from 'react';
 
 import ClubInput from '../components/ClubInput'
-import { editClub,setClubFormDataForEdit } from '../actions/addClub'
+import { editClub, setClubFormDataForEdit } from '../actions/editClub'
 
 class EditClubFormWrapper extends React.Component {
 

@@ -44,7 +44,7 @@ class ClubInput extends React.Component {
                 value={this.state.location}
                 name = 'location'
                 onChange={this.handleChange}/><br/>
-              <input type = "submit"  value= "New Club"/>
+        <input type = "submit"  value= "New Club"/>
         </form>
       </div>
     )

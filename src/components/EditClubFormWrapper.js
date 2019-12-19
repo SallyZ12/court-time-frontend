@@ -1,5 +1,5 @@
 import React from 'react';
-
+import {connect} from 'react-redux'
 import ClubInput from '../components/ClubInput'
 import { editClub, setClubFormDataForEdit } from '../actions/editClub'
 

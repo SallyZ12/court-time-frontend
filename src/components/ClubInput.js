@@ -28,6 +28,8 @@ class ClubInput extends React.Component {
 
   render(){
 
+    const editMode = this.state
+
     return (
       <div>
           <h5> New Club </h5>
@@ -44,7 +46,8 @@ class ClubInput extends React.Component {
                 value={this.state.location}
                 name = 'location'
                 onChange={this.handleChange}/><br/>
-        <input type = "submit"  value= "New Club"/>
+
+        <input type = "submit"  value={editMode ?  "New Club" : "Update Club Info"}/>
         </form>
       </div>
     )
@@ -53,5 +56,5 @@ class ClubInput extends React.Component {
 
 export default withRouter(connect(null, {addClub})(ClubInput))
 
-
+  // <input type = "submit"  value= "New Club"/>
 // <input type = "submit"  value={editMode ? "Update Club Info" : "New Club"}/>

@@ -63,6 +63,7 @@ return (
 {/*only admin can see New Court link*/}
 {admin1 ? <Button variant="link" onClick={()=> handleDeleteClub(club)}> Delete Club</Button> : ""}
 
+<NavLink to= {`/clubs/${club.id}/edit`}> Edit Club Info </NavLink> 
 
   <Table striped bordered size="sm">
     <thead>

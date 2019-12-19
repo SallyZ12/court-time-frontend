@@ -14,6 +14,7 @@ export default function clubsReducer(state = initialState, action) {
 
 
      case "UPDATE_CLUB_FORM":
+     debugger
        return action.clubFormData
 
      case "SET_CLUB_FORM_DATA_FOR_EDIT":

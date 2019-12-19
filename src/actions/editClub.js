@@ -18,7 +18,7 @@ export const editClub = (club, history) => {
        if (club.error) {
          alert(club.error)
        } else {
-       dispatch({type: "EDIT_Club", club: club})
+       dispatch({type: "EDIT_CLUB", club: club})
        history.push(`/clubs/${club.id}`)
      }
    })

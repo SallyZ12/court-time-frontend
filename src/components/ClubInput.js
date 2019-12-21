@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import { withRouter } from 'react-router-dom'
-import { updateClubForm } from '../actions/editClub'
+import { addClub } from '../actions/addClub'
 
 class ClubInput extends React.Component {
 
@@ -17,7 +17,7 @@ class ClubInput extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
-    this.props.updateClubForm(this.state)
+    this.props.addClub(this.state)
     this.props.history.push('/')
     this.setState({
       clubName:'',
@@ -53,7 +53,7 @@ class ClubInput extends React.Component {
   }
 }
 
-export default withRouter(connect(null, {updateClubForm})(ClubInput))
+export default withRouter(connect(null, {addClub})(ClubInput))
 
   // <input type = "submit"  value= "New Club"/>
 // <input type = "submit"  value={editMode ? "Update Club Info" : "New Club"}/>

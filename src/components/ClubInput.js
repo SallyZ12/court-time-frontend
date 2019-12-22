@@ -3,13 +3,26 @@ import {connect} from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import { updateClubForm } from '../actions/editClub'
 
-class ClubInput extends React.Component {
+// class ClubInput extends React.Component {
+//
+//   state= {
+//     clubName: '',
+//     location: ''
+//   }
 
-  state= {
-    clubName: '',
-    location: ''
+const ClubInput = ({ clubFormData, updateClubForm, history, handleSubmit, editMode}) => {
+
+  const {club_name, location} = clubFormData
+
+  const handleClubInfoInputChange = event => {
+    const { name, value } = event.target
+console.log("clubFormData", clubFormData)
+    const updatedClubFormInfo = {
+    ...clubFormData,
+    [name]: value
   }
-
+  updateClubForm(updatedClubFormInfo)
+}
 
   // handleChange = (event) => {
   //   this.setState({
@@ -27,22 +40,7 @@ class ClubInput extends React.Component {
   //   })
   // }
 
-  render(){
-
-    const clubFormData = (this.state.clubName, this.state.location)
-
-    const handleClubInfoInputChange = event => {
-      const { name, value } = event.target
-
-    const updatedClubFormInfo = {
-      ...clubFormData,
-      [name]: value
-    }
-    updateClubForm(updatedClubFormInfo)
-  }
-
-    const {editMode} = this.state
-    const {handleSubmit} = this.state
+  // render(){
 
     return (
       <div>
@@ -55,13 +53,13 @@ class ClubInput extends React.Component {
         <label> Club Name </label>
         <input type='text'
                 placeholder='Name'
-                value={this.state.clubName}
-                name = 'clubName'
+                value={club_name}
+                name = 'club_name'
                 onChange={handleClubInfoInputChange}/><br/>
         <label> Location </label>
         <input type='text'
                 placeholder='location'
-                value={this.state.location}
+                value={location}
                 name = 'location'
                 onChange={handleClubInfoInputChange}/><br/>
 
@@ -70,9 +68,15 @@ class ClubInput extends React.Component {
       </div>
     )
   }
-}
 
-export default withRouter(connect(null, {updateClubForm})(ClubInput))
+  const mapStateToProps = state => {
+  console.log("MSTP-clubFormData:", state.clubsReducer)
+    return {
+      clubFormData: state.clubsReducer
+    }
+  }
+
+export default withRouter(connect(mapStateToProps, {updateClubForm})(ClubInput))
 
   // <input type = "submit"  value= "New Club"/>
 // <input type = "submit"  value={editMode ? "Update Club Info" : "New Club"}/>

@@ -1,4 +1,8 @@
-const initialState = { clubs: []}
+const initialState = {
+  club_name: "",
+  location: ""
+}
+
 
 export default function clubsReducer(state = initialState, action) {
   switch (action.type) {

@@ -12,15 +12,16 @@ import { updateClubForm } from '../actions/editClub'
 
 const ClubInput = ({ clubFormData, updateClubForm, history, handleSubmit, editMode}) => {
 
-  const {club_name, location} = clubFormData
+  const {clubName, location} = clubFormData
 
   const handleClubInfoInputChange = event => {
     const { name, value } = event.target
-console.log("clubFormData", clubFormData)
+
     const updatedClubFormInfo = {
     ...clubFormData,
     [name]: value
   }
+  console.log("updatedClubFormInfo", updatedClubFormInfo)
   updateClubForm(updatedClubFormInfo)
 }
 
@@ -43,7 +44,6 @@ console.log("clubFormData", clubFormData)
   // render(){
 
     return (
-      <div>
 
         <form onSubmit={event => {
           event.preventDefault()
@@ -53,9 +53,10 @@ console.log("clubFormData", clubFormData)
         <label> Club Name </label>
         <input type='text'
                 placeholder='Name'
-                value={club_name}
+                value={clubName}
                 name = 'club_name'
                 onChange={handleClubInfoInputChange}/><br/>
+
         <label> Location </label>
         <input type='text'
                 placeholder='location'
@@ -65,7 +66,7 @@ console.log("clubFormData", clubFormData)
 
         <input type = "submit"  value={editMode ?   "Update Club Info" : "New Club" }/>
         </form>
-      </div>
+
     )
   }
 

@@ -1,5 +1,5 @@
 const initialState = {
-  club_name: "",
+  clubName: "",
   location: ""
 }
 
@@ -94,3 +94,6 @@ export default function clubsReducer(state = initialState, action) {
       return state
   }
 }
+
+// case 'ADD_CLUB':
+//    {...state, clubs: [...state.clubs, action.payload]}

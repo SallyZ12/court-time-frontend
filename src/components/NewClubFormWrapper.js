@@ -6,8 +6,7 @@ import { connect } from 'react-redux'
 
 const NewClubFormWrapper = ( {history, addClub}) => {
 
-  const handleSubmit = {clubData, clubId} => {
-
+  const handleSubmit = (clubData, clubId) => {
     addClub({
       ...clubData,
       clubId
@@ -17,4 +16,4 @@ const NewClubFormWrapper = ( {history, addClub}) => {
   return <ClubInput history={history} handleSubmit={handleSubmit} />
 }
 
-export default connect(null, { addClub})(NewClubFormWrapper)
+export default connect(null, { addClub })(NewClubFormWrapper)

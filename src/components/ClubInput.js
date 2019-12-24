@@ -54,7 +54,7 @@ const ClubInput = ({ clubFormData, updateClubForm, history, handleSubmit, editMo
         <input type='text'
                 placeholder='Name'
                 value={clubName}
-                name = 'club_name'
+                name = 'clubName'
                 onChange={handleClubInfoInputChange}/><br/>
 
         <label> Location </label>
@@ -71,9 +71,9 @@ const ClubInput = ({ clubFormData, updateClubForm, history, handleSubmit, editMo
   }
 
   const mapStateToProps = state => {
-  console.log("MSTP-clubFormData:", state.clubsReducer)
+  console.log("MSTP-clubFormData:", state.clubFormReducer)
     return {
-      clubFormData: state.clubsReducer
+      clubFormData: state.clubFormReducer
     }
   }
 

@@ -7,6 +7,7 @@ import { connect } from 'react-redux'
 const NewClubFormWrapper = ( {history, addClub }) => {
 
   const handleSubmit = (clubData, clubId) => {
+    console.log("clubData", clubData)
       addClub({
        ...clubData,
        clubId

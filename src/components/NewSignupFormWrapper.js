@@ -12,6 +12,7 @@ const NewSignupFormWrapper = ( {history, signup }) => {
        userId
      }, history)
   }
+  
   return <Signup history= {history} handleSubmit={handleSubmit} />
 }
 

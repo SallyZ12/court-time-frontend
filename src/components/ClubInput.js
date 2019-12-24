@@ -10,7 +10,6 @@ const ClubInput = ({ clubFormData, updateClubForm, history, editMode, handleSubm
 
   const handleClubInfoInputChange = event => {
     const { name, value } = event.target
-
     const updatedClubFormInfo = {
     ...clubFormData,
     [name]: value
@@ -23,9 +22,10 @@ const ClubInput = ({ clubFormData, updateClubForm, history, editMode, handleSubm
   return (
 
         <form onSubmit={event => {
-          event.preventDefault()
-          handleSubmit(clubFormData)
+        event.preventDefault()
+        handleSubmit(clubFormData)
         }}>
+
         <h5> New Club/Edit Club </h5>
         <label> Club Name </label>
         <input type='text'
@@ -56,3 +56,8 @@ export default (connect(mapStateToProps, {updateClubForm})(ClubInput))
 
   // <input type = "submit"  value= "New Club"/>
 // <input type = "submit"  value={editMode ? "Update Club Info" : "New Club"}/>
+
+// <form onSubmit={event => {
+//   event.preventDefault()
+//   handleSubmit(clubFormData)
+// }}>

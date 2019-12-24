@@ -1,7 +1,7 @@
 import React from 'react';
 
-import ClubInput from '../components'
-import { addClub } from '...actions/addClub'
+import ClubInput from '../components/ClubInput'
+import { addClub } from '../actions/addClub'
 import { connect } from 'react-redux'
 
 const NewClubFormWrapper = ( {history, addClub }) => {

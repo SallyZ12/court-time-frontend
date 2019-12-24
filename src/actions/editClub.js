@@ -29,7 +29,7 @@ export const editClub = (club, history) => {
   export const setClubFormDataForEdit = club => {
     const clubFormData = {
       id: club.id,
-      club_name: club.club_name,
+      clubName: club.club_name,
       location: club.location,
   }
 

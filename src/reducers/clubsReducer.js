@@ -1,7 +1,5 @@
-const initialState = {
-  clubName: "",
-  location: ""
-}
+const initialState = { clubs: []}
+
 
 
 export default function clubsReducer(state = initialState, action) {
@@ -15,17 +13,6 @@ export default function clubsReducer(state = initialState, action) {
 
      case 'DELETE_CLUB':
      return {...state, clubs: state.clubs.filter(club=> club.id !== action.payload.id)}
-
-
-     case 'EDIT_CLUB':
-       return {clubs: state.clubs.map(club => club.id === action.club.id ? action.club : club)}
-
-     case "UPDATE_CLUB_FORM":
-       return action.clubFormData
-
-     case "SET_CLUB_FORM_DATA_FOR_EDIT":
-       return action.clubFormData
-
 
 
 

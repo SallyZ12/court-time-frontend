@@ -16,6 +16,7 @@ class EditClubFormWrapper extends React.Component {
 
 
   handleSubmit = (clubFormData) => {
+
     const { editClub, club, history } = this.props
       editClub({
         ...clubFormData,

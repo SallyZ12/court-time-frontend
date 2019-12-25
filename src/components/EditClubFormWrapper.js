@@ -1,7 +1,7 @@
 import React from 'react';
 
 import ClubInput from '../components/ClubInput'
-import { editClub, setClubFormDataForEdit } from '../actions/editClub'
+import { editClub, setClubFormDataForEdit, resetClubForm } from '../actions/editClub'
 import {connect} from 'react-redux'
 
 class EditClubFormWrapper extends React.Component {

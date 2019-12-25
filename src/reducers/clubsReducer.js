@@ -1,8 +1,8 @@
 const initialState = { clubs: []}
 
 
-
 export default function clubsReducer(state = initialState, action) {
+
   switch (action.type) {
 
     case 'ADD_CLUB':

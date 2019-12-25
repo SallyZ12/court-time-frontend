@@ -1,10 +1,4 @@
-
-// export const addNewClub = club => {
-//   return {
-//     type: "ADD_NEW_CLUB",
-//     club
-//    }
-// }
+import {resetClubForm} from "../actions/editClub"
 
 
 //asynchronous action creators
@@ -29,7 +23,8 @@ export const addClub = (clubData, history) => {
           alert(club.error)
       } else {
         dispatch({type: 'ADD_CLUB', payload: club})
-
+        dispatch(resetClubForm())
+        history.push('/')
 
       }
     })

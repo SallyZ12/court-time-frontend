@@ -5,10 +5,8 @@ const initialState = {
 
 
 export default (state = initialState, action) => {
+  
   switch (action.type) {
-
-    case 'EDIT_CLUB':
-      return {clubs: state.clubs.map(club => club.id === action.club.id ? action.club : club)}
 
     case "UPDATE_CLUB_FORM":
       return action.clubFormData
@@ -23,3 +21,7 @@ export default (state = initialState, action) => {
         return state
     }
   }
+
+
+  // case "EDIT_CLUB":
+  //   return {clubs: state.clubs.map(club => club.id === action.club.id ? action.club : club)}

@@ -45,3 +45,9 @@ export const editClub = (club, history) => {
         clubFormData
       }
     }
+
+    export const resetClubForm = () => {
+      return {
+        type: "RESET_CLUB_FORM"
+      }
+    }

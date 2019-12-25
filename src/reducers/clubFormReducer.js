@@ -16,10 +16,10 @@ export default (state = initialState, action) => {
     case "SET_CLUB_FORM_DATA_FOR_EDIT":
       return action.clubFormData
 
-      case "RESET_CLUB_FORM":
+    case "RESET_CLUB_FORM":
         return initialState
 
-      default:
+    default:
         return state
     }
   }

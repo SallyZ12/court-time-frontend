@@ -31,4 +31,4 @@ class EditClubFormWrapper extends React.Component {
     }
 }
 
-export default connect(null, {editClub, setClubFormDataForEdit})(EditClubFormWrapper)
+export default connect(null, {editClub, setClubFormDataForEdit, resetClubForm})(EditClubFormWrapper)

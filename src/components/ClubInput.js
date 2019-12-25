@@ -14,7 +14,6 @@ const ClubInput = ({ clubFormData, updateClubForm, history, editMode, handleSubm
     ...clubFormData,
     [name]: value
   }
-  console.log("updatedClubFormInfo", updatedClubFormInfo)
 
   updateClubForm(updatedClubFormInfo)
 }

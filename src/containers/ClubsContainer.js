@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {fetchClubs} from '../actions/fetchClubs'
-import ClubInput from '../components/ClubInput'
+// import ClubInput from '../components/ClubInput'
 import Club from '../components/Club'
 import NewClubFormWrapper from '../components/NewClubFormWrapper'
 import EditClubFormWrapper from '../components/EditClubFormWrapper'

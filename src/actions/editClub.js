@@ -1,10 +1,10 @@
 export const editClub = (club, history) => {
 
   return dispatch => {
-
-      const clubInfo = {
-        club: club
+    const clubInfo = {
+      club: club
       }
+
     return fetch(`http://localhost:3000/api/v1/clubs/${club.clubId}`, {
       credentials: "include",
       method: "PATCH",
@@ -27,6 +27,7 @@ export const editClub = (club, history) => {
 
 
   export const setClubFormDataForEdit = club => {
+
     const clubFormData = {
       id: club.id,
       clubName: club.club_name,

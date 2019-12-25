@@ -1,10 +1,10 @@
 
-export const addNewClub = club => {
-  return {
-    type: "ADD_NEW_CLUB",
-    club
-   }
-}
+// export const addNewClub = club => {
+//   return {
+//     type: "ADD_NEW_CLUB",
+//     club
+//    }
+// }
 
 
 //asynchronous action creators
@@ -28,7 +28,7 @@ export const addClub = (clubData, history) => {
         if(club.error) {
           alert(club.error)
       } else {
-        dispatch({type: 'ADD_NEW_CLUB', payload: club})
+        dispatch({type: 'ADD_CLUB', payload: club})
 
 
       }

@@ -7,6 +7,7 @@ import { updateClubForm } from '../actions/editClub'
 const ClubInput = ({ clubFormData, updateClubForm, history, editMode, handleSubmit}) => {
 
   const {clubName, location} = clubFormData
+console.log("clubFormdData", clubFormData)
 
   const handleClubInfoInputChange = event => {
     const { name, value } = event.target
@@ -45,6 +46,7 @@ const ClubInput = ({ clubFormData, updateClubForm, history, editMode, handleSubm
     )}
 
   const mapStateToProps = state => {
+    console.log("MSTP", state.clubFormReducer)
     return {
       clubFormData: state.clubFormReducer
     }

@@ -46,7 +46,7 @@ const ClubInput = ({ clubFormData, updateClubForm, history, editMode, handleSubm
     )}
 
   const mapStateToProps = state => {
-    // console.log("MSTP", state.clubFormReducer)
+    
     return {
       clubFormData: state.clubFormReducer
     }

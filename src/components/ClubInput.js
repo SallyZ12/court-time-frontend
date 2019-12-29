@@ -46,19 +46,10 @@ const ClubInput = ({ clubFormData, updateClubForm, history, editMode, handleSubm
     )}
 
   const mapStateToProps = state => {
-    
+
     return {
       clubFormData: state.clubFormReducer
     }
   }
-
-// export default (connect(mapStateToProps, {updateClubForm})(ClubInput))
+  
 export default withRouter(connect(mapStateToProps, {updateClubForm})(ClubInput))
-
-  // <input type = "submit"  value= "New Club"/>
-// <input type = "submit"  value={editMode ? "Update Club Info" : "New Club"}/>
-
-// <form onSubmit={event => {
-//   event.preventDefault()
-//   handleSubmit(clubFormData)
-// }}>

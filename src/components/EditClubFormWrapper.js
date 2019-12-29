@@ -1,23 +1,26 @@
 import React from 'react';
 
 import ClubInput from '../components/ClubInput'
-import { editClub, setClubFormDataForEdit, resetClubForm } from '../actions/editClub'
+import { setClubFormDataForEdit, resetClubForm } from '../actions/editClub'
+import { editClub } from '../actions/addClub'
 import {connect} from 'react-redux'
 
 class EditClubFormWrapper extends React.Component {
 
+
   componentDidMount() {
-    this.props.club && this.props.setClubFormDataForEdit(this.props.club)
+    this.props.clubs.clubs && this.props.setClubFormDataForEdit(this.props.clubs.clubs.filter(club => club.id === parseInt(this.props.match.params.id))[0])
   }
 
   componentDidUpdate(prevProps) {
-    this.props.club && !prevProps.club && this.props.setClubFormDataForEdit(this.props.club)
+    this.props.clubs.clubs && !prevProps.clubs.clubs && this.props.setClubFormDataForEdit(this.props.clubs.clubs.filter(club => club.id === parseInt(this.props.match.params.id))[0])
   }
 
 
   handleSubmit = (clubFormData) => {
 
     const { editClub, club, history } = this.props
+    
       editClub({
         ...clubFormData,
         clubId: club.id

@@ -3,7 +3,6 @@ const initialState = {
   location: ""
 }
 
-
 export default (state = initialState, action) => {
 
   switch (action.type) {
@@ -20,8 +19,4 @@ export default (state = initialState, action) => {
     default:
         return state
     }
-  }
-
-
-  // case "EDIT_CLUB":
-  //   return {clubs: state.clubs.map(club => club.id === action.club.id ? action.club : club)}
+}

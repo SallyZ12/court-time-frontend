@@ -88,6 +88,7 @@ export const editUser = (user, history) => {
       const userInfo = {
         user: user
       }
+      
     return fetch(`http://localhost:3000/api/v1/users/${user.currentUserId}`, {
       credentials: "include",
       method: "PATCH",

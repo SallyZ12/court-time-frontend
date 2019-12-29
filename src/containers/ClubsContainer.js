@@ -22,7 +22,7 @@ class ClubsContainer extends React.Component {
         {/*<Route exact path = '/clubs' render ={() => <ClubInput clubInput = {this.props.club}/>} />*/}
         <Route exact path='/clubs' component = {NewClubFormWrapper} />
         <Route exact path = '/clubs/:id/courts' component = {CourtInput}/>
-        <Route exact path="/clubs/:id/edit" render={(rProps)=> <EditClubFormWrapper {...rProps} currentUser={this.props.currentUser} />}/>
+        <Route exact path="/clubs/:id/edit" render={(rProps)=> <EditClubFormWrapper {...rProps} clubs={this.props.clubs} />}/>
       </Switch>
 
       </div>

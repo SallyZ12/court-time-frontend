@@ -1,13 +1,13 @@
 import React from 'react'
 import {connect} from 'react-redux'
-// import { withRouter } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 import { updateClubForm } from '../actions/editClub'
 
 
 const ClubInput = ({ clubFormData, updateClubForm, history, editMode, handleSubmit}) => {
 
   const {clubName, location} = clubFormData
-console.log("clubFormdData", clubFormData)
+// console.log("clubFormdData", clubFormData)
 
   const handleClubInfoInputChange = event => {
     const { name, value } = event.target
@@ -46,14 +46,14 @@ console.log("clubFormdData", clubFormData)
     )}
 
   const mapStateToProps = state => {
-    console.log("MSTP", state.clubFormReducer)
+    // console.log("MSTP", state.clubFormReducer)
     return {
       clubFormData: state.clubFormReducer
     }
   }
 
-export default (connect(mapStateToProps, {updateClubForm})(ClubInput))
-// export default withRouter(connect(mapStateToProps, {updateClubForm})(ClubInput))
+// export default (connect(mapStateToProps, {updateClubForm})(ClubInput))
+export default withRouter(connect(mapStateToProps, {updateClubForm})(ClubInput))
 
   // <input type = "submit"  value= "New Club"/>
 // <input type = "submit"  value={editMode ? "Update Club Info" : "New Club"}/>

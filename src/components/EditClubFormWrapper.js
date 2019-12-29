@@ -22,11 +22,11 @@ class EditClubFormWrapper extends React.Component {
   }
 
   handleSubmit = (clubFormData) => {
-     const { editClub, clubd = parseInt(this.props.match.params.id), history } = this.props
+     const { editClub, club = parseInt(this.props.match.params.id), history } = this.props
 
       editClub({
         ...clubFormData,
-        clubId: clubd
+        clubId: club
       }, history)
   }
 

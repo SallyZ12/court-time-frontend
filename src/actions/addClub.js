@@ -5,6 +5,7 @@ import {resetClubForm} from "../actions/editClub"
 export const addClub = (clubData, history) => {
 
   return (dispatch) => {
+    
     const sendableClubData ={
           club_name: clubData.clubName,
           location: clubData.location
@@ -36,9 +37,10 @@ export const addClub = (clubData, history) => {
 export const editClub = (club, history) => {
 
   return dispatch => {
-    const clubInfo = {
-      club: club
-      }
+    const sendableClubData ={
+          club_name: club.clubName,
+          location: club.location
+        }
 
   return fetch(`http://localhost:3000/api/v1/clubs/${club.clubId}`, {
     credentials: "include",
@@ -46,7 +48,7 @@ export const editClub = (club, history) => {
     headers: {
       "Content-Type": "application/json"
       },
-      body: JSON.stringify(clubInfo)
+      body: JSON.stringify(sendableClubData)
     })
       .then(response => response.json())
       .then(club => {

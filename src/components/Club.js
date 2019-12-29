@@ -17,10 +17,10 @@ const Club = (props) => {
 // [props.match.params.id-1] finds club by index in array rather than by id
 // let club = props.clubs.clubs[props.match.params.id-1]
 
-// find a club by its id rather than by index
+// find a club by its id rather than by index props.clubs.clubs.filter(club => club.id === parseInt(props.match.params.id))[0]
 let club = props.clubs.clubs && props.clubs.clubs.filter(club => club.id === parseInt(props.match.params.id))[0]
 
-console.log ("club:", club)
+// console.log ("club:", club)
 
 // this is how I iterate and not repeat court surfaces with rates
 let courts = club && club.courts

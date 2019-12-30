@@ -65,10 +65,10 @@ return (
 {/*only admin can see New Court link*/}
 {admin1 ? <NavLink exact activeClassName="current" to={`/clubs/${club.id}/courts`}> New Court -- </NavLink> : ""}
 
-{/*only admin can see New Court link*/}
+{/*only admin can see Edit Club link*/}
 {admin1 ? <NavLink to= {`/clubs/${club.id}/edit`}> Edit Club Info -- </NavLink> : ""}
 
-{/*only admin can see New Court link*/}
+{/*only admin can see Delete Club link*/}
 {admin1 ? <Button variant="link" onClick={()=> handleDeleteClub(club)}> Delete Club</Button> : ""}
 
 

@@ -1,6 +1,5 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {fetchClubs} from '../actions/fetchClubs'
 import Club from '../components/Club'
 import NewClubFormWrapper from '../components/NewClubFormWrapper'
 import EditClubFormWrapper from '../components/EditClubFormWrapper'
@@ -24,7 +23,7 @@ class ClubsContainer extends React.Component {
         <Route exact path='/clubs' component = {NewClubFormWrapper} />
         <Route exact path = '/clubs/:id/courts' component = {CourtInput}/>
         <Route exact path="/clubs/:id/edit" render={(rProps)=> <EditClubFormWrapper {...rProps} clubs={this.props.clubs} />}/>
-        
+
       </Switch>
 
       </div>
@@ -40,4 +39,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, {fetchClubs})(ClubsContainer)
+export default connect(mapStateToProps)(ClubsContainer)

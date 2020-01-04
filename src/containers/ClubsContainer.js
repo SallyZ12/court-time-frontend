@@ -10,9 +10,11 @@ import { Route, Switch } from 'react-router-dom'
 
 class ClubsContainer extends React.Component {
 
-  componentDidMount() {
-    this.props.fetchClubs()
-  }
+// fetch occurs in App so don't need this here, if leave here also when start App
+// the first time receive a "TypeError" error since fetching twice
+  // componentDidMount() {
+  //   this.props.fetchClubs()
+  // }
 
   render() {
     return (

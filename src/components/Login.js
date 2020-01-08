@@ -31,7 +31,7 @@ const Login = ({ loginFormData, updateLoginForm, login, resetLoginForm, history}
               name="username"
               onChange={handleInputChange} />
               <br/>
-      <input  type="text"
+      <input  type="password"
               placeholder="password >= 8 chars"
               value={loginFormData.password}
               name="password"

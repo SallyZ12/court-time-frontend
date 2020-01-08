@@ -42,7 +42,7 @@ class CourtInput extends React.Component {
     return (
       <div className = "Input">
 
-        <h5> New Court Entry </h5>
+        <h5> Court Information </h5>
 
         <Form onSubmit={this.handleSubmit} className="Input">
 

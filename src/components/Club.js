@@ -101,8 +101,11 @@ return (
 
           {club && club.courts.map(court => <li key={court.id}>
 
-            Court:    {court.court_number} <br/>
+            Court:
+                      {court.court_number} <br/>
+                      courtId: {court.id}<br/>
                       {court.surface} <br/>
+
         <br/>
 
         <ReservationInput court = {court} currentUser = {props.currentUser} club = {props.clubs}/><br/>

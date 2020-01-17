@@ -62,15 +62,15 @@ return (
 <Container className="justify-content-md-center">
 <h3> {club ? club.club_name : null} - {club ? club.location : null} </h3>
 
-{/*only admin can see New Court link*/}
-{admin1 ? <NavLink exact activeClassName="current" to={`/clubs/${club.id}/courts`}> New Court -- </NavLink> : ""}
-
-{/*only admin can see Edit Club link*/}
-{admin1 ? <NavLink to= {`/clubs/${club.id}/edit`}> Edit Club Info -- </NavLink> : ""}
-
-{/*only admin can see Delete Club link*/}
-{admin1 ? <Button variant="link" onClick={()=> handleDeleteClub(club)}> Delete Club</Button> : ""}
-
+<Table striped bordered size="sm">
+  <tbody>
+    <tr>
+<td>{admin1 ? <NavLink exact activeClassName="current" to={`/clubs/${club.id}/courts`}> New Court </NavLink> : ""}</td>
+<td>{admin1 ? <NavLink to= {`/clubs/${club.id}/edit`}> Edit Club Info </NavLink> : ""}</td>
+<td>{admin1 ? <Button variant="link" onClick={()=> handleDeleteClub(club)}> Delete Club</Button> : ""}</td>
+  </tr>
+</tbody>
+</Table>
 
 
   <Table striped bordered size="sm">

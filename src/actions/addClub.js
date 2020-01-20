@@ -5,7 +5,7 @@ import {resetClubForm} from "../actions/editClub"
 export const addClub = (clubData, history) => {
 
   return (dispatch) => {
-    
+
     const sendableClubData ={
           club_name: clubData.clubName,
           location: clubData.location

@@ -1,5 +1,6 @@
 
 export const updateClubForm = (clubFormData) => {
+  
     return {
       type: "UPDATE_CLUB_FORM",
       clubFormData
@@ -26,6 +27,3 @@ export const updateClubForm = (clubFormData) => {
       clubFormData
     }
 }
-
-
-  

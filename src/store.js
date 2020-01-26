@@ -6,7 +6,7 @@ import loginFormReducer from './reducers/loginFormReducer'
 import usersReducer from './reducers/usersReducer'
 import clubsReducer from './reducers/clubsReducer'
 import clubFormReducer from './reducers/clubFormReducer'
-
+import courtFormReducer from './reducers/courtFormReducer'
 
 const reducer = combineReducers({
   currentUserReducer,
@@ -14,7 +14,8 @@ const reducer = combineReducers({
   usersReducer,
   signupFormReducer,
   clubsReducer,
-  clubFormReducer
+  clubFormReducer,
+  courtFormReducer
 })
 
 

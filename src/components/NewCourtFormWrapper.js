@@ -9,6 +9,7 @@ const NewCourtFormWrapper = ( {history, addCourt }) => {
   const handleSubmit = (courtData, clubId) => {
 
     console.log("courtData", courtData)
+
       addCourt({
        ...courtData,
        clubId

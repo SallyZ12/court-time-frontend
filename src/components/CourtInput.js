@@ -20,34 +20,6 @@ const CourtInput = ({ courtFormData, updateCourtForm, history, editMode, handleS
 
   updateCourtForm(updatedCourtFormInfo)
 }
-// class CourtInput extends React.Component {
-//
-//
-//   state = {
-//     courtNumber: "",
-//     surface: "Hard",
-//     prime: "",
-//     nonPrime: ""
-//   }
-//
-//   handleChange = (event) => {
-//     this.setState({
-//       [event.target.name]: event.target.value
-//     })
-//   }
-//
-//   handleSubmit = (event)=> {
-//     event.preventDefault()
-//     let clubId = this.props.match.params.id
-//     this.props.addCourt(this.state, clubId)
-//     this.props.history.push(`/clubs/${clubId}`)
-//     this.setState({
-//       courtNumber: "",
-//       surface: "Hard",
-//       prime: "",
-//       nonPrime: ""
-//     })
-//   }
 
     return (
       <div className = "Input">

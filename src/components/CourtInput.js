@@ -1,66 +1,79 @@
 import React from 'react'
 import{connect} from 'react-redux'
-import {addCourt} from '../actions/addCourt'
+import {updateCourtForm} from '../actions/editCourt'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
 import { withRouter } from 'react-router-dom';
 
+const CourtInput = ({ courtFormData, updateCourtForm, history, editMode, handleSubmit}) => {
 
-class CourtInput extends React.Component {
+  const {courtNumber, surface, prime, nonPrime} = courtFormData
+// console.log("courtFormdData", courtFormData)
 
-
-  state = {
-    courtNumber: "",
-    surface: "Hard",
-    prime: "",
-    nonPrime: ""
+  const handleCourtInfoInputChange = event => {
+    const { name, value } = event.target
+    const updatedCourtFormInfo = {
+    ...courtFormData,
+    [name]: value
   }
 
-  handleChange = (event) => {
-    this.setState({
-      [event.target.name]: event.target.value
-    })
-  }
-
-  handleSubmit = (event)=> {
-    event.preventDefault()
-    let clubId = this.props.match.params.id
-    this.props.addCourt(this.state, clubId)
-    this.props.history.push(`/clubs/${clubId}`)
-    this.setState({
-      courtNumber: "",
-      surface: "Hard",
-      prime: "",
-      nonPrime: ""
-    })
-  }
-
-
-  render() {
+  updateCourtForm(updatedCourtFormInfo)
+}
+// class CourtInput extends React.Component {
+//
+//
+//   state = {
+//     courtNumber: "",
+//     surface: "Hard",
+//     prime: "",
+//     nonPrime: ""
+//   }
+//
+//   handleChange = (event) => {
+//     this.setState({
+//       [event.target.name]: event.target.value
+//     })
+//   }
+//
+//   handleSubmit = (event)=> {
+//     event.preventDefault()
+//     let clubId = this.props.match.params.id
+//     this.props.addCourt(this.state, clubId)
+//     this.props.history.push(`/clubs/${clubId}`)
+//     this.setState({
+//       courtNumber: "",
+//       surface: "Hard",
+//       prime: "",
+//       nonPrime: ""
+//     })
+//   }
 
     return (
       <div className = "Input">
 
-        <h5> Court Information </h5>
+      <Form onSubmit={event=> {
+        event.preventDefault()
+        handleSubmit(courtFormData)
+      }}>
 
-        <Form onSubmit={this.handleSubmit} className="Input">
+        <h5> Court Information </h5>
 
           <Form.Row>
             <Form.Group as={Col}>
               <input type= 'integer'
                 placeholder = "Court #"
-                value = {this.state.courtNumber}
+                value = {courtNumber}
                 name = 'courtNumber'
-                onChange={this.handleChange}/>
+                onChange={handleCourtInfoInputChange}/>
           </Form.Group>
 
         <Form.Group as={Col} >
         <Form.Label>Surface</Form.Label>
               <select
                name = 'surface'
-               value = {this.state.surface}
-               onChange = {this.handleChange}>
+               value = {surface}
+               onChange = {handleCourtInfoInputChange}>
                <option value = "Hard">Hard</option>
                <option value = "Clay">Clay</option>
                <option value = "Har-Tru">Har-Tru</option>
@@ -75,15 +88,15 @@ class CourtInput extends React.Component {
 
           <input type= 'integer'
                 placeholder = "Prime Rate"
-                value = {this.state.prime}
+                value = {prime}
                 name = 'prime'
-                onChange={this.handleChange}/>
+                onChange={handleCourtInfoInputChange}/>
 
           <input type= 'integer'
                   placeholder = "Non-Prime Rate"
-                  value = {this.state.nonPrime}
+                  value = {nonPrime}
                   name = 'nonPrime'
-                  onChange={this.handleChange}/><br/>
+                  onChange={handleCourtInfoInputChange}/><br/>
         </Form.Group>
         </Form.Row>
 
@@ -93,6 +106,6 @@ class CourtInput extends React.Component {
     )
   }
 
-}
 
-export default withRouter(connect(null, {addCourt})(CourtInput))
+
+export default withRouter(connect(null, {updateCourtForm})(CourtInput))

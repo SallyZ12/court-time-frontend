@@ -17,7 +17,7 @@ export const updateCourtForm = (courtFormData) => {
   export const setCourtFormDataForEdit = court => {
     const courtFormData = {
       id: court.id,
-      club_id: court.club_id
+      club_id: court.club_id,
       courtNumber: court.court_number,
       surface: court.surface,
       prime: court.prime,

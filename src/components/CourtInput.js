@@ -25,13 +25,12 @@ const CourtInput = ({ courtFormData, updateCourtForm, history, match, params, id
 }
 
     return (
-      <form onSubmit={event=>{
+      <form onSubmit={event => {
         event.preventDefault()
         handleSubmit(courtFormData)
       }}>
 
         <h5> Court Data </h5>
-
 
             <label> Court Number </label>
               <input type= 'integer'

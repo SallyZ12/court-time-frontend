@@ -1,6 +1,6 @@
 import {resetCourtForm} from "../actions/editCourt"
 
-export const addCourt = (court) => {
+export const addCourt = (court, history) => {
 
   return (dispatch) => {
 
@@ -27,7 +27,7 @@ export const addCourt = (court) => {
         } else {
           dispatch({type: 'ADD_COURT', payload: club})
           dispatch(resetCourtForm())
-          
+          history.push(`/clubs/${club.id}`)
           }
         })
     }

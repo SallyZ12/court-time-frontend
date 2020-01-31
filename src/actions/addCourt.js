@@ -1,5 +1,6 @@
+import {resetCourtForm} from "../actions/editCourt"
 
-export const addCourt = (court, clubId) => {
+export const addCourt = (court) => {
 
   return (dispatch) => {
 
@@ -11,7 +12,7 @@ export const addCourt = (court, clubId) => {
       non_prime: court.nonPrime
     }
 
-    fetch (`http://localhost:3000/api/v1/clubs/${clubId}/courts`, {
+    fetch (`http://localhost:3000/api/v1/clubs/${court.clubId}/courts`, {
       method: 'POST',
       credentials: "include",
       headers: {
@@ -25,6 +26,8 @@ export const addCourt = (court, clubId) => {
           alert(club.error)
         } else {
           dispatch({type: 'ADD_COURT', payload: club})
+          dispatch(resetCourtForm())
+          history.push('/')
           }
         })
     }

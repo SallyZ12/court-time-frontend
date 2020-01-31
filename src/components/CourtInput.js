@@ -7,10 +7,10 @@ import Button from 'react-bootstrap/Button';
 import { withRouter } from 'react-router-dom';
 
 const CourtInput = ({ courtFormData, updateCourtForm, history, match, params, id, editMode, handleSubmit}) => {
-  let clubId = match.params.id
+  const clubId = match.params.id
   const {courtNumber, surface, prime, nonPrime} = courtFormData
 
-// console.log("courtFormData", courtFormData)
+// console.log("courtFormData", coourtFormData)
 
   const handleCourtInfoInputChange = event => {
     const { name, value } = event.target

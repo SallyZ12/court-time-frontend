@@ -7,7 +7,7 @@ import Button from 'react-bootstrap/Button';
 import { withRouter } from 'react-router-dom';
 
 const CourtInput = ({ courtFormData, updateCourtForm, history, match, params, id, editMode, handleSubmit}) => {
-  let club_id = match.params.id
+  let clubId = match.params.id
   const {courtNumber, surface, prime, nonPrime} = courtFormData
 
 // console.log("courtFormData", courtFormData)
@@ -18,7 +18,7 @@ const CourtInput = ({ courtFormData, updateCourtForm, history, match, params, id
     const updatedCourtFormInfo = {
     ...courtFormData,
     [name]: value,
-    clubId: club_id
+    clubId: clubId
   }
 
   updateCourtForm(updatedCourtFormInfo)

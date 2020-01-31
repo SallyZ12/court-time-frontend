@@ -6,7 +6,7 @@ import { connect } from 'react-redux'
 
 const NewCourtFormWrapper = ( {history, addCourt }) => {
 
-  const handleSubmit = (courtData, courtId, club_id) => {  
+  const handleSubmit = (courtData, courtId, clubId) => {  
 
       addCourt({
        ...courtData,

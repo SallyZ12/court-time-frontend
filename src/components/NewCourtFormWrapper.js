@@ -6,14 +6,14 @@ import { connect } from 'react-redux'
 
 const NewCourtFormWrapper = ( {history, addCourt }) => {
 
-  const handleSubmit = (courtData, courtId, clubId) => {
+  const handleSubmit = (courtData, courtId, club_id) => {
+
 
     console.log("courtData", courtData)
 
       addCourt({
        ...courtData,
        courtId,
-       clubId
     }, history)
   }
 

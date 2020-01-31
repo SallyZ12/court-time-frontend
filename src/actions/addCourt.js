@@ -27,7 +27,7 @@ export const addCourt = (court) => {
         } else {
           dispatch({type: 'ADD_COURT', payload: club})
           dispatch(resetCourtForm())
-          history.push('/')
+          
           }
         })
     }

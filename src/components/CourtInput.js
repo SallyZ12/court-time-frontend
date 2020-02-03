@@ -6,8 +6,10 @@ import Button from 'react-bootstrap/Button';
 // import Col from 'react-bootstrap/Col';
 import { withRouter } from 'react-router-dom';
 
-const CourtInput = ({ courtFormData, updateCourtForm, history, match, params, id, editMode, handleSubmit}) => {
+const CourtInput = ({ courtFormData, updateCourtForm, history, match, editMode, handleSubmit}) => {
+
   const clubId = match.params.id
+
   const {courtNumber, surface, prime, nonPrime} = courtFormData
 
 // console.log("courtFormData", coourtFormData)

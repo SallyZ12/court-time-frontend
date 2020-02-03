@@ -4,6 +4,7 @@ import Club from '../components/Club'
 import NewClubFormWrapper from '../components/NewClubFormWrapper'
 import EditClubFormWrapper from '../components/EditClubFormWrapper'
 import NewCourtFormWrapper from '../components/NewCourtFormWrapper'
+import EditCourtFormWrapper from '../components/EditCourtFormWrapper'
 // import CourtInput from '../components/CourtInput'
 import { Route, Switch } from 'react-router-dom'
 
@@ -23,7 +24,7 @@ class ClubsContainer extends React.Component {
         <Route exact path="/clubs/:id" render={(routerProps)=> <Club {...routerProps} clubs={this.props.clubs} currentUser={this.props.currentUser}/>}/>
         <Route exact path='/clubs' component = {NewClubFormWrapper} />
         <Route exact path='/clubs/:id/courts' component = {NewCourtFormWrapper} />
-
+        <Route exact path='/clubs/:id/courts/:id/edit' render={(rProps) => <EditCourtFormWrapper {...rProps} clubs={this.props.clubs} />} />
         <Route exact path="/clubs/:id/edit" render={(rProps)=> <EditClubFormWrapper {...rProps} clubs={this.props.clubs} />}/>
 
       </Switch>
@@ -42,5 +43,3 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps)(ClubsContainer)
-
-  

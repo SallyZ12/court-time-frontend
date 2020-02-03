@@ -1,6 +1,6 @@
 
 export const updateCourtForm = (courtFormData) => {
-  
+
     return {
       type: "UPDATE_COURT_FORM",
       courtFormData
@@ -19,7 +19,7 @@ export const updateCourtForm = (courtFormData) => {
 
     const courtFormData = {
       id: court.id,
-      club_id: court.club_id,
+      clubId: court.club_id,
       courtNumber: court.court_number,
       surface: court.surface,
       prime: court.prime,

@@ -40,7 +40,7 @@ export const editCourt = (court, clubId, history) => {
   return dispatch => {
     const sendableCourtData ={
       court_number: court.courtNumber,
-      club_id: court.club_id,
+      club_id: court.clubId,
       surface: court.surface,
       prime: court.prime,
       non_prime: court.nonPrime

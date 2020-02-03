@@ -9,12 +9,13 @@ class EditCourtFormWrapper extends React.Component {
 
 
   componentDidMount() {
+
     this.props.clubs.clubs && this.props.setCourtFormDataForEdit(this.props.clubs.clubs.filter(club => club.id === parseInt(this.props.match.params.id))[0])
 
   }
 
   componentDidUpdate(prevProps) {
-    this.props.clubs.clubs && !prevProps.clubs.clubs && this.props.setCourtFormDataForEdit(this.props.clubs.clubs.filter(club => club.id === parseInt(this.props.match.params.id))[0])
+    this.props.clubs.clubs && !prevProps.clubs.clubs && this.props.setCourtFormDataForEdit(parseInt(this.props.match.params.id))
   }
 
   componentWillUnmount(){
@@ -22,11 +23,10 @@ class EditCourtFormWrapper extends React.Component {
   }
 
   handleSubmit = (courtFormData) => {
-     const { editCourt, clubNumber = parseInt(this.props.match.params.id), history } = this.props
+     const { editCourt, courtId = parseInt(this.props.match.params.id), history } = this.props
 
       editCourt({
         ...courtFormData,
-        clubId: clubNumber
       }, history)
   }
 

@@ -2,8 +2,6 @@ import React from 'react'
 import{connect} from 'react-redux'
 import {updateCourtForm} from '../actions/editCourt'
 import Button from 'react-bootstrap/Button';
-// import Form from 'react-bootstrap/Form';
-// import Col from 'react-bootstrap/Col';
 import { withRouter } from 'react-router-dom';
 
 const CourtInput = ({ courtFormData, updateCourtForm, history, match, editMode, handleSubmit}) => {

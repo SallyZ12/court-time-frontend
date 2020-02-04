@@ -35,7 +35,7 @@ export const addCourt = (court, history) => {
 
 
 // async action creator
-export const editCourt = (court, clubId, history) => {
+export const editCourt = (court, history) => {
 
   return dispatch => {
     const sendableCourtData ={
@@ -46,7 +46,7 @@ export const editCourt = (court, clubId, history) => {
       non_prime: court.nonPrime
     }
 
-  return fetch(`http://localhost:3000/api/v1/clubs/${clubId}/courts/${court.courtId}`, {
+  return fetch(`http://localhost:3000/api/v1/clubs/${court.clubId}/courts/${court.courtId}`, {
     credentials: "include",
     method: "PATCH",
     headers: {

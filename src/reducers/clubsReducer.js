@@ -15,6 +15,7 @@ export default function clubsReducer(state = initialState, action) {
      return {...state, clubs: state.clubs.filter(club=> club.id !== action.payload.id)}
 
      case "EDIT_CLUB":
+     case "EDIT_COURT":
       return {clubs: state.clubs.map(club => club.id === action.club.id ? action.club: club)}
 
     case 'ADD_COURT':

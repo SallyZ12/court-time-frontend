@@ -10,9 +10,7 @@ class EditCourtFormWrapper extends React.Component {
 
 
   componentDidMount() {
-    const clubId= this.props.match.url.split('/')[2]
-    // this.props.clubs.clubs && this.props.setCourtFormDataForEdit(this.props.clubs.clubs.filter(club => club.id === parseInt(this.props.match.params.id))[0])
-    this.props.clubs.clubs && this.props.setCourtFormDataForEdit(clubId)
+    this.props.clubs.clubs && this.props.setCourtFormDataForEdit(this.props.clubs.clubs.filter(club => club.id === parseInt(this.props.match.url.split('/')[2])))
   }
 
   componentDidUpdate(prevProps) {

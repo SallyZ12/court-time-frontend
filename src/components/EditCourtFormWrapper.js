@@ -9,7 +9,7 @@ class EditCourtFormWrapper extends React.Component {
 
 
   componentDidMount() {
-
+debugger
     this.props.clubs.clubs && this.props.setCourtFormDataForEdit(this.props.clubs.clubs.filter(club => club.id === parseInt(this.props.match.params.id))[0])
 
   }
@@ -27,6 +27,7 @@ class EditCourtFormWrapper extends React.Component {
 
       editCourt({
         ...courtFormData,
+        courtId: courtId
       }, history)
   }
 

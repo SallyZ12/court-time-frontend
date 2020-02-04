@@ -29,7 +29,6 @@ class ClubsContainer extends React.Component {
         <Route exact path='/clubs/:id/courts' component = {NewCourtFormWrapper} />
         <Route exact path='/clubs/:id/courts/:id/edit' render={(rProps) => <EditCourtFormWrapper {...rProps} clubs={this.props.clubs} />}/>
 
-
       </Switch>
 
       </div>

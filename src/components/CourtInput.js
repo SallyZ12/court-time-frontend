@@ -10,7 +10,7 @@ const CourtInput = ({ courtFormData, updateCourtForm, history, match, editMode, 
 
   const {courtNumber, surface, prime, nonPrime} = courtFormData
 
-// console.log("courtFormData", coourtFormData)
+console.log("courtFormData", courtFormData)
 
   const handleCourtInfoInputChange = event => {
     const { name, value } = event.target
@@ -76,7 +76,7 @@ const CourtInput = ({ courtFormData, updateCourtForm, history, match, editMode, 
   }
 
 const mapStateToProps = state =>{
-
+console.log("MSTP", state.courtFormReducer)
   return{
     courtFormData: state.courtFormReducer
   }

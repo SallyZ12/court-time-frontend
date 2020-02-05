@@ -26,11 +26,10 @@ class EditCourtFormWrapper extends React.Component {
 
   handleSubmit = (courtFormData) => {
 
-     const { editCourt, courtId = parseInt(this.props.match.params.id), clubId = parseInt(this.props.match.url.split('/')[2]), history } = this.props
+     const { editCourt, clubId = parseInt(this.props.match.url.split('/')[2]), history } = this.props
 
       editCourt({
         ...courtFormData,
-        courtId: courtId,
         clubId: clubId
       }, history)
   }

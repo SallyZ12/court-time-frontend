@@ -10,11 +10,14 @@ class EditCourtFormWrapper extends React.Component {
 
 
   componentDidMount() {
-    this.props.clubs.clubs && this.props.setCourtFormDataForEdit(this.props.clubs.clubs.filter(club => club.id === parseInt(this.props.match.url.split('/')[2])))
+
+    let club1 = (this.props.clubs.clubs.filter(club => club.id === parseInt(this.props.match.url.split('/')[2]))[0])
+    this.props.clubs.clubs && this.props.setCourtFormDataForEdit(club1.courts.filter(court => court.id === parseInt(this.props.match.params.id))[0])
   }
 
   componentDidUpdate(prevProps) {
-    this.props.clubs.clubs && !prevProps.clubs.clubs && this.props.setCourtFormDataForEdit(parseInt(this.props.match.params.id))
+    let club2 = (this.props.clubs.clubs.filter(club => club.id === parseInt(this.props.match.url.split('/')[2]))[0])
+    this.props.clubs.clubs && !prevProps.clubs.clubs && this.props.setCourtFormDataForEdit(club2.courts.filter(court => court.id === parseInt(this.props.match.params.id))[0])
   }
 
   componentWillUnmount(){
@@ -22,6 +25,7 @@ class EditCourtFormWrapper extends React.Component {
   }
 
   handleSubmit = (courtFormData) => {
+
      const { editCourt, courtId = parseInt(this.props.match.params.id), clubId = parseInt(this.props.match.url.split('/')[2]), history } = this.props
 
       editCourt({

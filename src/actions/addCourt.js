@@ -37,10 +37,11 @@ export const addCourt = (court, history) => {
 // async action creator
 export const editCourt = (court, history) => {
 
-  return dispatch => {
+  return (dispatch) => {
+  
     const sendableCourtData ={
       court_number: court.courtNumber,
-      club_id: court.clubId,
+      club_id: court.club_id,
       surface: court.surface,
       prime: court.prime,
       non_prime: court.nonPrime

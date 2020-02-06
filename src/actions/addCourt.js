@@ -38,7 +38,7 @@ export const addCourt = (court, history) => {
 export const editCourt = (court, history) => {
 
   return (dispatch) => {
-  
+
     const sendableCourtData ={
       court_number: court.courtNumber,
       club_id: court.club_id,

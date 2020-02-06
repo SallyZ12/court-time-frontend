@@ -6,8 +6,8 @@ import { withRouter } from 'react-router-dom';
 
 const CourtInput = ({ courtFormData, updateCourtForm, history, match, editMode, handleSubmit}) => {
 
-  const clubId = match.params.id
-
+  // const clubId = match.params.id
+  const clubId = match.url.split('/')[2][0]
   const {courtNumber, surface, prime, nonPrime} = courtFormData
 
 console.log("courtFormData", courtFormData)

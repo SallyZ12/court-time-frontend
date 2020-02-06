@@ -47,7 +47,7 @@ export const editCourt = (court, history) => {
       non_prime: court.nonPrime
     }
 
-  return fetch(`http://localhost:3000/api/v1/clubs/${court.clubId}/courts/${court.courtId}`, {
+  return fetch(`http://localhost:3000/api/v1/clubs/${court.clubId}/courts/${court.id}`, {
     credentials: "include",
     method: "PATCH",
     headers: {

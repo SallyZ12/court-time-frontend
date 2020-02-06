@@ -23,7 +23,7 @@ export const updateCourtForm = (courtFormData) => {
       courtNumber: court.court_number,
       surface: court.surface,
       prime: court.prime,
-      non_prime: court.nonPrime
+      nonPrime: court.nonPrime
   }
 
     return {

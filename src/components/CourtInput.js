@@ -23,7 +23,7 @@ const CourtInput = ({ courtFormData, updateCourtForm, history, match, editMode, 
   }
 
   updateCourtForm(updatedCourtFormInfo)
-  
+
 }
 
     return (
@@ -77,7 +77,7 @@ const CourtInput = ({ courtFormData, updateCourtForm, history, match, editMode, 
   }
 
 const mapStateToProps = state =>{
-console.log("MSTP", state.courtFormReducer)
+
   return{
     courtFormData: state.courtFormReducer
   }

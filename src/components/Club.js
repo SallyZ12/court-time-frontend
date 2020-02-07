@@ -103,7 +103,6 @@ return (
 
             Court:
                       {court.court_number} <br/>
-                      courtId: {court.id}<br/>
                       {court.surface} <br/>
 
         <br/>

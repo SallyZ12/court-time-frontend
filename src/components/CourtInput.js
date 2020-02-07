@@ -13,8 +13,6 @@ const CourtInput = ({ courtFormData, updateCourtForm, history, match, editMode, 
   const clubId = match.url.split('/')[2][0]
   const {courtNumber, surface, prime, nonPrime} = courtFormData
 
-console.log("courtFormData", courtFormData)
-
   const handleCourtInfoInputChange = event => {
     const { name, value } = event.target
 
@@ -25,7 +23,7 @@ console.log("courtFormData", courtFormData)
   }
 
   updateCourtForm(updatedCourtFormInfo)
-
+  
 }
 
     return (

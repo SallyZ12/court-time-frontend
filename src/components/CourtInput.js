@@ -7,7 +7,8 @@ import { withRouter } from 'react-router-dom';
 const CourtInput = ({ courtFormData, updateCourtForm, history, match, editMode, handleSubmit}) => {
 
   // const clubId I needed to access the club.id and this was the only way I could
-  // think of doing that which worked for both a new court and edit a court
+  // think of doing that -- match.params.id only worked for a new court, but not
+   // edit a court, so changed for both
 
   const clubId = match.url.split('/')[2][0]
   const {courtNumber, surface, prime, nonPrime} = courtFormData

@@ -113,8 +113,9 @@ return (
         {moment(reservation.day).format('MMM DD YYYY')} <br/>{reservation.hour}</p>))}
 
         {/*only admin can see delete court, edit court link*/}
-        {admin1 ? <Button variant="link" onClick={()=> handleDeleteCourt(court)}> Delete Court </Button> : ""} <br/>
-        {admin1 ? <NavLink to= {`/clubs/${club.id}/courts/${court.id}/edit`}> Edit Court </NavLink> : ""} </li>)}
+        {admin1 ? <NavLink to= {`/clubs/${club.id}/courts/${court.id}/edit`}> Edit Court </NavLink> : ""} <br/>
+        {admin1 ? <Button variant="link" onClick={()=> handleDeleteCourt(court)}> Delete Court </Button> : ""}</li>)}
+
        </span>
 </Container>
 

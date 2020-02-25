@@ -1,11 +1,11 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-##Project:
+## Project:
 This web app was created for my final Project at The Flatiron School Online Software Engineering Program for the Full Stack Web Development Experience.
 
 The Project is CourtTime.  It is a simple web app that allows a user to book a tennis court at a particular tennis club for a specific day and time.
 
-##How To Get Started:
+## How To Get Started:
 There is a backend that is designed with Ruby on Rails and is in one github repository, while the frontend is designed with React and Redux and is in a different github repository.
 
 Once you clone the backend, remember to run "bundle install" and then start the rails server "rails s".
@@ -16,7 +16,7 @@ Always remember to "cd" to the correct directory.
 
  My set up has the backend server running on localhost/3000 while the frontend server is running on localhost/3001.
 
-#Now For the Fun Part:
+# Now For the Fun Part:
 Once you have your backend and frontend running, you need to create the first user who is also the admin.  The web app is delivered with no existing Tennis Clubs and therefore, no available courts to book.  This is where the admin comes in.  Also, you are restricted to having only 1 admin per Project.
 
 When the admin is registered, they can create a Tennis Club by selecting from the dropdown ADMIN menu - "New Club".  Once the Club is created, the admin can select that Club via the link and navigate to the Club page. From the Club page the admin has the option to:

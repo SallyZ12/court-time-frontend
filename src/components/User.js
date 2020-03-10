@@ -31,7 +31,7 @@ let currentUser1 = props.currentUser.username
 
 
   return (
-    <Card bg="light"  className="text-left" style={{ width: '45rem' }}>
+    <Card bg="light"  className="text-left" style={{ width: '45rem'}}>
       {/*<Card.Img variant="top" src="holder.js/100px180" />*/}
       <Card.Body>
         <Card.Title> Today's Date: {currentDate} <br/><br/> Player Information:</Card.Title>

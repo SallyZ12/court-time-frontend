@@ -10,7 +10,6 @@ import {deleteClub} from '../actions/deleteClub'
 import ReservationInput from '../components/ReservationInput'
 import moment from 'moment'
 
-
 const Club = (props) => {
 // console.log("props:", props)
 

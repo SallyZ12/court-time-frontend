@@ -2,7 +2,8 @@ import React from 'react'
 import court from '../court.png'
 import '../style.css';
 import Clubs from '../components/Clubs'
-
+import { NavLink } from 'react-router-dom'
+import Button from 'react-bootstrap/Button'
 
 
 const Home = (props) => {
@@ -10,6 +11,9 @@ const Home = (props) => {
     return (
 
       <div className = "Home">
+
+        <Button variant="light"><NavLink exact activeClassName="current" to="/signup"> Register </NavLink></Button>
+        <Button variant="light"><NavLink exact activeClassName="current" to="/login"> Login </NavLink></Button>
 
         <h2 className = "text-center"> It's Court Time! </h2>
         <h6 className = "text-center"> Register/Login To Begin </h6>

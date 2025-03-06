@@ -6,6 +6,7 @@
     "bootstrap": "^5.3.3",
     "dateformat": "^3.0.3",
     "jquery": "^3.5.0",
+<<<<<<< HEAD
     "moment": "^2.30.1",
     "popper.js": "^1.16.1",
     "react": "^16.14.0",
@@ -17,6 +18,19 @@
     "react-select": "^3.2.0",
     "redux": "^4.2.1",
     "redux-thunk": "^2.4.2"
+=======
+    "moment": "^2.24.0",
+    "popper.js": "^1.15.0",
+    "react": "^16.8.6",
+    "react-bootstrap": "^1.0.0-beta.10",
+    "react-dom": "^16.8.6",
+    "react-redux": "^7.1.0",
+    "react-router-dom": "^5.0.1",
+    "react-scripts": "5.0.1",
+    "react-select": "^3.0.5",
+    "redux": "^4.0.4",
+    "redux-thunk": "^2.3.0"
+>>>>>>> 6a6824d77f8aede8ff1bc76cd569b8f68d020a76
   },
   "scripts": {
     "start": "react-scripts start",

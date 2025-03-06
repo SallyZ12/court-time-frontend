@@ -7,7 +7,7 @@ import Button from 'react-bootstrap/Button'
 
 
 const Home = (props) => {
-  // console.log("home:", props)
+  console.log("home:", props)
     return (
 
       <div className = "Home">
